@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Sora, Manrope } from "next/font/google";
+import { Sora, Manrope, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SmoothScroll } from "@/components/smooth-scroll";
@@ -16,6 +16,12 @@ const manrope = Manrope({
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
+const ibmPlexArabic = IBM_Plex_Sans_Arabic({
+  subsets: ["arabic"],
+  variable: "--font-arabic",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Mubasher Capital Holding | Ultra-Premium Corporate Excellence",
   description: "Mubasher Capital Holding — a premier global financial holding group delivering world-class investment strategies, institutional advisory, and market intelligence.",
@@ -26,7 +32,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${sora.variable} ${manrope.variable}`}>
+      <body className={`${sora.variable} ${manrope.variable} ${ibmPlexArabic.variable} antialiased font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <SmoothScroll>
             {children}
