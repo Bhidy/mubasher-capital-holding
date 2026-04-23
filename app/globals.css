@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Alexandria:wght@400;700;800;900&display=swap');
 @import "tw-animate-css";
 @import "tailwindcss";
 
@@ -11,6 +11,7 @@
   --font-sans: 'Manrope', system-ui, sans-serif;
   --font-heading: 'Sora', system-ui, sans-serif;
   --font-arabic: 'IBM Plex Sans Arabic', sans-serif;
+  --font-alexandria: 'Alexandria', sans-serif;
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
@@ -102,7 +103,7 @@
     border-color: var(--border);
   }
 
-  /* Nuclear Font Fix for Arabic Mode */
+  /* Universal UI Font for Arabic (Trading interface, data grids, body) */
   body.lang-ar, 
   body.lang-ar *, 
   body.lang-ar *:before, 
@@ -110,22 +111,26 @@
     font-family: 'IBM Plex Sans Arabic', sans-serif !important;
   }
 
-  body.lang-ar {
-    --font-sans: 'IBM Plex Sans Arabic', sans-serif;
-    --font-heading: 'IBM Plex Sans Arabic', sans-serif;
-    direction: rtl;
-  }
-
-  .lang-ar h1, .lang-ar h2, .lang-ar h3, .lang-ar h4, .lang-ar h5, .lang-ar h6 {
-    font-family: 'IBM Plex Sans Arabic', sans-serif !important;
-    letter-spacing: 0 !important;
-    line-height: 1.3 !important;
-    font-weight: 800 !important;
+  /* Marketing Headlines Override (Alexandria) */
+  .lang-ar h1, 
+  .lang-ar h2, 
+  .lang-ar h3, 
+  .lang-ar .marketing-headline {
+    font-family: 'Alexandria', sans-serif !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.2 !important;
     text-shadow: 0 2px 10px rgba(0,0,0,0.15);
   }
 
-  .light .lang-ar h1, .light .lang-ar h2, .light .lang-ar h3, .light .lang-ar h4, .light .lang-ar h5, .light .lang-ar h6 {
+  .light .lang-ar h1, .light .lang-ar h2, .light .lang-ar h3 {
     text-shadow: none;
+  }
+
+  body.lang-ar {
+    --font-sans: 'IBM Plex Sans Arabic', sans-serif;
+    --font-heading: 'Alexandria', sans-serif;
+    direction: rtl;
   }
 
   html {
@@ -217,34 +222,11 @@
     background-clip: text;
   }
 
-  .text-gradient-green {
-    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
   .text-gradient-main {
     background: linear-gradient(135deg, #f0f4ff 0%, #94a8cc 60%, #2563eb 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-  }
-
-  .light .text-gradient-main {
-    background: linear-gradient(135deg, #060c1a 0%, #1e3a8a 50%, #2563eb 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Glow effects */
-  .glow-blue {
-    box-shadow: 0 0 40px rgba(37, 99, 235, 0.3), 0 0 80px rgba(37, 99, 235, 0.1);
-  }
-
-  .glow-green {
-    box-shadow: 0 0 40px rgba(16, 185, 129, 0.3), 0 0 80px rgba(16, 185, 129, 0.1);
   }
 
   /* Premium card */
@@ -273,50 +255,7 @@
       linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
     background-size: 80px 80px;
   }
-
-  /* Animated blob */
-  .blob {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    animation: blob-morph 10s ease-in-out infinite;
-    filter: blur(80px);
-  }
-
-  /* Noise texture */
-  .noise::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1;
-  }
 }
-
-/* ═══════════════════════════════════════════
-   SCROLLBAR
-═══════════════════════════════════════════ */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #2563eb, #10b981);
-  border-radius: 2px;
-}
-
-/* ═══════════════════════════════════════════
-   KEYFRAMES
-═══════════════════════════════════════════ */
-@keyframes blob-morph {
-  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0,0) scale(1); }
-  33%       { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: translate(30px,-40px) scale(1.05); }
-  66%       { border-radius: 50% 60% 30% 60% / 30% 40% 70% 50%; transform: translate(-20px,20px) scale(0.97); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50%       { opacity: 0.8; transform: scale(1.05); }
-}
-
-.animate-pulse-glow   { animation: pulse-glow 3s ease-in-out infinite; }
 
 /* ═══════════════════════════════════════════
    BUTTON OVERRIDES
