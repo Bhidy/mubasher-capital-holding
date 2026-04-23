@@ -6,7 +6,7 @@
 /* ═══════════════════════════════════════════
    FONT IMPORTS
 ═══════════════════════════════════════════ */
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
 
 /* ═══════════════════════════════════════════
    DESIGN TOKENS
@@ -116,6 +116,17 @@
     font-family: 'Manrope', system-ui, sans-serif;
     overflow-x: hidden;
     cursor: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  body.lang-ar {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    direction: rtl;
+  }
+
+  .lang-ar h1, .lang-ar h2, .lang-ar h3, .lang-ar h4, .lang-ar h5, .lang-ar h6 {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    letter-spacing: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {
