@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
 @import "tw-animate-css";
 @import "tailwindcss";
 
@@ -7,9 +8,9 @@
    DESIGN TOKENS
 ═══════════════════════════════════════════ */
 @theme inline {
-  --font-sans: var(--font-sans), system-ui, sans-serif;
-  --font-heading: var(--font-heading), system-ui, sans-serif;
-  --font-arabic: var(--font-arabic), sans-serif;
+  --font-sans: 'Manrope', system-ui, sans-serif;
+  --font-heading: 'Sora', system-ui, sans-serif;
+  --font-arabic: 'IBM Plex Sans Arabic', sans-serif;
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
@@ -93,12 +94,33 @@
 }
 
 /* ═══════════════════════════════════════════
-   BASE RESETS
+   BASE LAYER & UNIVERSAL FONT FIX
 ═══════════════════════════════════════════ */
 @layer base {
   *, *::before, *::after {
     box-sizing: border-box;
     border-color: var(--border);
+  }
+
+  /* Nuclear Font Fix for Arabic Mode */
+  body.lang-ar, 
+  body.lang-ar *, 
+  body.lang-ar *:before, 
+  body.lang-ar *:after {
+    font-family: 'IBM Plex Sans Arabic', sans-serif !important;
+  }
+
+  body.lang-ar {
+    --font-sans: 'IBM Plex Sans Arabic', sans-serif;
+    --font-heading: 'IBM Plex Sans Arabic', sans-serif;
+    direction: rtl;
+  }
+
+  .lang-ar h1, .lang-ar h2, .lang-ar h3, .lang-ar h4, .lang-ar h5, .lang-ar h6 {
+    font-family: 'IBM Plex Sans Arabic', sans-serif !important;
+    letter-spacing: 0 !important;
+    line-height: 1.4 !important;
+    font-weight: 700 !important;
   }
 
   html {
@@ -113,19 +135,6 @@
     overflow-x: hidden;
     cursor: none;
     transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  body.lang-ar {
-    --font-sans: var(--font-arabic);
-    --font-heading: var(--font-arabic);
-    font-family: var(--font-arabic) !important;
-    direction: rtl;
-  }
-
-  .lang-ar h1, .lang-ar h2, .lang-ar h3, .lang-ar h4, .lang-ar h5, .lang-ar h6 {
-    font-family: var(--font-arabic) !important;
-    letter-spacing: 0 !important;
-    line-height: 1.3 !important;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -252,15 +261,6 @@
     transform: translateY(-4px);
   }
 
-  .light .premium-card:hover {
-    border-color: rgba(29, 78, 216, 0.25);
-    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(29, 78, 216, 0.12);
-  }
-
-  .light .premium-card:hover {
-    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(37, 99, 235, 0.2);
-  }
-
   /* Grid lines overlay */
   .grid-overlay {
     background-image:
@@ -276,16 +276,6 @@
     filter: blur(80px);
   }
 
-  .blob-2 {
-    animation-delay: -3s;
-    border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
-  }
-
-  .blob-3 {
-    animation-delay: -6s;
-    border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
-  }
-
   /* Noise texture */
   .noise::after {
     content: '';
@@ -294,38 +284,6 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 1;
-  }
-
-  /* Shimmer */
-  .shimmer {
-    position: relative;
-    overflow: hidden;
-  }
-  .shimmer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
-    animation: shimmer 3s infinite;
-  }
-
-  /* Line decoration */
-  .line-accent {
-    position: relative;
-  }
-  .line-accent::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(180deg, #2563eb, #10b981);
-    border-radius: 2px;
   }
 }
 
@@ -348,53 +306,12 @@
   66%       { border-radius: 50% 60% 30% 60% / 30% 40% 70% 50%; transform: translate(-20px,20px) scale(0.97); }
 }
 
-@keyframes shimmer {
-  0%   { left: -100%; }
-  100% { left: 200%; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33%       { transform: translateY(-12px) rotate(1deg); }
-  66%       { transform: translateY(6px) rotate(-1deg); }
-}
-
-@keyframes spin-slow {
-  to { transform: rotate(360deg); }
-}
-
 @keyframes pulse-glow {
   0%, 100% { opacity: 0.4; transform: scale(1); }
   50%       { opacity: 0.8; transform: scale(1.05); }
 }
 
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes line-draw {
-  from { stroke-dashoffset: 1000; }
-  to   { stroke-dashoffset: 0; }
-}
-
-@keyframes number-ticker {
-  from { transform: translateY(100%); opacity: 0; }
-  to   { transform: translateY(0);    opacity: 1; }
-}
-
-.animate-float        { animation: float 6s ease-in-out infinite; }
-.animate-spin-slow    { animation: spin-slow 20s linear infinite; }
 .animate-pulse-glow   { animation: pulse-glow 3s ease-in-out infinite; }
-.animate-fade-in-up   { animation: fade-in-up 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
-.animate-number       { animation: number-ticker 0.6s cubic-bezier(0.16,1,0.3,1) forwards; }
-
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
 
 /* ═══════════════════════════════════════════
    BUTTON OVERRIDES
@@ -407,7 +324,7 @@
   padding: 0 2rem;
   height: 3.25rem;
   border-radius: 9999px;
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.01em;
@@ -422,22 +339,10 @@
   text-decoration: none;
 }
 
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 40px rgba(37,99,235,0.55), 0 1px 0 rgba(255,255,255,0.15) inset;
 }
-
-.btn-primary:hover::before { opacity: 1; }
-.btn-primary:active { transform: translateY(0); }
 
 .btn-outline {
   display: inline-flex;
@@ -447,7 +352,7 @@
   padding: 0 2rem;
   height: 3.25rem;
   border-radius: 9999px;
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.01em;
@@ -468,35 +373,15 @@
 
 .btn-outline:hover {
   transform: translateY(-2px);
-  border-color: rgba(37,99,235,0.5);
-  background: rgba(37,99,235,0.06);
+  border-color: rgba(37, 99, 235, 0.5);
+  background: rgba(37, 99, 235, 0.06);
 }
-
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: #94a8cc;
-  cursor: none;
-  transition: color 0.2s ease, gap 0.2s ease;
-  text-decoration: none;
-}
-
-.btn-ghost:hover {
-  color: #f0f4ff;
-  gap: 0.7rem;
-}
-
-.light .btn-ghost:hover { color: #060c1a; }
 
 /* ═══════════════════════════════════════════
    NAV LINK
 ═══════════════════════════════════════════ */
 .nav-link {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 500;
   color: rgba(148,168,204,0.8);
@@ -531,7 +416,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -546,29 +431,4 @@
   height: 1px;
   background: #10b981;
   display: block;
-}
-
-/* ═══════════════════════════════════════════
-   MARQUEE
-═══════════════════════════════════════════ */
-.marquee-track {
-  display: flex;
-  gap: 3rem;
-  animation: marquee 30s linear infinite;
-  white-space: nowrap;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-/* ═══════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════ */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
 }
