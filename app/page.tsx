@@ -131,7 +131,7 @@ const translations = {
     },
     about: {
       label: "الخدمات المصرفية للمؤسسات",
-      title: "شركة خدمات مصرفية استثمارية تخدم العملاء في مصر والشرق الأوسط",
+      title: "تميز مالي في مصر والشرق الأوسط",
       desc: "مباشر كابيتال هي بنك استثماري إقليمي رائد له حضور في مواقع استراتيجية في مصر والشرق الأوسط. نحن نقدم خدمات استشارية عالية التأثير، تجمع بين المعرفة المحلية العميقة ومعايير التنفيذ الدولية.",
       stat1: "تميز تشغيلي",
       stat2: "عملاء مؤسسيين",
@@ -368,7 +368,7 @@ function Hero({ t, lang }: { t: any, lang: string }) {
 
         <div className="mb-10">
           <motion.h1
-            className={`font-heading ${lang === 'ar' ? 'text-[clamp(3.5rem,11vw,7.5rem)] leading-[1.5]' : 'text-[clamp(3.5rem,11vw,9rem)] leading-[0.9]'} font-extrabold tracking-tightest`}
+            className={`font-heading ${lang === 'ar' ? 'text-[clamp(2.5rem,8vw,5.5rem)] leading-[1.3]' : 'text-[clamp(3.5rem,11vw,9rem)] leading-[0.9]'} font-extrabold tracking-tightest`}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
@@ -438,7 +438,7 @@ function Services({ t, lang }: { t: any, lang: string }) {
   ];
 
   return (
-    <section id="services" className="py-40 px-6 bg-background relative z-10">
+    <section id="services" className="py-24 px-6 bg-background relative z-10">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="mb-24 text-center max-w-4xl mx-auto"
@@ -498,7 +498,7 @@ function Services({ t, lang }: { t: any, lang: string }) {
 /* ─── About Section ─── */
 function AboutSection({ t, lang }: { t: any, lang: string }) {
   return (
-    <section id="about" className="py-40 px-6 bg-secondary/15 relative z-10 overflow-hidden">
+    <section id="about" className="py-24 px-6 bg-secondary/15 relative z-10 overflow-hidden">
       <div className={`max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-24 lg:gap-32 ${lang === 'ar' ? 'lg:flex-row-reverse text-right' : ''}`}>
         <motion.div
           className="lg:w-1/2"
@@ -568,7 +568,7 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
   ];
 
   return (
-    <section id="track-record" className="py-40 px-6 z-10 relative bg-background">
+    <section id="track-record" className="py-24 px-6 z-10 relative bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className={`mb-24 flex flex-col md:flex-row md:items-end justify-between gap-10 ${lang === 'ar' ? 'md:flex-row-reverse text-right' : ''}`}
@@ -627,7 +627,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
   ];
 
   return (
-    <section id="team" className="py-40 px-6 bg-secondary/10 z-10 relative">
+    <section id="team" className="py-24 px-6 bg-secondary/10 z-10 relative">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-24 max-w-3xl mx-auto"
@@ -682,7 +682,7 @@ function Values({ t, lang }: { t: any, lang: string }) {
   ];
 
   return (
-    <section className="py-40 px-6 z-10 relative bg-background">
+    <section className="py-24 px-6 z-10 relative bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className={`mb-28 ${lang === 'ar' ? 'text-right' : ''}`}
