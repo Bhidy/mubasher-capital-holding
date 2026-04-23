@@ -618,10 +618,14 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
 /* ─── Team Section ─── */
 function Team({ t, lang }: { t: any, lang: string }) {
   const leaders = [
-    { name: lang === 'en' ? "Hany Genena" : "هاني جنينة", role: lang === 'en' ? "Chief Economist" : "كبير الاقتصاديين", id: 1 },
+    { name: lang === 'en' ? "Amr Helal" : "عمرو هلال", role: lang === 'en' ? "Managing Director" : "العضو المنتدب", id: 1 },
     { name: lang === 'en' ? "Marianne Ghali" : "ماريان غالي", role: lang === 'en' ? "Head of Asset Management" : "رئيس إدارة الأصول", id: 2 },
-    { name: lang === 'en' ? "Mohamed Gouda" : "محمد جودة", role: lang === 'en' ? "Head of Brokerage" : "رئيس قسم الوساطة", id: 3 },
-    { name: lang === 'en' ? "Amr Helal" : "عمرو هلال", role: lang === 'en' ? "Managing Director" : "العضو المنتدب", id: 4 },
+    { name: lang === 'en' ? "Hany Genena" : "هاني جنينة", role: lang === 'en' ? "Chief Economist" : "كبير الاقتصاديين", id: 3 },
+    { name: lang === 'en' ? "Mohamed Gouda" : "محمد جودة", role: lang === 'en' ? "Head of Brokerage" : "رئيس قسم الوساطة", id: 4 },
+    { name: lang === 'en' ? "Sarah Ahmed" : "سارة أحمد", role: lang === 'en' ? "Head of Compliance" : "رئيس قسم الالتزام", id: 5 },
+    { name: lang === 'en' ? "Omar Farouk" : "عمر فاروق", role: lang === 'en' ? "Chief Operating Officer" : "الرئيس التنفيذي للعمليات", id: 6 },
+    { name: lang === 'en' ? "Laila Hassan" : "ليلى حسن", role: lang === 'en' ? "Head of Research" : "رئيس قسم البحوث", id: 7 },
+    { name: lang === 'en' ? "Karim Zaki" : "كريم زكي", role: lang === 'en' ? "Head of IT & Digital" : "رئيس قسم التكنولوجيا", id: 8 },
   ];
 
   return (
