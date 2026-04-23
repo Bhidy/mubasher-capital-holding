@@ -1,34 +1,33 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Sora, Manrope } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SmoothScroll } from "@/components/smooth-scroll";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
-  title: "Mubasher Capital Holding | Premium Corporate Excellence",
-  description: "Mubasher Capital Holding is a premier corporate entity delivering world-class financial and strategic solutions.",
-  icons: {
-    icon: "/favicon.ico",
-  },
+  title: "Mubasher Capital Holding | Ultra-Premium Corporate Excellence",
+  description: "Mubasher Capital Holding — a premier global financial holding group delivering world-class investment strategies, institutional advisory, and market intelligence.",
+  keywords: "capital holding, investment, corporate finance, global markets, institutional advisory",
+  icons: { icon: "/favicon.ico" },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${outfit.variable} antialiased selection:bg-primary/30`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+      <body className={`${sora.variable} ${manrope.variable}`}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <SmoothScroll>
             {children}
           </SmoothScroll>
