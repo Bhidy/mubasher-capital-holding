@@ -62,7 +62,7 @@ const translations = {
     about: {
       label: "Institutional Banking",
       title: "Investment banking firm serving clients in Egypt and the Middle East",
-      desc: "Mubasher Capital is a leading regional investment bank with a footprint across Cairo, Dubai, and Riyadh. We provide high-impact advisory services, combining deep local knowledge with international execution standards.",
+      desc: "Mubasher Capital is a leading regional investment bank with a footprint across strategic locations in Egypt and the Middle East. We provide high-impact advisory services, combining deep local knowledge with international execution standards.",
       stat1: "Operational Excellence",
       stat2: "Institutional Clients",
       btn: "Learn More About Us"
@@ -132,7 +132,7 @@ const translations = {
     about: {
       label: "الخدمات المصرفية للمؤسسات",
       title: "شركة خدمات مصرفية استثمارية تخدم العملاء في مصر والشرق الأوسط",
-      desc: "مباشر كابيتال هي بنك استثماري إقليمي رائد له حضور في القاهرة ودبي والرياض. نحن نقدم خدمات استشارية عالية التأثير، تجمع بين المعرفة المحلية العميقة ومعايير التنفيذ الدولية.",
+      desc: "مباشر كابيتال هي بنك استثماري إقليمي رائد له حضور في مواقع استراتيجية في مصر والشرق الأوسط. نحن نقدم خدمات استشارية عالية التأثير، تجمع بين المعرفة المحلية العميقة ومعايير التنفيذ الدولية.",
       stat1: "تميز تشغيلي",
       stat2: "عملاء مؤسسيين",
       btn: "تعرف علينا أكثر"
@@ -545,7 +545,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
           <div className="aspect-[3/4] rounded-[3rem] bg-gradient-to-br from-emerald-500/20 via-emerald-600/10 to-transparent border border-border/50 mt-16 overflow-hidden relative group">
              <div className="absolute inset-0 grid-overlay opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
              <div className={`absolute bottom-8 font-heading font-black text-3xl tracking-tighter ${lang === 'en' ? 'left-8' : 'right-8'}`}>
-                {lang === 'en' ? 'DUBAI' : 'دبي'}
+                {lang === 'en' ? 'REGIONAL' : 'إقليمي'}
              </div>
           </div>
           {/* Background Glow */}
@@ -817,9 +817,8 @@ function Footer({ t, lang }: { t: any, lang: string }) {
         <div className={`pt-12 border-t border-border/20 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] font-black tracking-[0.3em] text-muted-foreground/40 uppercase ${lang === 'ar' ? 'md:flex-row-reverse' : ''}`}>
           <span>&copy; {new Date().getFullYear()} {t.footer.rights}</span>
           <div className={`flex gap-12 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-            <span className="hover:text-foreground transition-colors">Cairo</span>
-            <span className="hover:text-foreground transition-colors">Dubai</span>
-            <span className="hover:text-foreground transition-colors">Riyadh</span>
+            <span className="hover:text-foreground transition-colors">{lang === 'en' ? 'Egypt' : 'مصر'}</span>
+            <span className="hover:text-foreground transition-colors">{lang === 'en' ? 'Middle East' : 'الشرق الأوسط'}</span>
           </div>
         </div>
       </div>
