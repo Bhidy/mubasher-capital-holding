@@ -9,71 +9,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
 /* ═══════════════════════════════════════════
-   DESIGN TOKENS — DARK MODE (DEFAULT)
+   DESIGN TOKENS
 ═══════════════════════════════════════════ */
 @theme inline {
   --font-sans: 'Manrope', system-ui, sans-serif;
   --font-heading: 'Sora', system-ui, sans-serif;
-
-  --color-background: #04080f;
-  --color-foreground: #f0f4ff;
-  --color-card: #080e1c;
-  --color-card-foreground: #f0f4ff;
-  --color-popover: #0c1526;
-  --color-popover-foreground: #f0f4ff;
-  --color-primary: #2563eb;
-  --color-primary-foreground: #ffffff;
-  --color-secondary: #0d1933;
-  --color-secondary-foreground: #94a8cc;
-  --color-muted: #0d1933;
-  --color-muted-foreground: #5a7099;
-  --color-accent: #10b981;
-  --color-accent-foreground: #ffffff;
-  --color-border: rgba(255,255,255,0.07);
-  --color-input: rgba(255,255,255,0.06);
-  --color-ring: #2563eb;
-  --color-destructive: #ef4444;
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
   --radius-2xl: 2rem;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
 }
 
 /* ═══════════════════════════════════════════
-   CSS CUSTOM PROPERTIES
+   DARK MODE (default)
 ═══════════════════════════════════════════ */
-:root {
-  /* Dark (default) */
-  --bg: #04080f;
-  --fg: #f0f4ff;
+:root,
+.dark {
+  --background: #04080f;
+  --foreground: #f0f4ff;
   --card: #080e1c;
+  --card-foreground: #f0f4ff;
+  --popover: #0c1526;
+  --popover-foreground: #f0f4ff;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #0d1933;
+  --secondary-foreground: #94a8cc;
   --muted: #0d1933;
-  --muted-fg: #5a7099;
+  --muted-foreground: #5a7099;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
   --border: rgba(255,255,255,0.07);
-  --blue: #2563eb;
-  --blue-glow: rgba(37,99,235,0.3);
-  --green: #10b981;
-  --green-glow: rgba(16,185,129,0.25);
+  --input: rgba(255,255,255,0.06);
+  --ring: #2563eb;
+  --destructive: #ef4444;
 
+  --blue-glow: rgba(37,99,235,0.35);
+  --green-glow: rgba(16,185,129,0.28);
   --radius: 1rem;
 }
 
-.dark {
-  --bg: #04080f;
-  --fg: #f0f4ff;
-}
-
-/* Light mode */
-:root[class~="light"], .light {
-  --bg: #f8faff;
-  --fg: #060c1a;
+/* ═══════════════════════════════════════════
+   LIGHT MODE
+═══════════════════════════════════════════ */
+.light {
+  --background: #ffffff;
+  --foreground: #060c1a;
   --card: #ffffff;
-  --muted: #eef2f9;
-  --muted-fg: #6b7a99;
-  --border: rgba(0,0,0,0.08);
-  --blue-glow: rgba(37,99,235,0.15);
-  --green-glow: rgba(16,185,129,0.12);
+  --card-foreground: #060c1a;
+  --popover: #ffffff;
+  --popover-foreground: #060c1a;
+  --primary: #1d4ed8;
+  --primary-foreground: #ffffff;
+  --secondary: #eef2fb;
+  --secondary-foreground: #1e3560;
+  --muted: #eef2fb;
+  --muted-foreground: #6b7a9b;
+  --accent: #059669;
+  --accent-foreground: #ffffff;
+  --border: rgba(15,23,42,0.09);
+  --input: rgba(15,23,42,0.06);
+  --ring: #1d4ed8;
+  --destructive: #dc2626;
+
+  --blue-glow: rgba(29,78,216,0.12);
+  --green-glow: rgba(5,150,105,0.12);
 }
 
 /* ═══════════════════════════════════════════
@@ -82,7 +102,7 @@
 @layer base {
   *, *::before, *::after {
     box-sizing: border-box;
-    @apply border-border;
+    border-color: var(--border);
   }
 
   html {
@@ -158,8 +178,11 @@
   }
 
   .light .glass {
-    background: rgba(248, 250, 255, 0.7);
-    border: 1px solid rgba(0, 0, 0, 0.07);
+    background: rgba(247, 249, 255, 0.92);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(15, 23, 42, 0.09);
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
   }
 
   /* Gradient text */
@@ -208,14 +231,20 @@
   }
 
   .light .premium-card {
-    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(238,242,249,0.8) 100%);
-    border: 1px solid rgba(0, 0, 0, 0.07);
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.09);
+    box-shadow: 0 2px 16px rgba(15, 23, 42, 0.06);
   }
 
   .premium-card:hover {
     border-color: rgba(37, 99, 235, 0.3);
     box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(37, 99, 235, 0.15);
     transform: translateY(-4px);
+  }
+
+  .light .premium-card:hover {
+    border-color: rgba(29, 78, 216, 0.25);
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(29, 78, 216, 0.12);
   }
 
   .light .premium-card:hover {
