@@ -212,7 +212,6 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
     { name: t.nav.services, id: "services" },
     { name: t.nav.about, id: "about" },
     { name: t.nav.track, id: "track-record" },
-    { name: t.nav.team, id: "team" },
     { name: t.nav.news, id: "news" },
     { name: t.nav.contact, id: "contact" }
   ];
@@ -849,7 +848,6 @@ export default function Home() {
       <Services t={t} lang={lang} />
       <AboutSection t={t} lang={lang} />
       <TrackRecord t={t} lang={lang} />
-      <Team t={t} lang={lang} />
       <Values t={t} lang={lang} />
       <CTA t={t} lang={lang} />
       <Footer t={t} lang={lang} />
