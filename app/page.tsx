@@ -368,13 +368,13 @@ function Hero({ t, lang }: { t: any, lang: string }) {
 
         <div className="mb-10">
           <motion.h1
-            className={`font-heading ${lang === 'ar' ? 'text-[clamp(3.5rem,11vw,7.5rem)] leading-[1.2]' : 'text-[clamp(3.5rem,11vw,9rem)] leading-[0.9]'} font-extrabold tracking-tightest`}
+            className={`font-heading ${lang === 'ar' ? 'text-[clamp(3.5rem,11vw,7.5rem)] leading-[1.5]' : 'text-[clamp(3.5rem,11vw,9rem)] leading-[0.9]'} font-extrabold tracking-tightest`}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
           >
             {t.hero.title1}<br />
-            <span className="text-gradient-blue italic">{t.hero.title2}</span><br />
+            <span className={`text-gradient-blue ${lang === 'en' ? 'italic' : ''}`}>{t.hero.title2}</span><br />
             {t.hero.title3}
           </motion.h1>
         </div>
