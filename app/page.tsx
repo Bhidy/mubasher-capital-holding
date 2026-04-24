@@ -109,7 +109,15 @@ const translations = {
     },
     footer: {
       desc: "Mubasher Capital Holding. A regional leader in financial services and digital innovation.",
-      rights: "Mubasher Capital Holding. All rights reserved."
+      rights: "Mubasher Capital Holding. All rights reserved.",
+      businessAreas: "Business Areas",
+      company: "Company",
+      legal: "Legal",
+      careers: "Careers",
+      privacy: "Privacy Policy",
+      terms: "Terms of Use",
+      fra: "FRA Disclosures",
+      cookies: "Cookie Policy"
     }
   },
   ar: {
@@ -192,7 +200,15 @@ const translations = {
     },
     footer: {
       desc: "مباشر كابيتال القابضة. رائد إقليمي في الخدمات المالية والابتكار الرقمي.",
-      rights: "مباشر كابيتال القابضة. جميع الحقوق محفوظة."
+      rights: "مباشر كابيتال القابضة. جميع الحقوق محفوظة.",
+      businessAreas: "قطاعات الأعمال",
+      company: "الشركة",
+      legal: "القانونية",
+      careers: "الوظائف",
+      privacy: "سياسة الخصوصية",
+      terms: "شروط الاستخدام",
+      fra: "إفصاحات الرقابة المالية",
+      cookies: "سياسة ملفات التعريف"
     }
   }
 };
@@ -989,9 +1005,9 @@ function CTA({ t, lang }: { t: any, lang: string }) {
 /* ─── Footer ─── */
 function Footer({ t, lang }: { t: any, lang: string }) {
   const footerLinks = [
-    { title: lang === 'en' ? "Business Areas" : "قطاعات الأعمال", links: [t.services.s1.title, t.services.s2.title, t.services.s5.title, t.services.s4.title, t.services.s3.title] },
-    { title: lang === 'en' ? "Company" : "الشركة", links: [t.nav.about, t.nav.team, t.nav.news, "Careers", t.nav.contact] },
-    { title: lang === 'en' ? "Legal" : "القانونية", links: ["Privacy Policy", "Terms of Use", "FRA Disclosures", "Cookie Policy"] },
+    { title: t.footer.businessAreas, links: [t.services.s1.title, t.services.s2.title, t.services.s5.title, t.services.s4.title, t.services.s3.title] },
+    { title: t.footer.company, links: [t.nav.about, t.nav.team, t.nav.news, t.footer.careers, t.nav.contact] },
+    { title: t.footer.legal, links: [t.footer.privacy, t.footer.terms, t.footer.fra, t.footer.cookies] },
   ];
 
   return (
