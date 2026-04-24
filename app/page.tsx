@@ -278,15 +278,26 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
           <div className="flex items-center gap-4">
             <button 
               onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
-              className="w-10 h-10 rounded-full border border-border/50 bg-secondary/30 backdrop-blur-md flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-border transition-all duration-300 group"
+              className="relative w-9 h-9 rounded-full border border-border/50 bg-secondary/50 backdrop-blur-md flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-border transition-all duration-300 group overflow-hidden"
               style={{cursor:"none"}}
               data-hover
             >
-              {lang === 'en' ? (
-                <span className="font-heading text-lg leading-none mt-0.5">ع</span>
-              ) : (
-                <span className="font-heading text-[10px] font-black leading-none">EN</span>
-              )}
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={lang}
+                  initial={{ y: 15, opacity: 0, rotate: -10 }}
+                  animate={{ y: 0, opacity: 1, rotate: 0 }}
+                  exit={{ y: -15, opacity: 0, rotate: 10 }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  className="absolute flex items-center justify-center font-heading"
+                >
+                  {lang === 'en' ? (
+                    <span className="text-lg font-bold mt-0.5">ع</span>
+                  ) : (
+                    <span className="text-[9px] font-black tracking-widest uppercase">EN</span>
+                  )}
+                </motion.span>
+              </AnimatePresence>
               <span className="sr-only">Toggle Language</span>
             </button>
             <ThemeToggle />
