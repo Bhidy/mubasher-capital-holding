@@ -645,19 +645,14 @@ function Team({ t, lang }: { t: any, lang: string }) {
       level: 2,
       members: [
         { name: lang === 'en' ? "Mohamed Kish" : "محمد كيش", role: lang === 'en' ? "Vice Chairman of Mubasher Capital" : "نائب رئيس مجلس إدارة مباشر كابيتال" },
-        { name: lang === 'en' ? "Ehab Rashad" : "إيهاب رشاد", role: lang === 'en' ? "Vice Chairman of the Board" : "نائب رئيس مجلس الإدارة" }
+        { name: lang === 'en' ? "Ehab Rashad" : "إيهاب رشاد", role: lang === 'en' ? "Vice Chairman of the Board" : "نائب رئيس مجلس الإدارة", image: "/images/rashad.jpg" },
+        { name: lang === 'en' ? "Hany Hamdy" : "هاني حمدي", role: lang === 'en' ? "MD of Mubasher Trade Egypt" : "العضو المنتدب لمباشر تريد مصر", image: "/images/hany_hamdy.png" },
       ]
     },
     {
       level: 3,
       members: [
-        { name: lang === 'en' ? "Hany Hamdy" : "هاني حمدي", role: lang === 'en' ? "MD of Mubasher Trade Egypt" : "العضو المنتدب لمباشر تريد مصر", image: "/images/hany_hamdy.png" },
-        { name: lang === 'en' ? "Mohamed Bhidy" : "محمد بيدي", role: lang === 'en' ? "Director of Product Development" : "مدير تطوير المنتجات" }
-      ]
-    },
-    {
-      level: 4,
-      members: [
+        { name: lang === 'en' ? "Mohamed Bhidy" : "محمد بيدي", role: lang === 'en' ? "Director of Product Development" : "مدير تطوير المنتجات" },
         { name: lang === 'en' ? "Mahmoud Salem" : "محمود سالم", role: lang === 'en' ? "Head of Operations" : "رئيس العمليات" },
         { name: lang === 'en' ? "Shahd Raa'fat" : "شهد رأفت", role: lang === 'en' ? "Head of Technical Analysis" : "رئيسة التحليل الفني" }
       ]
@@ -680,7 +675,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
 
         <div className="space-y-16">
           {tiers.map((tier, tierIdx) => (
-            <div key={tierIdx} className={`grid grid-cols-1 ${tier.members.length === 1 ? 'max-w-[320px]' : tier.members.length === 2 ? 'sm:grid-cols-2 max-w-2xl' : 'sm:grid-cols-2 lg:grid-cols-3 max-w-5xl'} gap-8 mx-auto`}>
+            <div key={tierIdx} className={`grid grid-cols-1 ${tier.members.length === 1 ? 'max-w-[300px]' : 'sm:grid-cols-2 lg:grid-cols-3 max-w-6xl'} gap-10 mx-auto`}>
               {tier.members.map((p, i) => (
                 <motion.div
                   key={p.name}
