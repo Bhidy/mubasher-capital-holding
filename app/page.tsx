@@ -1045,13 +1045,13 @@ function Footer({ t, lang }: { t: any, lang: string }) {
             </p>
             <div className={`flex gap-6 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
                {[
-                 { Icon: SocialIcons.Facebook, href: "#" },
-                 { Icon: SocialIcons.Instagram, href: "#" },
-                 { Icon: SocialIcons.Linkedin, href: "#" },
-                 { Icon: SocialIcons.Twitter, href: "#" },
-                 { Icon: SocialIcons.Youtube, href: "#" }
+                 { Icon: SocialIcons.Facebook, href: "https://www.facebook.com/MubasherTradeEG/" },
+                 { Icon: SocialIcons.Instagram, href: "https://www.instagram.com/mubashertradeegypt/" },
+                 { Icon: SocialIcons.Linkedin, href: "https://www.linkedin.com/company/mubasher-trade-egypt/" },
+                 { Icon: SocialIcons.Twitter, href: "https://x.com/MubasherTrade" },
+                 { Icon: SocialIcons.Youtube, href: "https://www.youtube.com/user/Mubashertrade" }
                ].map((item, i) => (
-                 <a key={i} href={item.href} className="w-12 h-12 rounded-2xl border border-border/50 bg-secondary/20 flex items-center justify-center text-muted-foreground hover:text-blue-500 hover:border-blue-500 transition-all duration-500 group" data-hover style={{cursor:"none"}}>
+                 <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-2xl border border-border/50 bg-secondary/20 flex items-center justify-center text-muted-foreground hover:text-blue-500 hover:border-blue-500 transition-all duration-500 group" data-hover style={{cursor:"none"}}>
                     <item.Icon />
                  </a>
                ))}
