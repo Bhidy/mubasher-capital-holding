@@ -644,7 +644,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
     {
       level: 2,
       members: [
-        { name: lang === 'en' ? "Mohamed Kish" : "محمد كيش", role: lang === 'en' ? "Vice Chairman of Mubasher Capital" : "نائب رئيس مجلس إدارة مباشر كابيتال" },
+        { name: lang === 'en' ? "Mohamed Kishk" : "محمد كشك", role: lang === 'en' ? "Vice Chairman of Mubasher Capital" : "نائب رئيس مجلس إدارة مباشر كابيتال", image: "/images/kishk.jpg" },
         { name: lang === 'en' ? "Ehab Rashad" : "إيهاب رشاد", role: lang === 'en' ? "Vice Chairman of the Board" : "نائب رئيس مجلس الإدارة", image: "/images/rashad.jpg" },
         { name: lang === 'en' ? "Hany Hamdy" : "هاني حمدي", role: lang === 'en' ? "MD of Mubasher Trade Egypt" : "العضو المنتدب لمباشر تريد مصر", image: "/images/hany_hamdy.png" },
       ]
@@ -676,7 +676,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
         <div className="space-y-16">
           {tiers.map((tier, tierIdx) => (
             <div key={tierIdx} className={`grid grid-cols-1 ${tier.members.length === 1 ? 'max-w-[300px]' : 'sm:grid-cols-2 lg:grid-cols-3 max-w-6xl'} gap-10 mx-auto`}>
-              {tier.members.map((p, i) => (
+              {tier.members.map((p: any, i) => (
                 <motion.div
                   key={p.name}
                   className="group relative"
