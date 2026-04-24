@@ -387,13 +387,13 @@ function Hero({ t, lang }: { t: any, lang: string }) {
 
         <div className="mb-10">
           <motion.h1
-            className={`font-heading ${lang === 'ar' ? 'text-[clamp(2.5rem,8vw,5.5rem)] leading-[1.3]' : 'text-[clamp(3.5rem,11vw,9rem)] leading-[0.9]'} font-extrabold tracking-tightest`}
+            className={`font-heading ${lang === 'ar' ? 'text-[clamp(2.5rem,8vw,5.5rem)] leading-[1.3]' : 'text-[clamp(3.5rem,11vw,9rem)] leading-[0.9]'} font-extrabold tracking-tightest text-gradient-main`}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
           >
             {t.hero.title1}<br />
-            <span className={`text-gradient-blue ${lang === 'en' ? 'italic' : ''}`}>{t.hero.title2}</span><br />
+            <span className={`${lang === 'en' ? 'italic' : ''} text-shine-blue`}>{t.hero.title2}</span><br />
             {t.hero.title3}
           </motion.h1>
         </div>
@@ -471,7 +471,7 @@ function Services({ t, lang }: { t: any, lang: string }) {
           viewport={{ once: true }}
         >
           <span className="section-label justify-center">{t.services.label}</span>
-          <h2 className={`font-heading ${lang === 'ar' ? 'text-5xl lg:text-7xl' : 'text-5xl lg:text-8xl'} font-extrabold tracking-tightest mt-6 leading-tight`}>
+          <h2 className={`font-heading ${lang === 'ar' ? 'text-5xl lg:text-7xl' : 'text-5xl lg:text-8xl'} font-extrabold tracking-tightest mt-6 leading-tight text-shine interactive-shine`}>
             {t.services.title}
           </h2>
         </motion.div>
@@ -531,7 +531,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
           viewport={{ once: true }}
         >
           <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.about.label}</span>
-          <h2 className={`font-heading ${lang === 'ar' ? 'text-5xl lg:text-7xl leading-snug' : 'text-5xl lg:text-7xl leading-[1.05]'} font-extrabold tracking-tightest mt-8 mb-10`}>
+          <h2 className={`font-heading ${lang === 'ar' ? 'text-5xl lg:text-7xl leading-snug' : 'text-5xl lg:text-7xl leading-[1.05]'} font-extrabold tracking-tightest mt-8 mb-10 text-shine interactive-shine`}>
             {t.about.title}
           </h2>
           <p className="font-sans text-muted-foreground/90 text-xl leading-relaxed mb-12">
@@ -596,7 +596,7 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
           viewport={{ once: true }}
         >
           <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.track.label}</span>
-          <h2 className="font-heading text-5xl lg:text-7xl font-extrabold tracking-tightest mt-6 leading-tight mb-8">
+          <h2 className="font-heading text-5xl lg:text-7xl font-extrabold tracking-tightest mt-6 leading-tight mb-8 text-shine interactive-shine">
             {t.track.title}
           </h2>
           <p className="font-sans text-muted-foreground/80 text-xl leading-relaxed mb-10">
@@ -670,7 +670,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
           viewport={{ once: true }}
         >
           <span className="section-label justify-center">{t.team.label}</span>
-          <h2 className="font-heading text-5xl lg:text-8xl font-extrabold tracking-tightest mt-6 leading-none">{t.team.title}</h2>
+          <h2 className="font-heading text-5xl lg:text-8xl font-extrabold tracking-tightest mt-6 leading-none text-shine interactive-shine">{t.team.title}</h2>
         </motion.div>
 
         <div className="space-y-16">
@@ -695,7 +695,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent opacity-90" />
                     <div className="absolute inset-0 flex flex-col justify-end p-6 text-center translate-y-2 group-hover:translate-y-0 transition-all duration-700">
-                      <div className="font-heading font-black text-lg lg:text-xl mb-1 text-white leading-tight">{p.name}</div>
+                      <div className="font-heading font-black text-lg lg:text-xl mb-1 text-white leading-tight text-shine interactive-shine">{p.name}</div>
                       <div className="font-sans text-blue-400 text-[9px] lg:text-[10px] font-bold tracking-widest uppercase leading-tight">{p.role}</div>
                     </div>
                   </div>
@@ -723,7 +723,7 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
             viewport={{ once: true }}
           >
             <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.platforms.label}</span>
-            <h2 className="font-heading text-4xl lg:text-6xl font-extrabold tracking-tightest mt-6 mb-8 leading-tight">
+            <h2 className="font-heading text-4xl lg:text-6xl font-extrabold tracking-tightest mt-6 mb-8 leading-tight text-shine interactive-shine">
               {t.platforms.title}
             </h2>
             <p className="font-sans text-muted-foreground/80 text-xl leading-relaxed mb-10 max-w-lg">
@@ -763,7 +763,7 @@ function Governance({ t, lang }: { t: any, lang: string }) {
             viewport={{ once: true }}
           >
             <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.gov.label}</span>
-            <h2 className="font-heading text-4xl lg:text-6xl font-extrabold tracking-tightest mt-6 mb-8 leading-tight">
+            <h2 className="font-heading text-4xl lg:text-6xl font-extrabold tracking-tightest mt-6 mb-8 leading-tight text-shine interactive-shine">
               {t.gov.title}
             </h2>
             <p className="font-sans text-muted-foreground/80 text-xl leading-relaxed max-w-lg">
