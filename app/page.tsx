@@ -23,7 +23,8 @@ import {
   Scale,
   Handshake,
   Heart,
-  Languages
+  Languages,
+  User
 } from "lucide-react";
 
 /* ─── Dictionary ─── */
@@ -54,7 +55,7 @@ const translations = {
       label: "Our Ecosystem",
       title: "Comprehensive Financial Powerhouse",
       s1: { title: "Mubasher Trade", desc: "Egypt's Top 3 Brokerage Firm delivering rapid execution and digital trading innovation." },
-      s2: { title: "Mubasher Info", desc: "The region's largest financial and economic news platform with over 2.5M monthly visitors." },
+      s2: { title: "Mubasher Media", desc: "The region's leading financial media powerhouse. Its flagship product, Mubasher Info, delivers real-time data to over 2.5M monthly visitors." },
       s3: { title: "Mubasher Global", desc: "Your secure gateway to over 90 international financial markets." },
       s4: { title: "Mubasher Asset Mgmt", desc: "Tailored institutional and private investment portfolios designed for growth." },
       s5: { title: "Mubasher Custody", desc: "The trusted guardian of client assets with unparalleled transparency and security." },
@@ -136,7 +137,7 @@ const translations = {
       label: "منظومتنا",
       title: "قوة مالية شاملة",
       s1: { title: "مباشر تريد", desc: "من أفضل 3 شركات وساطة في مصر، تقدم تنفيذ سريع وابتكار في التداول الرقمي." },
-      s2: { title: "مباشر إنفو", desc: "أكبر منصة للأخبار المالية والاقتصادية في المنطقة بأكثر من 2.5 مليون زائر شهرياً." },
+      s2: { title: "مباشر ميديا", desc: "القوة الإعلامية المالية الرائدة في المنطقة. منتجها الرائد، مباشر إنفو، يقدم بيانات لحظية لأكثر من 2.5 مليون زائر شهرياً." },
       s3: { title: "مباشر جلوبال", desc: "بوابتك الآمنة لأكثر من 90 سوقاً مالياً دولياً." },
       s4: { title: "مباشر لإدارة الأصول", desc: "محافظ استثمارية مؤسسية وخاصة مصممة خصيصاً للنمو." },
       s5: { title: "مباشر للحفظ", desc: "الحارس الموثوق لأصول العملاء بشفافية وأمان لا مثيل لهما." },
@@ -633,9 +634,34 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
 
 /* ─── Team Section ─── */
 function Team({ t, lang }: { t: any, lang: string }) {
-  const leaders = [
-    { name: lang === 'en' ? "M. Rashid Al-Ballaa" : "م. راشد البلاع", role: lang === 'en' ? "Founder & Chairman" : "المؤسس ورئيس مجلس الإدارة", image: "/images/al_ballaa.jpeg" },
-    { name: lang === 'en' ? "Hany Hamdy" : "هاني حمدي", role: lang === 'en' ? "Managing Director" : "العضو المنتدب", image: "/images/hany_hamdy.png" },
+  const tiers = [
+    {
+      level: 1,
+      members: [
+        { name: lang === 'en' ? "M. Rashid Al-Ballaa" : "م. راشد البلاع", role: lang === 'en' ? "Founder & Chairman" : "المؤسس ورئيس مجلس الإدارة", image: "/images/al_ballaa.jpeg" }
+      ]
+    },
+    {
+      level: 2,
+      members: [
+        { name: lang === 'en' ? "Mohamed Kish" : "محمد كيش", role: lang === 'en' ? "Vice Chairman of Mubasher Capital" : "نائب رئيس مجلس إدارة مباشر كابيتال" },
+        { name: lang === 'en' ? "Ehab Rashad" : "إيهاب رشاد", role: lang === 'en' ? "Vice Chairman of the Board" : "نائب رئيس مجلس الإدارة" }
+      ]
+    },
+    {
+      level: 3,
+      members: [
+        { name: lang === 'en' ? "Hany Hamdy" : "هاني حمدي", role: lang === 'en' ? "MD of Mubasher Trade Egypt" : "العضو المنتدب لمباشر تريد مصر", image: "/images/hany_hamdy.png" },
+        { name: lang === 'en' ? "Mohamed Bhidy" : "محمد بيدي", role: lang === 'en' ? "Director of Product Development" : "مدير تطوير المنتجات" }
+      ]
+    },
+    {
+      level: 4,
+      members: [
+        { name: lang === 'en' ? "Mahmoud Salem" : "محمود سالم", role: lang === 'en' ? "Head of Operations" : "رئيس العمليات" },
+        { name: lang === 'en' ? "Shahd Raa'fat" : "شهد رأفت", role: lang === 'en' ? "Head of Technical Analysis" : "رئيسة التحليل الفني" }
+      ]
+    }
   ];
 
   return (
@@ -652,26 +678,35 @@ function Team({ t, lang }: { t: any, lang: string }) {
           <h2 className="font-heading text-5xl lg:text-8xl font-extrabold tracking-tightest mt-6 leading-none">{t.team.title}</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-4xl mx-auto">
-          {leaders.map((p, i) => (
-          <motion.div
-            key={p.name}
-            className="group relative"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: i * 0.1 }}
-            viewport={{ once: true }}
-          >
-            <div className="aspect-[4/5] rounded-[3rem] bg-gradient-to-b from-blue-600/5 to-blue-900/10 border border-border/50 overflow-hidden mb-8 group-hover:border-blue-500/50 transition-all duration-700 relative shadow-xl shadow-blue-500/5">
-              <img src={p.image} alt={p.name} className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-80" />
-              {/* Info Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-end p-10 text-center translate-y-4 group-hover:translate-y-0 transition-all duration-700">
-                 <div className="font-heading font-black text-3xl mb-2 text-white">{p.name}</div>
-                 <div className="font-sans text-blue-400 text-sm font-bold tracking-widest uppercase">{p.role}</div>
-              </div>
+        <div className="space-y-24">
+          {tiers.map((tier, tierIdx) => (
+            <div key={tierIdx} className={`grid grid-cols-1 ${tier.members.length === 1 ? 'max-w-sm mx-auto' : tier.members.length === 2 ? 'sm:grid-cols-2 max-w-4xl mx-auto' : 'sm:grid-cols-2 lg:grid-cols-3'} gap-10`}>
+              {tier.members.map((p, i) => (
+                <motion.div
+                  key={p.name}
+                  className="group relative"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="aspect-[4/5] rounded-[3rem] bg-gradient-to-b from-blue-600/5 to-blue-900/10 border border-border/50 overflow-hidden mb-8 group-hover:border-blue-500/50 transition-all duration-700 relative shadow-xl shadow-blue-500/5">
+                    {p.image ? (
+                      <img src={p.image} alt={p.name} className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000" />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center bg-secondary/20">
+                        <User className="w-24 h-24 text-blue-500/20 group-hover:text-blue-500/40 transition-colors duration-700" />
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-80" />
+                    <div className="absolute inset-0 flex flex-col justify-end p-10 text-center translate-y-4 group-hover:translate-y-0 transition-all duration-700">
+                      <div className="font-heading font-black text-2xl lg:text-3xl mb-2 text-white">{p.name}</div>
+                      <div className="font-sans text-blue-400 text-xs lg:text-sm font-bold tracking-widest uppercase leading-tight">{p.role}</div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
           ))}
         </div>
       </div>
