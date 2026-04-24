@@ -32,140 +32,140 @@ const translations = {
     nav: {
       services: "Services",
       about: "About",
-      track: "Track Record",
-      team: "Team",
+      track: "In Numbers",
+      team: "Leadership",
       news: "News",
       contact: "Contact",
       clientPortal: "Client Portal"
     },
     hero: {
-      label: "Experience & Investment",
-      title1: "YOUR TRUSTED",
-      title2: "FINANCIAL",
-      title3: "ADVISOR",
-      desc: "Mubasher Capital Holding provides unparalleled expertise in investment banking, asset management, and brokerage services across the Middle East.",
-      primaryBtn: "Explore Services",
-      secondaryBtn: "Schedule Consultation",
-      stat1: "Assets Managed",
-      stat2: "Major Transactions",
-      stat3: "Global Markets"
+      label: "Pioneering Digital Trading Since 2006",
+      title1: "THE FUTURE BELONGS TO",
+      title2: "THOSE WHO",
+      title3: "SHAPE IT",
+      desc: "Mubasher for Securities and Bonds started a bold journey to redefine Egypt's financial landscape, empowering investors with speed and agility to seize market opportunities.",
+      primaryBtn: "Explore Our Platforms",
+      secondaryBtn: "Open An Account",
+      stat1: "Annual Trading Vol (EGP)",
+      stat2: "Market Share",
+      stat3: "Branches in Egypt"
     },
     services: {
       label: "Mubasher Services",
-      title: "Comprehensive Financial Solutions",
-      s1: { title: "Investment Banking", desc: "Expert advisory on mergers, acquisitions, and capital raising strategies." },
-      s2: { title: "Asset Management", desc: "Tailored investment portfolios designed for institutional and private clients." },
-      s3: { title: "Custody Services", desc: "Secure and transparent safe-keeping solutions for your global assets." },
-      s4: { title: "Research & Analysis", desc: "In-depth market intelligence and quantitative research to guide decision-making." },
-      s5: { title: "Securities Brokerage", desc: "High-performance execution and direct market access across global exchanges." }
+      title: "Your Investment Journey",
+      s1: { title: "Brokerage & Trading", desc: "Same-Day Trading (T+0), Margin Trading, and personalized account management." },
+      s2: { title: "Institutional Solutions", desc: "Swift execution, OTC trading, portfolio analysis, and global market access." },
+      s3: { title: "Research & Analysis", desc: "Professional daily reports, technical analysis, and real-time market recommendations." },
+      s4: { title: "Digital Platforms", desc: "Mubasher Trade Pro, Trade Plus, and Mobile Trading with E-Signature support." },
+      s5: { title: "Financial Education", desc: "Mubasher Academy offering courses, webinars, and personalized financial guidance." }
     },
     about: {
-      label: "Institutional Banking",
-      title: "Investment banking firm serving clients in Egypt and the Middle East",
-      desc: "Mubasher Capital is a leading regional investment bank with a footprint across strategic locations in Egypt and the Middle East. We provide high-impact advisory services, combining deep local knowledge with international execution standards.",
-      stat1: "Operational Excellence",
-      stat2: "Institutional Clients",
-      btn: "Learn More About Us"
+      label: "Company Overview",
+      title: "A Beacon of Innovation and Leadership",
+      desc: "Founded in 2006, Mubasher positioned itself at the forefront of digital trading. We have steadily risen to secure a spot within the \"Top 3\" out of more than 120 licensed brokers in Egypt, backed by an elite financial research team and world-class technological infrastructure.",
+      stat1: "Years of Excellence",
+      stat2: "Active Clients",
+      btn: "Join Our Legacy"
     },
     track: {
-      label: "Success Stories",
-      title: "Track Record",
-      desc: "Proven history of high-value transactions across diverse industries and markets."
+      label: "Proven Performance",
+      title: "Mubasher in Numbers",
+      desc: "Our record of achievement reflects a business model built on innovation, efficiency, and unwavering commitment."
     },
     team: {
-      label: "Leadership",
-      title: "Our People"
+      label: "Our Leadership",
+      title: "Visionary Minds"
     },
     values: {
-      label: "Our Philosophy",
-      title: "Corporate Values",
-      v1: { title: "Integrity", desc: "Honesty and transparency are the cornerstones of every relationship we build." },
-      v2: { title: "Balance", desc: "Strategic equilibrium between risk management and performance optimization." },
-      v3: { title: "Professionalism", desc: "Upholding the highest standards of financial conduct and expertise." },
-      v4: { title: "Loyalty", desc: "Unwavering commitment to our partners and their long-term prosperity." }
+      label: "Our Core Values",
+      title: "A Beacon for the Future",
+      v1: { title: "Integrity & Transparency", desc: "Highest standards of honesty and trustworthiness across every interaction." },
+      v2: { title: "Client-Centric", desc: "Our clients' needs are the compass guiding every decision we make." },
+      v3: { title: "Innovation", desc: "Relentlessly pursuing pioneering solutions and services that exceed expectations." },
+      v4: { title: "Financial Literacy", desc: "Equipping our clients with knowledge and promoting a culture of investment." }
     },
     cta: {
-      label: "Join Our Network",
-      title: "Elevate Your Financial Strategy",
-      desc: "Subscribe to our newsletter for exclusive market insights or contact our advisory board directly.",
+      label: "Start Your Journey",
+      title: "Choose Your Financial Future",
+      desc: "Open your account remotely through secure electronic signature services. We are here to answer, guide, and support you.",
       placeholder: "Your email address",
-      btn: "Subscribe",
-      link1: "Contact Advisory",
-      link2: "Investor Relations"
+      btn: "Get Started",
+      link1: "CS@mubasher.net",
+      link2: "Hotline: 16699"
     },
     footer: {
-      desc: "Your regional gateway to global financial excellence. Regulated by the Financial Regulatory Authority.",
-      rights: "Mubasher Capital Holding. All rights reserved."
+      desc: "Mubasher for Securities and Bonds. A distinguished regional beacon of innovation in financial markets.",
+      rights: "Mubasher for Securities and Bonds. All rights reserved."
     }
   },
   ar: {
     nav: {
       services: "خدماتنا",
-      about: "عن الشركة",
-      track: "سجل الإنجازات",
-      team: "فريق العمل",
+      about: "نظرة عامة",
+      track: "في أرقام",
+      team: "القيادة",
       news: "الأخبار",
       contact: "اتصل بنا",
       clientPortal: "بوابة العملاء"
     },
     hero: {
-      label: "الخبرة والاستثمار",
-      title1: "مستشارك",
-      title2: "المالي",
-      title3: "الموثوق",
-      desc: "تقدم مباشر كابيتال القابضة خبرات لا ميل لها في الخدمات المصرفية الاستثمارية، وإدارة الأصول، وخدمات الوساطة في جميع أنحاء الشرق الأوسط.",
-      primaryBtn: "استكشف خدماتنا",
-      secondaryBtn: "حجز استشارة",
-      stat1: "الأصول المدارة",
-      stat2: "عمليات رئيسية",
-      stat3: "أسواق عالمية"
+      label: "ريادة التداول الرقمي منذ 2006",
+      title1: "المستقبل مِلك",
+      title2: "لمن",
+      title3: "يصنعه",
+      desc: "انطلقت شركة مباشر لتداول الأوراق المالية والسندات في رحلة طموحة لإعادة رسم ملامح المشهد المالي في مصر، وتمكين المستثمرين من اغتنام الفرص بسرعة ومرونة.",
+      primaryBtn: "استكشف منصاتنا",
+      secondaryBtn: "افتح حسابك",
+      stat1: "حجم التداول السنوي (ج.م)",
+      stat2: "الحصة السوقية",
+      stat3: "فروع في مصر"
     },
     services: {
       label: "خدمات مباشر",
-      title: "حلول مالية شاملة",
-      s1: { title: "الخدمات المصرفية الاستثمارية", desc: "استشارات خبيرة في عمليات الاندماج والاستحواذ واستراتيجيات زيادة رأس المال." },
-      s2: { title: "إدارة الأصول", desc: "محافظ استثمارية مصممة خصيصاً للعملاء المؤسسيين والأفراد." },
-      s3: { title: "خدمات الحفظ", desc: "حلول حفظ آمنة وشفافة لأصولك العالمية." },
-      s4: { title: "البحوث والتحليل", desc: "معلومات سوقية متعمقة وأبحاث كمية لتوجيه عملية صنع القرار." },
-      s5: { title: "وساطة الأوراق المالية", desc: "تنفيذ عالي الأداء ووصول مباشر إلى الأسواق عبر البورصات العالمية." }
+      title: "رحلتك الاستثمارية",
+      s1: { title: "خدمات التداول والوساطة", desc: "التداول في ذات الجلسة (T+0)، الشراء بالهامش، وإدارة حسابات مخصصة." },
+      s2: { title: "حلول المؤسسات", desc: "تنفيذ سريع، تداول خارج المقصورة، تحليل المحافظ، والوصول للأسواق العالمية." },
+      s3: { title: "البحوث والتحليل", desc: "تقارير يومية احترافية، تحليل فني وأساسي، وتوصيات لحظية للسوق." },
+      s4: { title: "المنصات الرقمية", desc: "مباشر تريد برو، تريد بلس، وتطبيقات الهاتف مع التوقيع الإلكتروني." },
+      s5: { title: "الوعي المالي", desc: "أكاديمية مباشر تقدم دورات تدريبية وتوجيه مالي شخصي." }
     },
     about: {
-      label: "الخدمات المصرفية للمؤسسات",
-      title: "تميز مالي في مصر والشرق الأوسط",
-      desc: "مباشر كابيتال هي بنك استثماري إقليمي رائد له حضور في مواقع استراتيجية في مصر والشرق الأوسط. نحن نقدم خدمات استشارية عالية التأثير، تجمع بين المعرفة المحلية العميقة ومعايير التنفيذ الدولية.",
-      stat1: "تميز تشغيلي",
-      stat2: "عملاء مؤسسيين",
-      btn: "تعرف علينا أكثر"
+      label: "نظرة عامة على الشركة",
+      title: "منارة للابتكار والريادة",
+      desc: "تأسست مباشر عام 2006 لتقود ثورة التداول الرقمي. وبفضل البنية التحتية التكنولوجية وفريق البحوث المتميز، ارتقينا بثبات لنكون ضمن 'أفضل 3' شركات وساطة من بين أكثر من 120 شركة مرخصة في مصر.",
+      stat1: "سنوات من التميز",
+      stat2: "عملاء نشطين",
+      btn: "انضم إلى مسيرتنا"
     },
     track: {
-      label: "قصص النجاح",
-      title: "سجل الإنجازات",
-      desc: "تاريخ حافل من المعاملات عالية القيمة عبر مختلف الصناعات والأسواق."
+      label: "أداء مثبت",
+      title: "مباشر في أرقام",
+      desc: "سجل إنجازاتنا يعكس نموذج عمل مبني على الابتكار، الكفاءة، والالتزام الراسخ."
     },
     team: {
-      label: "القيادة",
-      title: "فريق عملنا"
+      label: "قيادتنا",
+      title: "عقول رائدة"
     },
     values: {
-      label: "فلسفتنا",
-      title: "قيم الشركة",
-      v1: { title: "النزاهة", desc: "الصدق والشفافية هما حجر الزاوية في كل علاقة نبنيها." },
-      v2: { title: "التوازن", desc: "توازن استراتيجي بين إدارة المخاطر وتحسين الأداء." },
-      v3: { title: "المهنية", desc: "الالتزام بأعلى معايير السلوك المالي والخبرة." },
-      v4: { title: "الولاء", desc: "التزام ثابت تجاه شركائنا وازدهارهم على المدى الطويل." }
+      label: "قيمنا الأساسية",
+      title: "منارة للمستقبل",
+      v1: { title: "النزاهة والشفافية", desc: "أعلى معايير الصدق والأمانة في كل تعاملاتنا." },
+      v2: { title: "العميل أولاً", desc: "احتياجات عملائنا هي البوصلة التي توجه قراراتنا." },
+      v3: { title: "الابتكار والتميز", desc: "السعي المستمر لتقديم حلول وخدمات رائدة تفوق التوقعات." },
+      v4: { title: "الثقافة المالية", desc: "تزويد عملائنا بالمعرفة ونشر ثقافة الاستثمار." }
     },
     cta: {
-      label: "انضم إلى شبكتنا",
-      title: "ارتقِ باستراتيجيتك المالية",
-      desc: "اشترك في نشرتنا الإخبارية للحصول على رؤى حصرية للسوق أو تواصل مع مجلسنا الاستشاري مباشرة.",
-      placeholder: "عنوان بريدك الإلكتروني",
-      btn: "اشترك الآن",
-      link1: "اتصل بالمستشارين",
-      link2: "علاقات المستثمرين"
+      label: "ابدأ رحلتك",
+      title: "اختر مستقبلك المالي",
+      desc: "افتح حسابك عن بعد من خلال خدمات التوقيع الإلكتروني الآمنة. نحن هنا للإجابة، التوجيه، والدعم.",
+      placeholder: "بريدك الإلكتروني",
+      btn: "ابدأ الآن",
+      link1: "CS@mubasher.net",
+      link2: "الخط الساخن: 16699"
     },
     footer: {
-      desc: "بوابتك الإقليمية للتميز المالي العالمي. خاضعة لرقابة الهيئة العامة للرقابة المالية.",
-      rights: "مباشر كابيتال القابضة. جميع الحقوق محفوظة."
+      desc: "مباشر لتداول الأوراق المالية والسندات. منارة إقليمية متميزة للابتكار في الأسواق المالية.",
+      rights: "مباشر لتداول الأوراق المالية والسندات. جميع الحقوق محفوظة."
     }
   }
 };
@@ -410,15 +410,15 @@ function Hero({ t, lang }: { t: any, lang: string }) {
           transition={{ duration: 1, delay: 0.9 }}
         >
           <div className="space-y-2">
-            <div className="font-heading text-4xl lg:text-6xl font-black text-gradient-main">6.6bn</div>
+            <div className="font-heading text-4xl lg:text-6xl font-black text-gradient-main">10B+</div>
             <div className="font-sans text-[11px] font-bold tracking-[0.3em] text-muted-foreground uppercase">{t.hero.stat1}</div>
           </div>
           <div className="space-y-2">
-            <div className="font-heading text-4xl lg:text-6xl font-black text-gradient-main">48+</div>
+            <div className="font-heading text-4xl lg:text-6xl font-black text-gradient-main">10%</div>
             <div className="font-sans text-[11px] font-bold tracking-[0.3em] text-muted-foreground uppercase">{t.hero.stat2}</div>
           </div>
           <div className="space-y-2">
-            <div className="font-heading text-4xl lg:text-6xl font-black text-gradient-main">80+</div>
+            <div className="font-heading text-4xl lg:text-6xl font-black text-gradient-main">18</div>
             <div className="font-sans text-[11px] font-bold tracking-[0.3em] text-muted-foreground uppercase">{t.hero.stat3}</div>
           </div>
         </motion.div>
@@ -516,11 +516,11 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
           </p>
           <div className="grid grid-cols-2 gap-12 mb-16">
             <div className="space-y-3">
-              <div className="font-heading text-5xl lg:text-6xl font-black text-foreground">25Y+</div>
+              <div className="font-heading text-5xl lg:text-6xl font-black text-foreground">19Y+</div>
               <div className="font-sans text-[11px] font-black tracking-[0.3em] text-blue-500 uppercase">{t.about.stat1}</div>
             </div>
             <div className="space-y-3">
-              <div className="font-heading text-5xl lg:text-6xl font-black text-foreground">500+</div>
+              <div className="font-heading text-5xl lg:text-6xl font-black text-foreground">10K+</div>
               <div className="font-sans text-[11px] font-black tracking-[0.3em] text-blue-500 uppercase">{t.about.stat2}</div>
             </div>
           </div>
@@ -537,14 +537,18 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
           viewport={{ once: true }}
         >
           <div className="aspect-[3/4] rounded-[3rem] bg-gradient-to-br from-blue-600/20 via-blue-700/10 to-transparent border border-border/50 overflow-hidden relative group">
+             <img src="/images/cairo.jpeg" alt="Cairo" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 mix-blend-overlay" />
              <div className="absolute inset-0 grid-overlay opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
-             <div className={`absolute bottom-8 font-heading font-black text-3xl tracking-tighter ${lang === 'en' ? 'left-8' : 'right-8'}`}>
+             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+             <div className={`absolute bottom-8 font-heading font-black text-3xl tracking-tighter z-10 ${lang === 'en' ? 'left-8' : 'right-8'}`}>
                 {lang === 'en' ? 'CAIRO' : 'القاهرة'}
              </div>
           </div>
           <div className="aspect-[3/4] rounded-[3rem] bg-gradient-to-br from-emerald-500/20 via-emerald-600/10 to-transparent border border-border/50 mt-16 overflow-hidden relative group">
+             <img src="/images/regional.png" alt="Regional" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 mix-blend-overlay" />
              <div className="absolute inset-0 grid-overlay opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
-             <div className={`absolute bottom-8 font-heading font-black text-3xl tracking-tighter ${lang === 'en' ? 'left-8' : 'right-8'}`}>
+             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+             <div className={`absolute bottom-8 font-heading font-black text-3xl tracking-tighter z-10 ${lang === 'en' ? 'left-8' : 'right-8'}`}>
                 {lang === 'en' ? 'REGIONAL' : 'إقليمي'}
              </div>
           </div>
@@ -558,13 +562,12 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
 
 /* ─── Track Record ─── */
 function TrackRecord({ t, lang }: { t: any, lang: string }) {
-  const transactions = [
-    { company: "Coca-Cola", label: lang === 'en' ? "Bottling Group" : "مجموعة التعبئة", year: "2023", value: "$450M" },
-    { company: "Gulf Capital", label: lang === 'en' ? "Strategic Exit" : "تخارج استراتيجي", year: "2022", value: "$1.2B" },
-    { company: "Almarai", label: lang === 'en' ? "Capital Raising" : "زيادة رأس المال", year: "2023", value: "$800M" },
-    { company: "MinaPharm", label: lang === 'en' ? "M&A Advisory" : "استشارات اندماج", year: "2021", value: "$200M" },
-    { company: "Indorama", label: lang === 'en' ? "Investment" : "استثمار مباشر", year: "2022", value: "$600M" },
-    { company: "Palm Hills", label: lang === 'en' ? "Debt Restructuring" : "هيكلة ديون", year: "2023", value: "$300M" },
+  const numbers = [
+    { label: lang === 'en' ? "Market Share" : "الحصة السوقية", value: "10%", icon: BarChart3 },
+    { label: lang === 'en' ? "Trading Vol" : "حجم التداول", value: "10B+", icon: TrendingUp },
+    { label: lang === 'en' ? "Branch Network" : "شبكة الفروع", value: "18", icon: Globe },
+    { label: lang === 'en' ? "Investment Funds" : "صناديق الاستثمار", value: "30+", icon: Briefcase },
+    { label: lang === 'en' ? "Active Clients" : "عملاء نشطين", value: "10K+", icon: Users },
   ];
 
   return (
@@ -587,9 +590,9 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {transactions.map((t, i) => (
+          {numbers.map((n, i) => (
             <motion.div
-              key={t.company}
+              key={n.label}
               className="premium-card p-10 rounded-[2.5rem] group border border-border/40 hover:bg-secondary/40 transition-all duration-500"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -598,13 +601,12 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
               data-hover
             >
               <div className={`flex justify-between items-center mb-10 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                <div className="font-heading text-3xl font-black text-blue-500/10 group-hover:text-blue-500 transition-colors duration-500">
-                  {t.company}
+                <div className="w-16 h-16 rounded-[1.25rem] bg-secondary flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white group-hover:rotate-12 transition-all duration-700 shadow-xl group-hover:shadow-blue-500/30">
+                  <n.icon className="w-8 h-8" />
                 </div>
-                <span className="text-[11px] font-black tracking-widest text-muted-foreground/40 uppercase bg-secondary/50 px-3 py-1 rounded-full">{t.year}</span>
               </div>
-              <div className="font-heading text-2xl font-bold mb-2 tracking-tight group-hover:text-foreground transition-colors duration-500">{t.label}</div>
-              <div className="font-sans text-blue-500 font-black text-lg">{t.value}</div>
+              <div className="font-heading text-4xl lg:text-5xl font-black mb-2 tracking-tight group-hover:text-blue-500 transition-colors duration-500">{n.value}</div>
+              <div className="font-sans text-muted-foreground font-bold text-lg">{n.label}</div>
             </motion.div>
           ))}
         </div>
@@ -616,14 +618,8 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
 /* ─── Team Section ─── */
 function Team({ t, lang }: { t: any, lang: string }) {
   const leaders = [
-    { name: lang === 'en' ? "Amr Helal" : "عمرو هلال", role: lang === 'en' ? "Managing Director" : "العضو المنتدب", id: 1 },
-    { name: lang === 'en' ? "Marianne Ghali" : "ماريان غالي", role: lang === 'en' ? "Head of Asset Management" : "رئيس إدارة الأصول", id: 2 },
-    { name: lang === 'en' ? "Hany Genena" : "هاني جنينة", role: lang === 'en' ? "Chief Economist" : "كبير الاقتصاديين", id: 3 },
-    { name: lang === 'en' ? "Mohamed Gouda" : "محمد جودة", role: lang === 'en' ? "Head of Brokerage" : "رئيس قسم الوساطة", id: 4 },
-    { name: lang === 'en' ? "Sarah Ahmed" : "سارة أحمد", role: lang === 'en' ? "Head of Compliance" : "رئيس قسم الالتزام", id: 5 },
-    { name: lang === 'en' ? "Omar Farouk" : "عمر فاروق", role: lang === 'en' ? "Chief Operating Officer" : "الرئيس التنفيذي للعمليات", id: 6 },
-    { name: lang === 'en' ? "Laila Hassan" : "ليلى حسن", role: lang === 'en' ? "Head of Research" : "رئيس قسم البحوث", id: 7 },
-    { name: lang === 'en' ? "Karim Zaki" : "كريم زكي", role: lang === 'en' ? "Head of IT & Digital" : "رئيس قسم التكنولوجيا", id: 8 },
+    { name: lang === 'en' ? "M. Rashid Al-Ballaa" : "م. راشد البلاع", role: lang === 'en' ? "Founder & Chairman" : "المؤسس ورئيس مجلس الإدارة", id: 1 },
+    { name: lang === 'en' ? "Hany Hamdy" : "هاني حمدي", role: lang === 'en' ? "Managing Director" : "العضو المنتدب", id: 2 },
   ];
 
   return (
@@ -640,7 +636,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
           <h2 className="font-heading text-5xl lg:text-8xl font-extrabold tracking-tightest mt-6 leading-none">{t.team.title}</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-4xl mx-auto">
           {leaders.map((p, i) => (
             <motion.div
               key={p.name}
