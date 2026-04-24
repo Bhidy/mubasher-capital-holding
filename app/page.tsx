@@ -54,6 +54,7 @@ const translations = {
       track: "Trade Spotlight",
       team: "Leadership",
       news: "News",
+      media: "Media",
       contact: "Contact",
       clientPortal: "Client Portal"
     },
@@ -125,6 +126,10 @@ const translations = {
       link1: "CS@mubasher.net",
       link2: "Hotline: 16699"
     },
+    media: {
+      label: "Multimedia",
+      title: "Visionary Insights"
+    },
     footer: {
       desc: "Mubasher Capital Holding. A regional leader in financial services and digital innovation.",
       rights: "Mubasher Capital Holding. All rights reserved.",
@@ -144,7 +149,8 @@ const translations = {
       about: "عن المجموعة",
       track: "تسليط الضوء",
       team: "القيادة",
-      news: "الأخبار",
+      news: "أبرز الأخبار",
+      media: "الوسائط",
       contact: "اتصل بنا",
       clientPortal: "بوابة العملاء"
     },
@@ -194,6 +200,10 @@ const translations = {
       label: "قيادة المجموعة",
       title: "عقول رائدة"
     },
+    media: {
+      label: "الوسائط المتعددة",
+      title: "رؤى بصرية"
+    },
     gov: {
       label: "الحوكمة المؤسسية",
       title: "الثقة المؤسسية والأمان",
@@ -214,7 +224,8 @@ const translations = {
       placeholder: "بريدك الإلكتروني",
       btn: "ابدأ الآن",
       link1: "CS@mubasher.net",
-      link2: "الخط الساخن: 16699"
+      link2: "الخط الساخن: 16699",
+      news: "أبرز الأخبار"
     },
     footer: {
       desc: "مباشر كابيتال القابضة. رائد إقليمي في الخدمات المالية والابتكار الرقمي.",
@@ -273,6 +284,7 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
     { name: t.nav.services, id: "services" },
     { name: t.nav.about, id: "about" },
     { name: t.nav.news, id: "news" },
+    { name: t.nav.media, id: "media" },
     { name: t.nav.team, id: "team" },
     { name: t.nav.contact, id: "contact" }
   ];
@@ -638,7 +650,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
 /* ─── Track Record ─── */
 function TrackRecord({ t, lang }: { t: any, lang: string }) {
   return (
-    <section id="track-record" className="py-24 px-6 z-10 relative bg-background">
+    <section id="track" className="py-24 px-6 z-10 relative bg-background">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
         <motion.div
           className={`lg:w-1/2 ${lang === 'ar' ? 'order-last text-right' : ''}`}
@@ -975,6 +987,82 @@ function News({ t, lang }: { t: any, lang: string }) {
   );
 }
 
+/* ─── Media Section ─── */
+function Media({ t, lang }: { t: any, lang: string }) {
+  const videos = [
+    { id: "myR5vhbROl0", title: lang === 'en' ? "Mubasher Capital Overview" : "نظرة عامة على مباشر كابيتال" },
+    { id: "TUghAHf2kvc", title: lang === 'en' ? "Market Insights" : "تحليلات السوق" },
+    { id: "L2grK9Fv7lQ", title: lang === 'en' ? "Trading Excellence" : "التميز في التداول" },
+    { id: "PhtRhhJijC0", title: lang === 'en' ? "Digital Innovation" : "الابتكار الرقمي" },
+    { id: "3EE1WC73rYE", title: lang === 'en' ? "Global Reach" : "الوصول العالمي" },
+    { id: "TwgxnmG_Te8", title: lang === 'en' ? "Future of Finance" : "مستقبل التمويل" },
+  ];
+
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (containerRef.current) {
+      const { scrollLeft, clientWidth } = containerRef.current;
+      const scrollTo = direction === 'left' ? scrollLeft - clientWidth / 2 : scrollLeft + clientWidth / 2;
+      containerRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section id="media" className="py-24 px-6 relative z-10 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className={`flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 ${lang === 'ar' ? 'md:flex-row-reverse text-right' : ''}`}>
+          <div>
+            <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.media.label}</span>
+            <h2 className="font-heading text-4xl lg:text-6xl font-extrabold tracking-tightest mt-6 text-shine interactive-shine">
+              {t.media.title}
+            </h2>
+          </div>
+          <div className="flex gap-4">
+            <button onClick={() => scroll('left')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300" style={{cursor:"none"}} data-hover>
+              <ArrowRight className={`w-6 h-6 transform ${lang === 'ar' ? '' : 'rotate-180'}`} />
+            </button>
+            <button onClick={() => scroll('right')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300" style={{cursor:"none"}} data-hover>
+              <ArrowRight className={`w-6 h-6 transform ${lang === 'ar' ? 'rotate-180' : ''}`} />
+            </button>
+          </div>
+        </div>
+
+        <div 
+          ref={containerRef}
+          className="flex gap-8 overflow-x-auto pb-12 scrollbar-hide snap-x snap-mandatory"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {videos.map((video, i) => (
+            <motion.div 
+              key={video.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="flex-shrink-0 w-[85vw] md:w-[600px] snap-center group"
+            >
+              <div className="relative aspect-video rounded-[2rem] overflow-hidden border border-border/50 shadow-2xl group-hover:border-blue-500/50 transition-all duration-500 bg-black">
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.id}`}
+                  title={video.title}
+                  className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none" />
+                <div className={`absolute bottom-8 left-8 right-8 ${lang === 'ar' ? 'text-right' : ''} pointer-events-none`}>
+                   <h3 className="text-white font-heading text-xl font-bold tracking-tight">{video.title}</h3>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── CTA Banner ─── */
 function CTA({ t, lang }: { t: any, lang: string }) {
   return (
@@ -1100,6 +1188,7 @@ export default function Home() {
       <TrackRecord t={t} lang={lang} />
       <DigitalPlatforms t={t} lang={lang} />
       <News t={t} lang={lang} />
+      <Media t={t} lang={lang} />
       <Team t={t} lang={lang} />
       <Governance t={t} lang={lang} />
       <Values t={t} lang={lang} />
