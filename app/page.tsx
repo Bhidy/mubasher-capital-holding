@@ -675,7 +675,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
 
         <div className="space-y-16">
           {tiers.map((tier, tierIdx) => (
-            <div key={tierIdx} className={`grid grid-cols-1 ${tier.members.length === 1 ? 'max-w-[300px]' : 'sm:grid-cols-2 lg:grid-cols-3 max-w-6xl'} gap-10 mx-auto`}>
+            <div key={tierIdx} className={`grid grid-cols-1 ${tier.members.length === 1 ? 'max-w-[280px]' : 'sm:grid-cols-2 lg:grid-cols-3 max-w-5xl'} gap-8 mx-auto`}>
               {tier.members.map((p: any, i) => (
                 <motion.div
                   key={p.name}
@@ -685,7 +685,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
                   transition={{ duration: 0.8, delay: i * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="aspect-[4/5] rounded-[2.5rem] bg-gradient-to-b from-blue-600/5 to-blue-900/10 border border-border/50 overflow-hidden mb-6 group-hover:border-blue-500/50 transition-all duration-700 relative shadow-lg shadow-blue-500/5">
+                  <div className="aspect-[4/4.8] rounded-[2rem] bg-gradient-to-b from-blue-600/5 to-blue-900/10 border border-border/50 overflow-hidden mb-6 group-hover:border-blue-500/50 transition-all duration-700 relative shadow-lg shadow-blue-500/5">
                     {p.image ? (
                       <img src={p.image} alt={p.name} className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000" />
                     ) : (
@@ -694,9 +694,9 @@ function Team({ t, lang }: { t: any, lang: string }) {
                       </div>
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent opacity-90" />
-                    <div className="absolute inset-0 flex flex-col justify-end p-8 text-center translate-y-2 group-hover:translate-y-0 transition-all duration-700">
-                      <div className="font-heading font-black text-xl lg:text-2xl mb-1 text-white leading-tight">{p.name}</div>
-                      <div className="font-sans text-blue-400 text-[10px] lg:text-[11px] font-bold tracking-widest uppercase leading-tight">{p.role}</div>
+                    <div className="absolute inset-0 flex flex-col justify-end p-6 text-center translate-y-2 group-hover:translate-y-0 transition-all duration-700">
+                      <div className="font-heading font-black text-lg lg:text-xl mb-1 text-white leading-tight">{p.name}</div>
+                      <div className="font-sans text-blue-400 text-[9px] lg:text-[10px] font-bold tracking-widest uppercase leading-tight">{p.role}</div>
                     </div>
                   </div>
                 </motion.div>
