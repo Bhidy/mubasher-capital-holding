@@ -652,9 +652,9 @@ function Team({ t, lang }: { t: any, lang: string }) {
     {
       level: 3,
       members: [
-        { name: lang === 'en' ? "Mohamed Bhidy" : "محمد بيدي", role: lang === 'en' ? "Director of Product Development" : "مدير تطوير المنتجات" },
+        { name: lang === 'en' ? "Mohamed Bhidy" : "محمد بيدي", role: lang === 'en' ? "Director of Product Development" : "مدير تطوير المنتجات", image: "/images/bhidy.jpg" },
         { name: lang === 'en' ? "Mahmoud Salem" : "محمود سالم", role: lang === 'en' ? "Head of Operations" : "رئيس العمليات" },
-        { name: lang === 'en' ? "Shahd Raa'fat" : "شهد رأفت", role: lang === 'en' ? "Head of Technical Analysis" : "رئيسة التحليل الفني" }
+        { name: lang === 'en' ? "Shahd Raa'fat" : "شهد رأفت", role: lang === 'en' ? "Head of Technical Analysis" : "رئيسة التحليل الفني", image: "/images/raafat.png" }
       ]
     }
   ];
