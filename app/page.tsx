@@ -421,7 +421,7 @@ function Hero({ t, lang }: { t: any, lang: string }) {
 
         <div className="mb-10">
           <motion.h1
-            className={`font-heading ${lang === 'ar' ? 'text-[clamp(2.5rem,8vw,5.5rem)] leading-[1.3]' : 'text-[clamp(3.5rem,11vw,9rem)] leading-[0.9]'} font-extrabold tracking-tightest text-gradient-main`}
+            className={`font-heading ${lang === 'ar' ? 'text-[clamp(3rem,10vw,7.5rem)] leading-[1.15]' : 'text-[clamp(3.5rem,11vw,9rem)] leading-[0.9]'} font-extrabold tracking-tightest text-gradient-main`}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
