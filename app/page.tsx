@@ -733,6 +733,17 @@ function Values({ t, lang }: { t: any, lang: string }) {
             );
           })}
         </div>
+        <motion.div 
+          className="mt-32 w-full aspect-[21/9] lg:aspect-[3/1] rounded-[3rem] overflow-hidden relative border border-border/50 group shadow-2xl shadow-blue-500/10"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <img src="/images/trading_floor.jpeg" alt="Trading Floor" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-[3000ms] ease-out" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+          <div className="absolute inset-0 grid-overlay opacity-40 mix-blend-overlay" />
+        </motion.div>
       </div>
     </section>
   );
@@ -857,6 +868,8 @@ export default function Home() {
       <Hero t={t} lang={lang} />
       <Services t={t} lang={lang} />
       <AboutSection t={t} lang={lang} />
+      <TrackRecord t={t} lang={lang} />
+      <Team t={t} lang={lang} />
       <Values t={t} lang={lang} />
       <CTA t={t} lang={lang} />
       <Footer t={t} lang={lang} />
