@@ -678,9 +678,9 @@ function Team({ t, lang }: { t: any, lang: string }) {
           <h2 className="font-heading text-5xl lg:text-8xl font-extrabold tracking-tightest mt-6 leading-none">{t.team.title}</h2>
         </motion.div>
 
-        <div className="space-y-24">
+        <div className="space-y-16">
           {tiers.map((tier, tierIdx) => (
-            <div key={tierIdx} className={`grid grid-cols-1 ${tier.members.length === 1 ? 'max-w-sm mx-auto' : tier.members.length === 2 ? 'sm:grid-cols-2 max-w-4xl mx-auto' : 'sm:grid-cols-2 lg:grid-cols-3'} gap-10`}>
+            <div key={tierIdx} className={`grid grid-cols-1 ${tier.members.length === 1 ? 'max-w-[320px]' : tier.members.length === 2 ? 'sm:grid-cols-2 max-w-2xl' : 'sm:grid-cols-2 lg:grid-cols-3 max-w-5xl'} gap-8 mx-auto`}>
               {tier.members.map((p, i) => (
                 <motion.div
                   key={p.name}
@@ -690,18 +690,18 @@ function Team({ t, lang }: { t: any, lang: string }) {
                   transition={{ duration: 0.8, delay: i * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="aspect-[4/5] rounded-[3rem] bg-gradient-to-b from-blue-600/5 to-blue-900/10 border border-border/50 overflow-hidden mb-8 group-hover:border-blue-500/50 transition-all duration-700 relative shadow-xl shadow-blue-500/5">
+                  <div className="aspect-[4/5] rounded-[2.5rem] bg-gradient-to-b from-blue-600/5 to-blue-900/10 border border-border/50 overflow-hidden mb-6 group-hover:border-blue-500/50 transition-all duration-700 relative shadow-lg shadow-blue-500/5">
                     {p.image ? (
                       <img src={p.image} alt={p.name} className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000" />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center bg-secondary/20">
-                        <User className="w-24 h-24 text-blue-500/20 group-hover:text-blue-500/40 transition-colors duration-700" />
+                        <User className="w-16 h-16 text-blue-500/20 group-hover:text-blue-500/40 transition-colors duration-700" />
                       </div>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-80" />
-                    <div className="absolute inset-0 flex flex-col justify-end p-10 text-center translate-y-4 group-hover:translate-y-0 transition-all duration-700">
-                      <div className="font-heading font-black text-2xl lg:text-3xl mb-2 text-white">{p.name}</div>
-                      <div className="font-sans text-blue-400 text-xs lg:text-sm font-bold tracking-widest uppercase leading-tight">{p.role}</div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent opacity-90" />
+                    <div className="absolute inset-0 flex flex-col justify-end p-8 text-center translate-y-2 group-hover:translate-y-0 transition-all duration-700">
+                      <div className="font-heading font-black text-xl lg:text-2xl mb-1 text-white leading-tight">{p.name}</div>
+                      <div className="font-sans text-blue-400 text-[10px] lg:text-[11px] font-bold tracking-widest uppercase leading-tight">{p.role}</div>
                     </div>
                   </div>
                 </motion.div>
