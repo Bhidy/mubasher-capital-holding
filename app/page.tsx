@@ -73,12 +73,12 @@ const translations = {
     services: {
       label: "Our Ecosystem",
       title: "Comprehensive Financial Powerhouse",
-      s1: { title: "Mubasher Trade", desc: "Egypt's Top 3 Brokerage Firm delivering rapid execution and digital trading innovation." },
+      s1: { title: "Mubasher Trade - Egypt", desc: "Egypt's Top 3 Brokerage Firm delivering rapid execution and digital trading innovation." },
       s2: { title: "Mubasher Media", desc: "The region's leading financial media powerhouse. Its flagship product, Mubasher Info, delivers real-time data to over 2.5M monthly visitors." },
       s3: { title: "Mubasher Global", desc: "Your secure gateway to over 90 international financial markets." },
       s4: { title: "Mubasher Asset Mgmt", desc: "Tailored institutional and private investment portfolios designed for growth." },
       s5: { title: "Mubasher Custody", desc: "The trusted guardian of client assets with unparalleled transparency and security." },
-      s6: { title: "Mubasher Capital", desc: "Global investment partner providing elite institutional trading solutions." }
+      s6: { title: "Mubasher Capital - Bahrain", desc: "Global investment partner providing elite institutional trading solutions." }
     },
     about: {
       label: "Group Overview",
@@ -164,12 +164,12 @@ const translations = {
     services: {
       label: "منظومتنا",
       title: "قوة مالية شاملة",
-      s1: { title: "مباشر تريد", desc: "من أفضل 3 شركات وساطة في مصر، تقدم تنفيذ سريع وابتكار في التداول الرقمي." },
+      s1: { title: "مباشر تريد - مصر", desc: "من أفضل 3 شركات وساطة في مصر، تقدم تنفيذ سريع وابتكار في التداول الرقمي." },
       s2: { title: "مباشر ميديا", desc: "القوة الإعلامية المالية الرائدة في المنطقة. منتجها الرائد، مباشر إنفو، يقدم بيانات واخبار اقتصادية شاملة لأكثر من 2.5 مليون زائر شهرياً." },
       s3: { title: "مباشر جلوبال", desc: "بوابتك الآمنة لأكثر من 90 سوقاً مالياً دولياً." },
       s4: { title: "مباشر لإدارة الأصول", desc: "محافظ استثمارية مؤسسية وخاصة مصممة خصيصاً للنمو." },
       s5: { title: "مباشر للحفظ", desc: "الحارس الموثوق لأصول العملاء بشفافية وأمان لا مثيل لهما." },
-      s6: { title: "مباشر كابيتال", desc: "شريك استثماري عالمي يقدم حلول تداول مؤسسية رائدة." }
+      s6: { title: "مباشر كابيتال - البحرين", desc: "شريك استثماري عالمي يقدم حلول تداول مؤسسية رائدة." }
     },
     about: {
       label: "نظرة عامة على المجموعة",
