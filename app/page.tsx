@@ -1040,7 +1040,7 @@ function Media({ t, lang }: { t: any, lang: string }) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="flex-shrink-0 w-[85vw] md:w-[calc(33.333%-1.5rem)] lg:w-[calc(28.57%-1rem)] snap-start group"
+              className="flex-shrink-0 w-[85vw] md:w-[calc(45%-1.5rem)] lg:w-[calc(38%-2rem)] snap-start group"
             >
               <div className="relative aspect-video rounded-[2rem] overflow-hidden border border-border/50 shadow-2xl group-hover:border-blue-500/50 transition-all duration-500 bg-black">
                 <iframe
