@@ -40,11 +40,11 @@ const translations = {
       clientPortal: "Client Portal"
     },
     hero: {
-      label: "Architecting the Future of Finance",
-      title1: "ARCHITECTING",
-      title2: "VISIONARY WEALTH",
-      title3: "FOR GLOBAL IMPACT",
-      desc: "Mubasher Capital Holding orchestrates a sophisticated financial ecosystem, harmonizing global market access with deep regional intelligence to empower institutional and private wealth.",
+      label: "Global Reach. Regional Mastery.",
+      title1: "GLOBAL MARKETS",
+      title2: "REGIONAL MASTERY",
+      title3: "UNIFIED EXCELLENCE",
+      desc: "Mubasher Capital Holding provides institutional-grade access to global markets through a sophisticated, unified digital ecosystem.",
       primaryBtn: "Explore Ecosystem",
       secondaryBtn: "Partner With Us",
       placeholder: "Your corporate email",
@@ -123,11 +123,11 @@ const translations = {
       clientPortal: "بوابة العملاء"
     },
     hero: {
-      label: "صناعة مستقبل التمويل",
-      title1: "بناء",
-      title2: "الثروات الرؤيوية",
-      title3: "لأثر عالمي مستدام",
-      desc: "تجمع مباشر كابيتال القابضة بين منظومة مالية عالمية المستوى، وتدمج الخبرة الإقليمية مع الفرص العالمية لإعادة تعريف التميز في الاستثمار المؤسسي والخاص.",
+      label: "آفاق عالمية. خبرة إقليمية.",
+      title1: "أسواق عالمية",
+      title2: "خبرة إقليمية",
+      title3: "تمير موحد",
+      desc: "تقدم مباشر كابيتال القابضة وصولاً مؤسسياً للأسواق العالمية من خلال منظومة رقمية موحدة ومتطورة.",
       primaryBtn: "استكشف منظومتنا",
       secondaryBtn: "شراكة استراتيجية",
       placeholder: "بريدك الإلكتروني المؤسسي",
@@ -303,7 +303,7 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
               <span className="sr-only">Toggle Language</span>
             </button>
             <ThemeToggle />
-            <a href="#contact" className="btn-primary hidden md:inline-flex text-[10px] uppercase font-bold tracking-[0.2em] h-11 px-8" style={{cursor:"none"}}>
+            <a href="https://rubixegypt.mubashertrade.com" target="_blank" rel="noopener noreferrer" className="btn-primary hidden md:inline-flex text-[10px] uppercase font-bold tracking-[0.2em] h-11 px-8" style={{cursor:"none"}}>
               {t.nav.clientPortal}
             </a>
             <button
@@ -354,7 +354,7 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
               ))}
             </div>
             <div className="mt-auto space-y-4">
-              <a href="#contact" className="btn-primary w-full py-5 text-center text-lg font-bold">
+              <a href="https://rubixegypt.mubashertrade.com" target="_blank" rel="noopener noreferrer" className="btn-primary w-full py-5 text-center text-lg font-bold">
                 {t.nav.clientPortal}
               </a>
               <button 
