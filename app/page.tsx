@@ -370,8 +370,7 @@ function Hero({ t, lang }: { t: any, lang: string }) {
     <section ref={ref} className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-20 overflow-hidden noise">
       {/* Dynamic Background Elements */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 pointer-events-none z-0">
-        <img src="/images/trading_floor.jpeg" alt="Hero Background" className="absolute inset-0 w-full h-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--secondary)_0%,transparent_70%)] opacity-30" />
         <div className="absolute top-[10%] left-[5%] w-[700px] h-[700px] bg-blue-600/10 blur-[120px] rounded-full animate-pulse-glow" />
         <div className="absolute bottom-[10%] right-[5%] w-[600px] h-[600px] bg-blue-500/5 blur-[100px] rounded-full animate-pulse-glow delay-1000" />
         <div className="absolute inset-0 grid-overlay opacity-10" />
@@ -642,7 +641,7 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
 function Team({ t, lang }: { t: any, lang: string }) {
   const leaders = [
     { name: lang === 'en' ? "M. Rashid Al-Ballaa" : "م. راشد البلاع", role: lang === 'en' ? "Founder & Chairman" : "المؤسس ورئيس مجلس الإدارة", image: "/images/al_ballaa.jpeg" },
-    { name: lang === 'en' ? "Hany Hamdy" : "هاني حمدي", role: lang === 'en' ? "Managing Director" : "العضو المنتدب", image: "/images/hany_hamdy.jpeg" },
+    { name: lang === 'en' ? "Hany Hamdy" : "هاني حمدي", role: lang === 'en' ? "Managing Director" : "العضو المنتدب", image: "/images/hany_hamdy.png" },
   ];
 
   return (
