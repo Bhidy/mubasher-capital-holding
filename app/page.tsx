@@ -282,7 +282,11 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
               style={{cursor:"none"}}
               data-hover
             >
-              <Languages className="w-4 h-4 transition-transform duration-500 group-hover:rotate-12" />
+              {lang === 'en' ? (
+                <span className="font-heading text-lg leading-none mt-0.5">ع</span>
+              ) : (
+                <span className="font-heading text-[10px] font-black leading-none">EN</span>
+              )}
               <span className="sr-only">Toggle Language</span>
             </button>
             <ThemeToggle />
