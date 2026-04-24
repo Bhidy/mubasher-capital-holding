@@ -830,7 +830,7 @@ function Governance({ t, lang }: { t: any, lang: string }) {
             viewport={{ once: true }}
           >
             <div className="aspect-[4/3] rounded-[3rem] overflow-hidden border border-border/50 shadow-2xl relative group">
-              <img src="/images/governance.jpeg" alt="Governance" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-all duration-1000" />
+              <img src="/images/governance.jpeg" alt="Governance" className="absolute inset-0 w-full h-full object-cover object-top opacity-80 group-hover:scale-105 transition-all duration-1000" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
               <div className="absolute inset-0 grid-overlay opacity-30 mix-blend-overlay" />
             </div>
