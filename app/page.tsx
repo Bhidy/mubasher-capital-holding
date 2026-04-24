@@ -40,11 +40,11 @@ const translations = {
       clientPortal: "Client Portal"
     },
     hero: {
-      label: "Global Reach. Regional Mastery.",
-      title1: "GLOBAL MARKETS",
-      title2: "REGIONAL MASTERY",
-      title3: "UNIFIED EXCELLENCE",
-      desc: "Mubasher Capital Holding provides institutional-grade access to global markets through a sophisticated, unified digital ecosystem.",
+      label: "Your Trusted Financial Advisor",
+      title1: "SECURITIES &",
+      title2: "INVESTMENT",
+      title3: "LEADERSHIP",
+      desc: "Leading regional expertise in securities and investment advisory services.",
       primaryBtn: "Explore Ecosystem",
       secondaryBtn: "Partner With Us",
       placeholder: "Your corporate email",
@@ -123,11 +123,11 @@ const translations = {
       clientPortal: "بوابة العملاء"
     },
     hero: {
-      label: "آفاق عالمية. خبرة إقليمية.",
-      title1: "أسواق عالمية",
-      title2: "خبرة إقليمية",
-      title3: "تمير موحد",
-      desc: "تقدم مباشر كابيتال القابضة وصولاً مؤسسياً للأسواق العالمية من خلال منظومة رقمية موحدة ومتطورة.",
+      label: "مستشاركم المالي الموثوق",
+      title1: "الأوراق المالية",
+      title2: "والاستثمار",
+      title3: "ريادة إقليمية",
+      desc: "خبرة إقليمية رائدة في مجال الأوراق المالية والاستشارات الاستثمارية.",
       primaryBtn: "استكشف منظومتنا",
       secondaryBtn: "شراكة استراتيجية",
       placeholder: "بريدك الإلكتروني المؤسسي",
