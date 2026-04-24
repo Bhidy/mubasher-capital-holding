@@ -646,7 +646,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
       members: [
         { name: lang === 'en' ? "Mohamed Kishk" : "محمد كشك", role: lang === 'en' ? "Vice Chairman of Mubasher Capital" : "نائب رئيس مجلس إدارة مباشر كابيتال", image: "/images/kishk.jpg" },
         { name: lang === 'en' ? "Ehab Rashad" : "إيهاب رشاد", role: lang === 'en' ? "Vice Chairman of the Board" : "نائب رئيس مجلس الإدارة", image: "/images/rashad.jpg" },
-        { name: lang === 'en' ? "Hany Hamdy" : "هاني حمدي", role: lang === 'en' ? "MD of Mubasher Trade Egypt" : "العضو المنتدب لمباشر تريد مصر", image: "/images/hany_hamdy.png" },
+        { name: lang === 'en' ? "Hany Hamdy" : "هاني حمدي", role: lang === 'en' ? "MD of Mubasher Trade Egypt" : "العضو المنتدب لمباشر تريد مصر", image: "/images/hany_hamdy.jpg" },
       ]
     },
     {
