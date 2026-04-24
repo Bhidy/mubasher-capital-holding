@@ -39,11 +39,11 @@ const translations = {
       clientPortal: "Client Portal"
     },
     hero: {
-      label: "National Technology Group (NTG) Investment Arm",
-      title1: "A FULLY INTEGRATED",
-      title2: "REGIONAL",
+      label: "ELEVATING REGIONAL FINANCE",
+      title1: "UNIFIED",
+      title2: "INVESTMENT",
       title3: "ECOSYSTEM",
-      desc: "The investment arm of National Technology Group (NTG). We unite expertise, innovation, and global reach to redefine the Middle East's financial landscape.",
+      desc: "Mubasher Capital Holding is the premier force in Middle Eastern financial services. We bridge global markets with local expertise, delivering institutional-grade solutions through a seamless digital ecosystem.",
       primaryBtn: "Explore Our Ecosystem",
       secondaryBtn: "Partner With Us",
       stat1: "Global Markets",
@@ -63,7 +63,7 @@ const translations = {
     about: {
       label: "Group Overview",
       title: "Building the Fortress of Trust",
-      desc: "Mubasher Capital Holding orchestrates a seamless, end-to-end investment experience. Backed by the National Technology Group, our subsidiaries operate synergistically to provide comprehensive financial environments for retail and institutional investors alike.",
+      desc: "Mubasher Capital Holding orchestrates a seamless, end-to-end investment experience. Our subsidiaries operate synergistically to provide comprehensive financial environments for retail and institutional investors alike.",
       stat1: "Years of Heritage",
       stat2: "Subsidiaries",
       btn: "Discover Our Vision"
@@ -106,7 +106,7 @@ const translations = {
       link2: "Hotline: 16699"
     },
     footer: {
-      desc: "Mubasher Capital Holding. The investment arm of National Technology Group (NTG).",
+      desc: "Mubasher Capital Holding. A regional leader in financial services and digital innovation.",
       rights: "Mubasher Capital Holding. All rights reserved."
     }
   },
@@ -121,11 +121,11 @@ const translations = {
       clientPortal: "بوابة العملاء"
     },
     hero: {
-      label: "الذراع الاستثماري للمجموعة الوطنية للتقنية (NTG)",
-      title1: "نظام إقليمي",
-      title2: "متكامل",
-      title3: "وشامل",
-      desc: "الذراع الاستثماري للمجموعة الوطنية للتقنية (NTG). نحن نوحد الخبرة والابتكار والانتشار العالمي لإعادة رسم ملامح المشهد الاستثماري في الشرق الأوسط.",
+      label: "الارتقاء بالخدمات المالية الإقليمية",
+      title1: "منظومة",
+      title2: "استثمارية",
+      title3: "موحدة",
+      desc: "مباشر كابيتال القابضة هي القوة الرائدة في الخدمات المالية في الشرق الأوسط. نجمع بين الأسواق العالمية والخبرة المحلية، لنقدم حلولاً مؤسسية من خلال منظومة رقمية متكاملة وسلسة.",
       primaryBtn: "استكشف منظومتنا",
       secondaryBtn: "شاركنا النجاح",
       stat1: "أسواق عالمية",
@@ -145,7 +145,7 @@ const translations = {
     about: {
       label: "نظرة عامة على المجموعة",
       title: "بناء قلعة من الثقة",
-      desc: "تدير مباشر كابيتال القابضة تجربة استثمارية سلسة ومتكاملة. بدعم من المجموعة الوطنية للتقنية، تعمل شركاتنا التابعة بتآزر لتوفير بيئات مالية شاملة للمستثمرين الأفراد والمؤسسات.",
+      desc: "تقوم مباشر كابيتال القابضة بتنسيق تجربة استثمارية متكاملة وسلسة. تعمل شركاتنا التابعة بتآزر لتوفير بيئات مالية شاملة للمستثمرين الأفراد والمؤسسات على حد سواء.",
       stat1: "سنوات من التراث",
       stat2: "شركات تابعة",
       btn: "اكتشف رؤيتنا"
@@ -188,7 +188,7 @@ const translations = {
       link2: "الخط الساخن: 16699"
     },
     footer: {
-      desc: "مباشر كابيتال القابضة. الذراع الاستثماري للمجموعة الوطنية للتقنية (NTG).",
+      desc: "مباشر كابيتال القابضة. رائد إقليمي في الخدمات المالية والابتكار الرقمي.",
       rights: "مباشر كابيتال القابضة. جميع الحقوق محفوظة."
     }
   }
@@ -368,12 +368,12 @@ function Hero({ t, lang }: { t: any, lang: string }) {
 
   return (
     <section ref={ref} className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-20 overflow-hidden noise">
-      {/* Dynamic Background Elements */}
+      {/* Premium Minimalist Mesh Background */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--secondary)_0%,transparent_70%)] opacity-30" />
-        <div className="absolute top-[10%] left-[5%] w-[700px] h-[700px] bg-blue-600/10 blur-[120px] rounded-full animate-pulse-glow" />
-        <div className="absolute bottom-[10%] right-[5%] w-[600px] h-[600px] bg-blue-500/5 blur-[100px] rounded-full animate-pulse-glow delay-1000" />
-        <div className="absolute inset-0 grid-overlay opacity-10" />
+        <div className="absolute inset-0 bg-background" />
+        <div className="absolute top-[-10%] left-[-10%] w-[100%] h-[100%] bg-blue-600/10 blur-[160px] rounded-full animate-pulse-glow" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[100%] h-[100%] bg-blue-500/5 blur-[160px] rounded-full animate-pulse-glow delay-1000" />
+        <div className="absolute inset-0 grid-overlay opacity-[0.03]" />
       </motion.div>
 
       <div className="relative z-10 max-w-7xl mx-auto text-center">
@@ -814,17 +814,6 @@ function Values({ t, lang }: { t: any, lang: string }) {
             );
           })}
         </div>
-        <motion.div 
-          className="mt-32 w-full aspect-[21/9] lg:aspect-[3/1] rounded-[3rem] overflow-hidden relative border border-border/50 group shadow-2xl shadow-blue-500/10"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-        >
-          <img src="/images/trading_floor.jpeg" alt="Trading Floor" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-[3000ms] ease-out" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-          <div className="absolute inset-0 grid-overlay opacity-40 mix-blend-overlay" />
-        </motion.div>
       </div>
     </section>
   );
