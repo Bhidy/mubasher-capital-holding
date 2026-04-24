@@ -652,7 +652,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
     {
       level: 3,
       members: [
-        { name: lang === 'en' ? "Mohamed Bhidy" : "محمد بهيدي", role: lang === 'en' ? "Global Director Product Management" : "رئيس تطوير المنتجات الإقليمي", image: "/images/bhidy.jpg" },
+        { name: lang === 'en' ? "Mohamed Bhidy" : "محمد بهيدي", role: lang === 'en' ? "Regional Director Product Management" : "رئيس تطوير المنتجات الإقليمي", image: "/images/bhidy.jpg" },
         { name: lang === 'en' ? "Mahmoud Hossam" : "محمود حسام", role: lang === 'en' ? "MD of Mubasher Asset Mgmt" : "العضو المنتدب لمباشر لإدارة الأصول", image: "/images/hossam.png" },
         { name: lang === 'en' ? "Shahd Raa'fat" : "شهد رأفت", role: lang === 'en' ? "Head of Technical Analysis" : "رئيسة التحليل الفني", image: "/images/raafat.png" }
       ]
