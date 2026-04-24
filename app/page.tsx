@@ -30,50 +30,51 @@ import {
 const translations = {
   en: {
     nav: {
-      services: "Services",
-      about: "About",
-      track: "In Numbers",
+      services: "Ecosystem",
+      about: "About Group",
+      track: "Trade Spotlight",
       team: "Leadership",
       news: "News",
       contact: "Contact",
       clientPortal: "Client Portal"
     },
     hero: {
-      label: "Pioneering Digital Trading Since 2006",
-      title1: "THE FUTURE BELONGS TO",
-      title2: "THOSE WHO",
-      title3: "SHAPE IT",
-      desc: "Mubasher for Securities and Bonds started a bold journey to redefine Egypt's financial landscape, empowering investors with speed and agility to seize market opportunities.",
-      primaryBtn: "Explore Our Platforms",
-      secondaryBtn: "Open An Account",
-      stat1: "Annual Trading Vol (EGP)",
-      stat2: "Market Share",
-      stat3: "Branches in Egypt"
+      label: "National Technology Group (NTG) Investment Arm",
+      title1: "A FULLY INTEGRATED",
+      title2: "REGIONAL",
+      title3: "ECOSYSTEM",
+      desc: "Mubasher Capital Holding stands at the heart of the region's financial network. We unite expertise, innovation, and global reach to redefine the investment landscape across the Middle East and beyond.",
+      primaryBtn: "Explore Our Ecosystem",
+      secondaryBtn: "Partner With Us",
+      stat1: "Global Markets",
+      stat2: "Monthly Visitors",
+      stat3: "Trading Volume"
     },
     services: {
-      label: "Mubasher Services",
-      title: "Your Investment Journey",
-      s1: { title: "Brokerage & Trading", desc: "Same-Day Trading (T+0), Margin Trading, and personalized account management." },
-      s2: { title: "Institutional Solutions", desc: "Swift execution, OTC trading, portfolio analysis, and global market access." },
-      s3: { title: "Research & Analysis", desc: "Professional daily reports, technical analysis, and real-time market recommendations." },
-      s4: { title: "Digital Platforms", desc: "Mubasher Trade Pro, Trade Plus, and Mobile Trading with E-Signature support." },
-      s5: { title: "Financial Education", desc: "Mubasher Academy offering courses, webinars, and personalized financial guidance." }
+      label: "Our Ecosystem",
+      title: "Comprehensive Financial Powerhouse",
+      s1: { title: "Mubasher Trade", desc: "Egypt's Top 3 Brokerage Firm delivering rapid execution and digital trading innovation." },
+      s2: { title: "Mubasher Info", desc: "The region's largest financial and economic news platform with over 2.5M monthly visitors." },
+      s3: { title: "Mubasher Global", desc: "Your secure gateway to over 90 international financial markets." },
+      s4: { title: "Mubasher Asset Mgmt", desc: "Tailored institutional and private investment portfolios designed for growth." },
+      s5: { title: "Mubasher Custody", desc: "The trusted guardian of client assets with unparalleled transparency and security." },
+      s6: { title: "Mubasher Capital", desc: "Global investment partner providing elite institutional trading solutions." }
     },
     about: {
-      label: "Company Overview",
-      title: "A Beacon of Innovation and Leadership",
-      desc: "Founded in 2006, Mubasher positioned itself at the forefront of digital trading. We have steadily risen to secure a spot within the \"Top 3\" out of more than 120 licensed brokers in Egypt, backed by an elite financial research team and world-class technological infrastructure.",
-      stat1: "Years of Excellence",
-      stat2: "Active Clients",
-      btn: "Join Our Legacy"
+      label: "Group Overview",
+      title: "Building the Fortress of Trust",
+      desc: "Mubasher Capital Holding orchestrates a seamless, end-to-end investment experience. Backed by the National Technology Group, our subsidiaries operate synergistically to provide comprehensive financial environments for retail and institutional investors alike.",
+      stat1: "Years of Heritage",
+      stat2: "Subsidiaries",
+      btn: "Discover Our Vision"
     },
     track: {
-      label: "Proven Performance",
-      title: "Mubasher in Numbers",
-      desc: "Our record of achievement reflects a business model built on innovation, efficiency, and unwavering commitment."
+      label: "Subsidiary Spotlight",
+      title: "Mubasher Trade Excellence",
+      desc: "Our flagship brokerage arm, Mubasher for Securities and Bonds, pioneered digital trading in 2006 and continuously ranks among the top brokers in Egypt."
     },
     team: {
-      label: "Our Leadership",
+      label: "Group Leadership & Governance",
       title: "Visionary Minds"
     },
     values: {
@@ -87,63 +88,64 @@ const translations = {
     cta: {
       label: "Start Your Journey",
       title: "Choose Your Financial Future",
-      desc: "Open your account remotely through secure electronic signature services. We are here to answer, guide, and support you.",
+      desc: "Connect with the Mubasher ecosystem. Whether you seek global markets, deep research, or institutional asset management, we are here to support you.",
       placeholder: "Your email address",
       btn: "Get Started",
       link1: "CS@mubasher.net",
       link2: "Hotline: 16699"
     },
     footer: {
-      desc: "Mubasher for Securities and Bonds. A distinguished regional beacon of innovation in financial markets.",
-      rights: "Mubasher for Securities and Bonds. All rights reserved."
+      desc: "Mubasher Capital Holding. The investment arm of National Technology Group (NTG).",
+      rights: "Mubasher Capital Holding. All rights reserved."
     }
   },
   ar: {
     nav: {
-      services: "خدماتنا",
-      about: "نظرة عامة",
-      track: "في أرقام",
+      services: "منظومتنا",
+      about: "عن المجموعة",
+      track: "تسليط الضوء",
       team: "القيادة",
       news: "الأخبار",
       contact: "اتصل بنا",
       clientPortal: "بوابة العملاء"
     },
     hero: {
-      label: "ريادة التداول الرقمي منذ 2006",
-      title1: "المستقبل مِلك",
-      title2: "لمن",
-      title3: "يصنعه",
-      desc: "انطلقت شركة مباشر لتداول الأوراق المالية والسندات في رحلة طموحة لإعادة رسم ملامح المشهد المالي في مصر، وتمكين المستثمرين من اغتنام الفرص بسرعة ومرونة.",
-      primaryBtn: "استكشف منصاتنا",
-      secondaryBtn: "افتح حسابك",
-      stat1: "حجم التداول السنوي (ج.م)",
-      stat2: "الحصة السوقية",
-      stat3: "فروع في مصر"
+      label: "الذراع الاستثماري للمجموعة الوطنية للتقنية (NTG)",
+      title1: "نظام إقليمي",
+      title2: "متكامل",
+      title3: "وشامل",
+      desc: "تقف مباشر كابيتال القابضة في قلب الشبكة المالية للمنطقة. نحن نوحد الخبرة والابتكار والانتشار العالمي لإعادة رسم ملامح المشهد الاستثماري في الشرق الأوسط وما وراءه.",
+      primaryBtn: "استكشف منظومتنا",
+      secondaryBtn: "شاركنا النجاح",
+      stat1: "أسواق عالمية",
+      stat2: "زائر شهرياً",
+      stat3: "حجم التداول"
     },
     services: {
-      label: "خدمات مباشر",
-      title: "رحلتك الاستثمارية",
-      s1: { title: "خدمات التداول والوساطة", desc: "التداول في ذات الجلسة (T+0)، الشراء بالهامش، وإدارة حسابات مخصصة." },
-      s2: { title: "حلول المؤسسات", desc: "تنفيذ سريع، تداول خارج المقصورة، تحليل المحافظ، والوصول للأسواق العالمية." },
-      s3: { title: "البحوث والتحليل", desc: "تقارير يومية احترافية، تحليل فني وأساسي، وتوصيات لحظية للسوق." },
-      s4: { title: "المنصات الرقمية", desc: "مباشر تريد برو، تريد بلس، وتطبيقات الهاتف مع التوقيع الإلكتروني." },
-      s5: { title: "الوعي المالي", desc: "أكاديمية مباشر تقدم دورات تدريبية وتوجيه مالي شخصي." }
+      label: "منظومتنا",
+      title: "قوة مالية شاملة",
+      s1: { title: "مباشر تريد", desc: "من أفضل 3 شركات وساطة في مصر، تقدم تنفيذ سريع وابتكار في التداول الرقمي." },
+      s2: { title: "مباشر إنفو", desc: "أكبر منصة للأخبار المالية والاقتصادية في المنطقة بأكثر من 2.5 مليون زائر شهرياً." },
+      s3: { title: "مباشر جلوبال", desc: "بوابتك الآمنة لأكثر من 90 سوقاً مالياً دولياً." },
+      s4: { title: "مباشر لإدارة الأصول", desc: "محافظ استثمارية مؤسسية وخاصة مصممة خصيصاً للنمو." },
+      s5: { title: "مباشر للحفظ", desc: "الحارس الموثوق لأصول العملاء بشفافية وأمان لا مثيل لهما." },
+      s6: { title: "مباشر كابيتال", desc: "شريك استثماري عالمي يقدم حلول تداول مؤسسية رائدة." }
     },
     about: {
-      label: "نظرة عامة على الشركة",
-      title: "منارة للابتكار والريادة",
-      desc: "تأسست مباشر عام 2006 لتقود ثورة التداول الرقمي. وبفضل البنية التحتية التكنولوجية وفريق البحوث المتميز، ارتقينا بثبات لنكون ضمن 'أفضل 3' شركات وساطة من بين أكثر من 120 شركة مرخصة في مصر.",
-      stat1: "سنوات من التميز",
-      stat2: "عملاء نشطين",
-      btn: "انضم إلى مسيرتنا"
+      label: "نظرة عامة على المجموعة",
+      title: "بناء قلعة من الثقة",
+      desc: "تدير مباشر كابيتال القابضة تجربة استثمارية سلسة ومتكاملة. بدعم من المجموعة الوطنية للتقنية، تعمل شركاتنا التابعة بتآزر لتوفير بيئات مالية شاملة للمستثمرين الأفراد والمؤسسات.",
+      stat1: "سنوات من التراث",
+      stat2: "شركات تابعة",
+      btn: "اكتشف رؤيتنا"
     },
     track: {
-      label: "أداء مثبت",
-      title: "مباشر في أرقام",
-      desc: "سجل إنجازاتنا يعكس نموذج عمل مبني على الابتكار، الكفاءة، والالتزام الراسخ."
+      label: "تسليط الضوء على الشركات التابعة",
+      title: "تميز مباشر تريد",
+      desc: "ذراع الوساطة الرائد لدينا، مباشر لتداول الأوراق المالية والسندات، قادت ثورة التداول الرقمي في عام 2006 وتصنف باستمرار من بين أفضل الوسطاء في مصر."
     },
     team: {
-      label: "قيادتنا",
+      label: "قيادة وحوكمة المجموعة",
       title: "عقول رائدة"
     },
     values: {
@@ -157,15 +159,15 @@ const translations = {
     cta: {
       label: "ابدأ رحلتك",
       title: "اختر مستقبلك المالي",
-      desc: "افتح حسابك عن بعد من خلال خدمات التوقيع الإلكتروني الآمنة. نحن هنا للإجابة، التوجيه، والدعم.",
+      desc: "تواصل مع منظومة مباشر. سواء كنت تبحث عن الأسواق العالمية، البحوث العميقة، أو إدارة الأصول المؤسسية، نحن هنا لدعمك.",
       placeholder: "بريدك الإلكتروني",
       btn: "ابدأ الآن",
       link1: "CS@mubasher.net",
       link2: "الخط الساخن: 16699"
     },
     footer: {
-      desc: "مباشر لتداول الأوراق المالية والسندات. منارة إقليمية متميزة للابتكار في الأسواق المالية.",
-      rights: "مباشر لتداول الأوراق المالية والسندات. جميع الحقوق محفوظة."
+      desc: "مباشر كابيتال القابضة. الذراع الاستثماري للمجموعة الوطنية للتقنية (NTG).",
+      rights: "مباشر كابيتال القابضة. جميع الحقوق محفوظة."
     }
   }
 };
@@ -346,6 +348,7 @@ function Hero({ t, lang }: { t: any, lang: string }) {
     <section ref={ref} className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-20 overflow-hidden noise">
       {/* Dynamic Background Elements */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 pointer-events-none z-0">
+        <img src="/images/hero.jpeg" alt="Hero Background" className="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-overlay" />
         <div className="absolute top-[10%] left-[5%] w-[700px] h-[700px] bg-blue-600/10 blur-[120px] rounded-full animate-pulse-glow" />
         <div className="absolute bottom-[10%] right-[5%] w-[600px] h-[600px] bg-emerald-500/5 blur-[100px] rounded-full animate-pulse-glow delay-1000" />
         <div className="absolute inset-0 grid-overlay opacity-[0.05]" />
@@ -410,15 +413,15 @@ function Hero({ t, lang }: { t: any, lang: string }) {
           transition={{ duration: 1, delay: 0.9 }}
         >
           <div className="space-y-2">
-            <div className="font-heading text-4xl lg:text-6xl font-black text-gradient-main">10B+</div>
+            <div className="font-heading text-4xl lg:text-6xl font-black text-gradient-main">90+</div>
             <div className="font-sans text-[11px] font-bold tracking-[0.3em] text-muted-foreground uppercase">{t.hero.stat1}</div>
           </div>
           <div className="space-y-2">
-            <div className="font-heading text-4xl lg:text-6xl font-black text-gradient-main">10%</div>
+            <div className="font-heading text-4xl lg:text-6xl font-black text-gradient-main">2.5M+</div>
             <div className="font-sans text-[11px] font-bold tracking-[0.3em] text-muted-foreground uppercase">{t.hero.stat2}</div>
           </div>
           <div className="space-y-2">
-            <div className="font-heading text-4xl lg:text-6xl font-black text-gradient-main">18</div>
+            <div className="font-heading text-4xl lg:text-6xl font-black text-gradient-main">10B+</div>
             <div className="font-sans text-[11px] font-bold tracking-[0.3em] text-muted-foreground uppercase">{t.hero.stat3}</div>
           </div>
         </motion.div>
@@ -431,15 +434,19 @@ function Hero({ t, lang }: { t: any, lang: string }) {
 function Services({ t, lang }: { t: any, lang: string }) {
   const serviceList = [
     { id: "01", title: t.services.s1.title, desc: t.services.s1.desc, icon: Briefcase, color: "blue" },
-    { id: "02", title: t.services.s2.title, desc: t.services.s2.desc, icon: TrendingUp, color: "emerald" },
-    { id: "03", title: t.services.s3.title, desc: t.services.s3.desc, icon: Shield, color: "blue" },
-    { id: "04", title: t.services.s4.title, desc: t.services.s4.desc, icon: Search, color: "emerald" },
-    { id: "05", title: t.services.s5.title, desc: t.services.s5.desc, icon: Zap, color: "blue" },
+    { id: "02", title: t.services.s2.title, desc: t.services.s2.desc, icon: Search, color: "emerald" },
+    { id: "03", title: t.services.s3.title, desc: t.services.s3.desc, icon: Globe, color: "blue" },
+    { id: "04", title: t.services.s4.title, desc: t.services.s4.desc, icon: TrendingUp, color: "emerald" },
+    { id: "05", title: t.services.s5.title, desc: t.services.s5.desc, icon: Shield, color: "blue" },
+    { id: "06", title: t.services.s6.title, desc: t.services.s6.desc, icon: Zap, color: "emerald" },
   ];
 
   return (
-    <section id="services" className="py-24 px-6 bg-background relative z-10">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="py-24 px-6 bg-background relative z-10 overflow-hidden">
+      <div className="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none mix-blend-overlay">
+        <img src="/images/ecosystem.png" alt="Ecosystem" className="w-full h-full object-cover" />
+      </div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           className="mb-24 text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
@@ -562,54 +569,48 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
 
 /* ─── Track Record ─── */
 function TrackRecord({ t, lang }: { t: any, lang: string }) {
-  const numbers = [
-    { label: lang === 'en' ? "Market Share" : "الحصة السوقية", value: "10%", icon: BarChart3 },
-    { label: lang === 'en' ? "Trading Vol" : "حجم التداول", value: "10B+", icon: TrendingUp },
-    { label: lang === 'en' ? "Branch Network" : "شبكة الفروع", value: "18", icon: Globe },
-    { label: lang === 'en' ? "Investment Funds" : "صناديق الاستثمار", value: "30+", icon: Briefcase },
-    { label: lang === 'en' ? "Active Clients" : "عملاء نشطين", value: "10K+", icon: Users },
-  ];
-
   return (
     <section id="track-record" className="py-24 px-6 z-10 relative bg-background">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
         <motion.div
-          className={`mb-24 flex flex-col md:flex-row md:items-end justify-between gap-10 ${lang === 'ar' ? 'md:flex-row-reverse text-right' : ''}`}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          className={`lg:w-1/2 ${lang === 'ar' ? 'order-last text-right' : ''}`}
+          initial={{ opacity: 0, x: lang === 'en' ? -60 : 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <div className="max-w-2xl">
-            <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.track.label}</span>
-            <h2 className="font-heading text-5xl lg:text-8xl font-extrabold tracking-tightest mt-6 leading-none">{t.track.title}</h2>
-          </div>
-          <p className="font-sans text-muted-foreground/80 text-xl max-w-sm leading-relaxed">
+          <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.track.label}</span>
+          <h2 className="font-heading text-5xl lg:text-7xl font-extrabold tracking-tightest mt-6 leading-tight mb-8">
+            {t.track.title}
+          </h2>
+          <p className="font-sans text-muted-foreground/80 text-xl leading-relaxed mb-10">
             {t.track.desc}
           </p>
+          <div className={`grid grid-cols-2 gap-8 ${lang === 'ar' ? 'text-right' : ''}`}>
+            <div className="premium-card p-6 rounded-3xl">
+              <div className="font-heading text-4xl lg:text-5xl font-black text-blue-500 mb-2">10%</div>
+              <div className="font-sans text-sm font-bold text-muted-foreground uppercase">{lang === 'en' ? 'Market Share' : 'الحصة السوقية'}</div>
+            </div>
+            <div className="premium-card p-6 rounded-3xl">
+              <div className="font-heading text-4xl lg:text-5xl font-black text-emerald-500 mb-2">18</div>
+              <div className="font-sans text-sm font-bold text-muted-foreground uppercase">{lang === 'en' ? 'Branches' : 'فروع'}</div>
+            </div>
+          </div>
         </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {numbers.map((n, i) => (
-            <motion.div
-              key={n.label}
-              className="premium-card p-10 rounded-[2.5rem] group border border-border/40 hover:bg-secondary/40 transition-all duration-500"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: i * 0.05 }}
-              viewport={{ once: true }}
-              data-hover
-            >
-              <div className={`flex justify-between items-center mb-10 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                <div className="w-16 h-16 rounded-[1.25rem] bg-secondary flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white group-hover:rotate-12 transition-all duration-700 shadow-xl group-hover:shadow-blue-500/30">
-                  <n.icon className="w-8 h-8" />
-                </div>
-              </div>
-              <div className="font-heading text-4xl lg:text-5xl font-black mb-2 tracking-tight group-hover:text-blue-500 transition-colors duration-500">{n.value}</div>
-              <div className="font-sans text-muted-foreground font-bold text-lg">{n.label}</div>
-            </motion.div>
-          ))}
-        </div>
+        
+        <motion.div
+          className="lg:w-1/2 w-full relative"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="aspect-square lg:aspect-[4/5] rounded-[3rem] overflow-hidden relative border border-border/50 group">
+             <img src="/images/mubasher_trade.jpeg" alt="Mubasher Trade" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+             <div className="absolute inset-0 grid-overlay opacity-30 mix-blend-overlay" />
+          </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -636,8 +637,22 @@ function Team({ t, lang }: { t: any, lang: string }) {
           <h2 className="font-heading text-5xl lg:text-8xl font-extrabold tracking-tightest mt-6 leading-none">{t.team.title}</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-4xl mx-auto">
-          {leaders.map((p, i) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-6xl mx-auto items-center">
+          <motion.div
+            className={`lg:col-span-1 ${lang === 'ar' ? 'order-last' : ''}`}
+            initial={{ opacity: 0, x: lang === 'en' ? -40 : 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="aspect-[4/5] rounded-[3rem] overflow-hidden relative border border-border/50">
+              <img src="/images/governance.jpeg" alt="Governance" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+              <div className="absolute inset-0 grid-overlay opacity-30 mix-blend-overlay" />
+            </div>
+          </motion.div>
+          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-10">
+            {leaders.map((p, i) => (
             <motion.div
               key={p.name}
               className="group relative"
@@ -661,7 +676,8 @@ function Team({ t, lang }: { t: any, lang: string }) {
                 <p className="font-sans text-muted-foreground/60 text-[10px] font-black uppercase tracking-[0.3em]">{p.role}</p>
               </div>
             </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
