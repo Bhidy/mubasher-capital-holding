@@ -237,6 +237,7 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
     { name: t.nav.services, id: "services" },
     { name: t.nav.about, id: "about" },
     { name: t.nav.news, id: "news" },
+    { name: t.nav.team, id: "team" },
     { name: t.nav.contact, id: "contact" }
   ];
 
@@ -712,7 +713,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
 /* ─── Digital Platforms ─── */
 function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
   return (
-    <section className="py-24 px-6 bg-background z-10 relative overflow-hidden">
+    <section id="platforms" className="py-24 px-6 bg-background z-10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${lang === 'ar' ? 'text-right' : ''}`}>
           <motion.div
@@ -752,7 +753,7 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
 /* ─── Governance Section ─── */
 function Governance({ t, lang }: { t: any, lang: string }) {
   return (
-    <section className="py-24 px-6 bg-secondary/10 z-10 relative">
+    <section id="gov" className="py-24 px-6 bg-secondary/10 z-10 relative">
       <div className="max-w-7xl mx-auto">
         <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${lang === 'ar' ? 'text-right' : ''}`}>
           <motion.div
@@ -799,7 +800,7 @@ function Values({ t, lang }: { t: any, lang: string }) {
   ];
 
   return (
-    <section className="py-24 px-6 z-10 relative bg-background">
+    <section id="values" className="py-24 px-6 z-10 relative bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className={`mb-28 ${lang === 'ar' ? 'text-right' : ''}`}
@@ -837,6 +838,86 @@ function Values({ t, lang }: { t: any, lang: string }) {
               </motion.div>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── News Section ─── */
+function News({ t, lang }: { t: any, lang: string }) {
+  const newsItems = [
+    {
+      id: 1,
+      date: lang === 'en' ? "Oct 24, 2023" : "24 أكتوبر 2023",
+      title: lang === 'en' ? "Mubasher Capital Expands Fintech Ecosystem in the Region" : "مباشر كابيتال توسع منظومة التكنولوجيا المالية في المنطقة",
+      category: lang === 'en' ? "Innovation" : "ابتكار",
+      image: "/images/hero.jpeg"
+    },
+    {
+      id: 2,
+      date: lang === 'en' ? "Oct 12, 2023" : "12 أكتوبر 2023",
+      title: lang === 'en' ? "Global Market Outlook: Strategic Opportunities in Emerging Markets" : "توقعات الأسواق العالمية: فرص استراتيجية في الأسواق الناشئة",
+      category: lang === 'en' ? "Insights" : "رؤى",
+      image: "/images/global_markets.jpeg"
+    },
+    {
+      id: 3,
+      date: lang === 'en' ? "Sep 28, 2023" : "28 سبتمبر 2023",
+      title: lang === 'en' ? "Mubasher Capital Awarded Best Asset Management Firm 2023" : "مباشر كابيتال تحصد جائزة أفضل شركة لإدارة الأصول لعام 2023",
+      category: lang === 'en' ? "Awards" : "جوائز",
+      image: "/images/trading_floor.jpeg"
+    }
+  ];
+
+  return (
+    <section id="news" className="py-24 px-6 bg-background z-10 relative">
+      <div className="max-w-7xl mx-auto">
+        <motion.div 
+          className={`mb-20 ${lang === 'ar' ? 'text-right' : ''}`}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.nav.news}</span>
+          <h2 className="font-heading text-5xl lg:text-7xl font-extrabold tracking-tightest mt-6 text-shine interactive-shine">
+            {lang === 'en' ? "News & Insights" : "الأخبار والتحليلات"}
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {newsItems.map((item, i) => (
+            <motion.div
+              key={item.id}
+              className="group cursor-none"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: i * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-8">
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full">
+                  {item.category}
+                </div>
+              </div>
+              <div className={`space-y-4 ${lang === 'ar' ? 'text-right' : ''}`}>
+                <div className="text-muted-foreground text-sm font-bold tracking-wider">{item.date}</div>
+                <h3 className={`font-heading text-xl lg:text-2xl font-bold leading-tight group-hover:text-blue-500 transition-colors duration-500`}>
+                  {item.title}
+                </h3>
+                <div className={`flex items-center gap-2 text-blue-500 text-sm font-black tracking-widest uppercase group-hover:translate-x-2 transition-transform duration-500 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+                  {lang === 'en' ? "Read More" : "اقرأ المزيد"}
+                  <ArrowRight className={`w-4 h-4 ${lang === 'ar' ? 'rotate-180' : ''}`} />
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
@@ -965,6 +1046,7 @@ export default function Home() {
       <AboutSection t={t} lang={lang} />
       <TrackRecord t={t} lang={lang} />
       <DigitalPlatforms t={t} lang={lang} />
+      <News t={t} lang={lang} />
       <Team t={t} lang={lang} />
       <Governance t={t} lang={lang} />
       <Values t={t} lang={lang} />
