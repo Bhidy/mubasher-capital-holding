@@ -237,13 +237,27 @@
     animation: textShine 8s ease-in-out infinite alternate;
   }
 
+  .light .text-gradient-main {
+    background: linear-gradient(
+      135deg, 
+      #060c1a 0%, 
+      #1e40af 50%, 
+      #1d4ed8 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShine 8s ease-in-out infinite alternate;
+  }
+
   /* Ultra-Premium Shining Text */
   .text-shine {
     background: linear-gradient(
       110deg,
-      rgba(255,255,255,0.1) 40%,
-      rgba(255,255,255,0.9) 50%,
-      rgba(255,255,255,0.1) 60%
+      var(--foreground) 40%,
+      rgba(255,255,255,0.8) 50%,
+      var(--foreground) 60%
     );
     background-size: 200% 100%;
     -webkit-background-clip: text;
@@ -251,6 +265,19 @@
     background-clip: text;
     animation: shimmer 5s infinite linear;
     transition: filter 0.3s ease;
+  }
+
+  .light .text-shine {
+    background: linear-gradient(
+      110deg,
+      #060c1a 40%,
+      #2563eb 50%,
+      #060c1a 60%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .text-shine-blue {
@@ -267,6 +294,21 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: shimmer 6s infinite linear;
+  }
+
+  .light .text-shine-blue {
+    background: linear-gradient(
+      110deg,
+      #1e3a8a 30%,
+      #2563eb 45%,
+      #60a5fa 50%,
+      #2563eb 55%,
+      #1e40af 70%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .interactive-shine:hover {
