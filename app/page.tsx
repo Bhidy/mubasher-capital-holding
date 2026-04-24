@@ -96,9 +96,9 @@ const translations = {
     },
     platforms: {
       label: "Digital Platforms",
-      title: "Digital Strongholds for Financial Excellence",
-      desc: "Our technological infrastructure is the backbone of our leadership. We provide cutting-edge platforms including Mubasher Trade Pro, Trade Plus, and our unified Mobile App.",
-      btn: "Explore Platforms"
+      title: "Trade with Us",
+      desc: "Unlike other online trading platforms, Mubasher Trade provides you with all trading tools in one integrated application. Experience impressive features across Desktop, Web, Android, and iOS—tailored for both retail and institutional excellence.",
+      btn: "Open a Live Account"
     },
     team: {
       label: "Group Leadership",
@@ -192,9 +192,9 @@ const translations = {
     },
     platforms: {
       label: "المنصات الرقمية",
-      title: "قلاع رقمية للتميز المالي",
-      desc: "البنية التحتية التكنولوجية هي العمود الفقري لريادتنا. نقدم منصات رائدة تشمل مباشر تريد برو، تريد بلس، وتطبيق الهاتف الموحد.",
-      btn: "استكشف المنصات"
+      title: "تداول معنا",
+      desc: "على عكس منصات التداول الأخرى، توفر لك مباشر تريد جميع أدوات التداول في تطبيق واحد متكامل. استمتع بميزات مبهرة عبر منصات الكمبيوتر والويب والأندرويد وiOS - مصممة للتميز على مستوى الأفراد والمؤسسات.",
+      btn: "افتح حساباً حقيقياً"
     },
     team: {
       label: "قيادة المجموعة",
@@ -778,7 +778,7 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
   return (
     <section id="platforms" className="py-24 px-6 bg-background z-10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${lang === 'ar' ? 'text-right' : ''}`}>
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center ${lang === 'ar' ? 'text-right' : ''}`}>
           <motion.div
             className={lang === 'ar' ? 'order-last' : ''}
             initial={{ opacity: 0, x: lang === 'en' ? -40 : 40 }}
@@ -787,24 +787,73 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
             viewport={{ once: true }}
           >
             <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.platforms.label}</span>
-            <h2 className="font-heading text-4xl lg:text-6xl font-extrabold tracking-tightest mt-6 mb-8 leading-tight text-shine interactive-shine">
+            <h2 className="font-heading text-4xl lg:text-7xl font-extrabold tracking-tightest mt-6 mb-8 leading-tight text-shine interactive-shine">
               {t.platforms.title}
             </h2>
+            <div className={`h-1 w-20 bg-blue-600 mb-8 ${lang === 'ar' ? 'mr-0 ml-auto' : ''}`} />
             <p className="font-sans text-muted-foreground/80 text-xl leading-relaxed mb-10 max-w-lg">
               {t.platforms.desc}
             </p>
-            <button className="btn-primary" style={{cursor:"none"}}>{t.platforms.btn}</button>
+            
+            <div className={`flex flex-col gap-10 ${lang === 'ar' ? 'items-end' : 'items-start'}`}>
+              <button className="btn-primary px-12 text-lg h-16 shadow-blue-500/40" style={{cursor:"none"}} data-hover>
+                {t.platforms.btn}
+              </button>
+
+              <div className={`flex flex-wrap gap-8 items-center ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+                 <div className="flex gap-4 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                    <Globe className="w-6 h-6" />
+                    <Layers className="w-6 h-6" />
+                    <Zap className="w-6 h-6" />
+                    <Shield className="w-6 h-6" />
+                 </div>
+                 <div className={`flex gap-4 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+                    <a href="#" className="h-10 lg:h-12 block hover:scale-105 transition-transform" style={{cursor:"none"}} data-hover>
+                       <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-full w-auto" />
+                    </a>
+                    <a href="#" className="h-10 lg:h-12 block hover:scale-105 transition-transform" style={{cursor:"none"}} data-hover>
+                       <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-full w-auto" />
+                    </a>
+                 </div>
+              </div>
+            </div>
           </motion.div>
+
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: lang === 'en' ? 40 : -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-square lg:aspect-auto lg:h-[600px] rounded-[3rem] overflow-hidden border border-border/50 shadow-2xl shadow-blue-500/20 relative group">
-              <img src="/images/platforms.jpeg" alt="Digital Platforms" className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 via-background/20 to-transparent" />
+            <div className="relative group">
+               <div className="absolute -inset-10 bg-blue-500/10 blur-[100px] rounded-full" />
+               
+               <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden border border-border/50 shadow-2xl shadow-blue-500/10">
+                  <img 
+                    src="/images/platforms.jpeg" 
+                    alt="Digital Platforms" 
+                    className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000" 
+                    style={{ objectPosition: 'center top' }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 via-transparent to-transparent" />
+               </div>
+
+               <motion.div 
+                 animate={{ y: [0, -20, 0] }}
+                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                 className="absolute -bottom-8 -right-8 glass p-6 rounded-3xl border-border/50 shadow-2xl hidden lg:block"
+               >
+                 <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-blue-600/20 flex items-center justify-center">
+                       <Zap className="w-6 h-6 text-blue-500" />
+                    </div>
+                    <div>
+                       <div className="text-white font-bold text-sm">Ultra-Low Latency</div>
+                       <div className="text-muted-foreground text-xs">Real-time execution</div>
+                    </div>
+                 </div>
+               </motion.div>
             </div>
           </motion.div>
         </div>
