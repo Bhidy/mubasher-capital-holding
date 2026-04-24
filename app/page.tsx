@@ -563,7 +563,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
              <div className="absolute inset-0 grid-overlay opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
              <div className={`absolute bottom-8 font-heading font-black text-3xl tracking-tighter z-10 ${lang === 'en' ? 'left-8' : 'right-8'}`}>
-                {lang === 'en' ? 'CAIRO' : 'القاهرة'}
+                {lang === 'en' ? 'EGYPT' : 'مصر'}
              </div>
           </div>
           <div className="aspect-[3/4] rounded-[3rem] bg-gradient-to-br from-emerald-500/20 via-emerald-600/10 to-transparent border border-border/50 mt-16 overflow-hidden relative group">
