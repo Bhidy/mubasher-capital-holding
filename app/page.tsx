@@ -40,13 +40,14 @@ const translations = {
       clientPortal: "Client Portal"
     },
     hero: {
-      label: "ELEVATING REGIONAL FINANCE",
-      title1: "UNIFIED",
-      title2: "INVESTMENT",
-      title3: "ECOSYSTEM",
-      desc: "Mubasher Capital Holding is the premier force in Middle Eastern financial services. We bridge global markets with local expertise, delivering institutional-grade solutions through a seamless digital ecosystem.",
-      primaryBtn: "Explore Our Ecosystem",
+      label: "Architecting the Future of Finance",
+      title1: "ARCHITECTING",
+      title2: "VISIONARY WEALTH",
+      title3: "FOR GLOBAL IMPACT",
+      desc: "Mubasher Capital Holding orchestrates a sophisticated financial ecosystem, harmonizing global market access with deep regional intelligence to empower institutional and private wealth.",
+      primaryBtn: "Explore Ecosystem",
       secondaryBtn: "Partner With Us",
+      placeholder: "Your corporate email",
       stat1: "Global Markets",
       stat2: "Monthly Visitors",
       stat3: "Trading Volume"
@@ -122,13 +123,14 @@ const translations = {
       clientPortal: "بوابة العملاء"
     },
     hero: {
-      label: "الارتقاء بالخدمات المالية الإقليمية",
-      title1: "منظومة",
-      title2: "استثمارية",
-      title3: "موحدة",
-      desc: "مباشر كابيتال القابضة هي القوة الرائدة في الخدمات المالية في الشرق الأوسط. نجمع بين الأسواق العالمية والخبرة المحلية، لنقدم حلولاً مؤسسية من خلال منظومة رقمية متكاملة وسلسة.",
+      label: "صناعة مستقبل التمويل",
+      title1: "بناء",
+      title2: "الثروات الرؤيوية",
+      title3: "لأثر عالمي مستدام",
+      desc: "تجمع مباشر كابيتال القابضة بين منظومة مالية عالمية المستوى، وتدمج الخبرة الإقليمية مع الفرص العالمية لإعادة تعريف التميز في الاستثمار المؤسسي والخاص.",
       primaryBtn: "استكشف منظومتنا",
-      secondaryBtn: "شاركنا النجاح",
+      secondaryBtn: "شراكة استراتيجية",
+      placeholder: "بريدك الإلكتروني المؤسسي",
       stat1: "أسواق عالمية",
       stat2: "زائر شهرياً",
       stat3: "حجم التداول"
