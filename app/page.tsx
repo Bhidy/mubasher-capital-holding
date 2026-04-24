@@ -257,18 +257,12 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="group flex items-center gap-3 no-underline outline-none" style={{cursor:"none"}}>
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform duration-500">
-              <span className="text-white font-bold text-xl font-heading">M</span>
-            </div>
-            <div className="flex flex-col leading-tight">
-              <span className="font-heading font-extrabold text-xl tracking-tight text-foreground uppercase">
-                MUBASHER
-              </span>
-              <span className="font-heading font-bold text-[10px] tracking-[0.4em] text-accent uppercase">
-                {lang === 'en' ? 'CAPITAL' : 'كابيتال'}
-              </span>
-            </div>
+          <a href="/" className="group flex items-center no-underline outline-none" style={{cursor:"none"}}>
+            <img 
+              src="/images/logo.png" 
+              alt="Mubasher Holding" 
+              className="h-10 md:h-12 w-auto group-hover:scale-105 transition-transform duration-500 dark:brightness-110" 
+            />
           </a>
 
           {/* Desktop Links */}
@@ -877,11 +871,12 @@ function Footer({ t, lang }: { t: any, lang: string }) {
       <div className="max-w-7xl mx-auto">
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-20 mb-28 ${lang === 'ar' ? 'lg:flex lg:flex-row-reverse lg:justify-between' : ''}`}>
           <div className="lg:col-span-2 space-y-10">
-            <a href="/" className={`flex items-center gap-3 no-underline group ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-              <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center shadow-xl shadow-blue-500/20 group-hover:scale-110 transition-transform duration-700">
-                <span className="text-white font-black text-2xl font-heading">M</span>
-              </div>
-              <span className="font-heading font-black text-3xl tracking-tightest uppercase">Mubasher<span className="text-blue-500">.</span>Capital</span>
+            <a href="/" className={`flex items-center no-underline group ${lang === 'ar' ? 'justify-end' : ''}`}>
+              <img 
+                src="/images/logo.png" 
+                alt="Mubasher Holding" 
+                className="h-14 w-auto group-hover:scale-105 transition-transform duration-700 dark:brightness-110" 
+              />
             </a>
             <p className="font-sans text-muted-foreground/80 text-xl leading-relaxed max-w-sm">
               {t.footer.desc}
