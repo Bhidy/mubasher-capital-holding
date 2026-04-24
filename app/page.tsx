@@ -43,7 +43,7 @@ const translations = {
       title1: "A FULLY INTEGRATED",
       title2: "REGIONAL",
       title3: "ECOSYSTEM",
-      desc: "Mubasher Capital Holding stands at the heart of the region's financial network. We unite expertise, innovation, and global reach to redefine the investment landscape across the Middle East and beyond.",
+      desc: "The investment arm of National Technology Group (NTG). We unite expertise, innovation, and global reach to redefine the Middle East's financial landscape.",
       primaryBtn: "Explore Our Ecosystem",
       secondaryBtn: "Partner With Us",
       stat1: "Global Markets",
@@ -73,9 +73,20 @@ const translations = {
       title: "Mubasher Trade Excellence",
       desc: "Our flagship brokerage arm, Mubasher for Securities and Bonds, pioneered digital trading in 2006 and continuously ranks among the top brokers in Egypt."
     },
+    platforms: {
+      label: "Digital Platforms",
+      title: "Digital Strongholds for Financial Excellence",
+      desc: "Our technological infrastructure is the backbone of our leadership. We provide cutting-edge platforms including Mubasher Trade Pro, Trade Plus, and our unified Mobile App.",
+      btn: "Explore Platforms"
+    },
     team: {
-      label: "Group Leadership & Governance",
+      label: "Group Leadership",
       title: "Visionary Minds"
+    },
+    gov: {
+      label: "Corporate Governance",
+      title: "Institutional Trust & Security",
+      desc: "We operate with strict adherence to the Egyptian Financial Regulatory Authority (FRA) regulations and maintain world-class digital security measures to safeguard client assets."
     },
     values: {
       label: "Our Core Values",
@@ -114,7 +125,7 @@ const translations = {
       title1: "نظام إقليمي",
       title2: "متكامل",
       title3: "وشامل",
-      desc: "تقف مباشر كابيتال القابضة في قلب الشبكة المالية للمنطقة. نحن نوحد الخبرة والابتكار والانتشار العالمي لإعادة رسم ملامح المشهد الاستثماري في الشرق الأوسط وما وراءه.",
+      desc: "الذراع الاستثماري للمجموعة الوطنية للتقنية (NTG). نحن نوحد الخبرة والابتكار والانتشار العالمي لإعادة رسم ملامح المشهد الاستثماري في الشرق الأوسط.",
       primaryBtn: "استكشف منظومتنا",
       secondaryBtn: "شاركنا النجاح",
       stat1: "أسواق عالمية",
@@ -144,9 +155,20 @@ const translations = {
       title: "تميز مباشر تريد",
       desc: "ذراع الوساطة الرائد لدينا، مباشر لتداول الأوراق المالية والسندات، قادت ثورة التداول الرقمي في عام 2006 وتصنف باستمرار من بين أفضل الوسطاء في مصر."
     },
+    platforms: {
+      label: "المنصات الرقمية",
+      title: "قلاع رقمية للتميز المالي",
+      desc: "البنية التحتية التكنولوجية هي العمود الفقري لريادتنا. نقدم منصات رائدة تشمل مباشر تريد برو، تريد بلس، وتطبيق الهاتف الموحد.",
+      btn: "استكشف المنصات"
+    },
     team: {
-      label: "قيادة وحوكمة المجموعة",
+      label: "قيادة المجموعة",
       title: "عقول رائدة"
+    },
+    gov: {
+      label: "الحوكمة المؤسسية",
+      title: "الثقة المؤسسية والأمان",
+      desc: "نعمل بامتثال تام لتعليمات الهيئة العامة للرقابة المالية (FRA) ونطبق أعلى معايير الأمان الرقمي لحماية أصول العملاء."
     },
     values: {
       label: "قيمنا الأساسية",
@@ -348,11 +370,11 @@ function Hero({ t, lang }: { t: any, lang: string }) {
     <section ref={ref} className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-20 overflow-hidden noise">
       {/* Dynamic Background Elements */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 pointer-events-none z-0">
-        <img src="/images/hero.jpeg" alt="Hero Background" className="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-overlay" />
+        <img src="/images/trading_floor.jpeg" alt="Hero Background" className="absolute inset-0 w-full h-full object-cover opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
         <div className="absolute top-[10%] left-[5%] w-[700px] h-[700px] bg-blue-600/10 blur-[120px] rounded-full animate-pulse-glow" />
-        <div className="absolute bottom-[10%] right-[5%] w-[600px] h-[600px] bg-emerald-500/5 blur-[100px] rounded-full animate-pulse-glow delay-1000" />
-        <div className="absolute inset-0 grid-overlay opacity-[0.05]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_100%_at_50%_50%,transparent,var(--background))]" />
+        <div className="absolute bottom-[10%] right-[5%] w-[600px] h-[600px] bg-blue-500/5 blur-[100px] rounded-full animate-pulse-glow delay-1000" />
+        <div className="absolute inset-0 grid-overlay opacity-10" />
       </motion.div>
 
       <div className="relative z-10 max-w-7xl mx-auto text-center">
@@ -544,7 +566,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
           viewport={{ once: true }}
         >
           <div className="aspect-[3/4] rounded-[3rem] bg-gradient-to-br from-blue-600/20 via-blue-700/10 to-transparent border border-border/50 overflow-hidden relative group">
-             <img src="/images/cairo.jpeg" alt="Cairo" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 mix-blend-overlay" />
+             <img src="/images/cairo.jpeg" alt="Cairo" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700" />
              <div className="absolute inset-0 grid-overlay opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
              <div className={`absolute bottom-8 font-heading font-black text-3xl tracking-tighter z-10 ${lang === 'en' ? 'left-8' : 'right-8'}`}>
@@ -552,7 +574,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
              </div>
           </div>
           <div className="aspect-[3/4] rounded-[3rem] bg-gradient-to-br from-emerald-500/20 via-emerald-600/10 to-transparent border border-border/50 mt-16 overflow-hidden relative group">
-             <img src="/images/regional.png" alt="Regional" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 mix-blend-overlay" />
+             <img src="/images/regional.png" alt="Regional" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700" />
              <div className="absolute inset-0 grid-overlay opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
              <div className={`absolute bottom-8 font-heading font-black text-3xl tracking-tighter z-10 ${lang === 'en' ? 'left-8' : 'right-8'}`}>
@@ -619,8 +641,8 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
 /* ─── Team Section ─── */
 function Team({ t, lang }: { t: any, lang: string }) {
   const leaders = [
-    { name: lang === 'en' ? "M. Rashid Al-Ballaa" : "م. راشد البلاع", role: lang === 'en' ? "Founder & Chairman" : "المؤسس ورئيس مجلس الإدارة", id: 1 },
-    { name: lang === 'en' ? "Hany Hamdy" : "هاني حمدي", role: lang === 'en' ? "Managing Director" : "العضو المنتدب", id: 2 },
+    { name: lang === 'en' ? "M. Rashid Al-Ballaa" : "م. راشد البلاع", role: lang === 'en' ? "Founder & Chairman" : "المؤسس ورئيس مجلس الإدارة", image: "/images/al_ballaa.jpeg" },
+    { name: lang === 'en' ? "Hany Hamdy" : "هاني حمدي", role: lang === 'en' ? "Managing Director" : "العضو المنتدب", image: "/images/hany_hamdy.jpeg" },
   ];
 
   return (
@@ -637,47 +659,107 @@ function Team({ t, lang }: { t: any, lang: string }) {
           <h2 className="font-heading text-5xl lg:text-8xl font-extrabold tracking-tightest mt-6 leading-none">{t.team.title}</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-6xl mx-auto items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-4xl mx-auto">
+          {leaders.map((p, i) => (
           <motion.div
-            className={`lg:col-span-1 ${lang === 'ar' ? 'order-last' : ''}`}
+            key={p.name}
+            className="group relative"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: i * 0.1 }}
+            viewport={{ once: true }}
+          >
+            <div className="aspect-[4/5] rounded-[3rem] bg-gradient-to-b from-blue-600/5 to-blue-900/10 border border-border/50 overflow-hidden mb-8 group-hover:border-blue-500/50 transition-all duration-700 relative shadow-xl shadow-blue-500/5">
+              <img src={p.image} alt={p.name} className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-80" />
+              {/* Info Overlay */}
+              <div className="absolute inset-0 flex flex-col justify-end p-10 text-center translate-y-4 group-hover:translate-y-0 transition-all duration-700">
+                 <div className="font-heading font-black text-3xl mb-2 text-white">{p.name}</div>
+                 <div className="font-sans text-blue-400 text-sm font-bold tracking-widest uppercase">{p.role}</div>
+              </div>
+            </div>
+          </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Digital Platforms ─── */
+function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
+  return (
+    <section className="py-24 px-6 bg-background z-10 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${lang === 'ar' ? 'text-right' : ''}`}>
+          <motion.div
+            className={lang === 'ar' ? 'order-last' : ''}
             initial={{ opacity: 0, x: lang === 'en' ? -40 : 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="aspect-[4/5] rounded-[3rem] overflow-hidden relative border border-border/50">
-              <img src="/images/governance.jpeg" alt="Governance" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-80" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+            <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.platforms.label}</span>
+            <h2 className="font-heading text-4xl lg:text-6xl font-extrabold tracking-tightest mt-6 mb-8 leading-tight">
+              {t.platforms.title}
+            </h2>
+            <p className="font-sans text-muted-foreground/80 text-xl leading-relaxed mb-10 max-w-lg">
+              {t.platforms.desc}
+            </p>
+            <button className="btn-primary" style={{cursor:"none"}}>{t.platforms.btn}</button>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="aspect-square lg:aspect-auto lg:h-[600px] rounded-[3rem] overflow-hidden border border-border/50 shadow-2xl shadow-blue-500/20 relative group">
+              <img src="/images/platforms.jpeg" alt="Digital Platforms" className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 via-background/20 to-transparent" />
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Governance Section ─── */
+function Governance({ t, lang }: { t: any, lang: string }) {
+  return (
+    <section className="py-24 px-6 bg-secondary/10 z-10 relative">
+      <div className="max-w-7xl mx-auto">
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${lang === 'ar' ? 'text-right' : ''}`}>
+          <motion.div
+            className={lang === 'ar' ? 'order-first' : 'order-last'}
+            initial={{ opacity: 0, x: lang === 'en' ? 40 : -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.gov.label}</span>
+            <h2 className="font-heading text-4xl lg:text-6xl font-extrabold tracking-tightest mt-6 mb-8 leading-tight">
+              {t.gov.title}
+            </h2>
+            <p className="font-sans text-muted-foreground/80 text-xl leading-relaxed max-w-lg">
+              {t.gov.desc}
+            </p>
+          </motion.div>
+          <motion.div
+            className={lang === 'ar' ? 'order-last' : 'order-first'}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <div className="aspect-[4/3] rounded-[3rem] overflow-hidden border border-border/50 shadow-2xl relative group">
+              <img src="/images/governance.jpeg" alt="Governance" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-all duration-1000" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
               <div className="absolute inset-0 grid-overlay opacity-30 mix-blend-overlay" />
             </div>
           </motion.div>
-          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-10">
-            {leaders.map((p, i) => (
-            <motion.div
-              key={p.name}
-              className="group relative"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: i * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="aspect-[4/5] rounded-[3rem] bg-gradient-to-b from-blue-600/5 to-blue-900/10 border border-border/50 overflow-hidden mb-8 group-hover:border-blue-500/50 transition-all duration-700 relative">
-                <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity duration-700">
-                   <Users className="w-24 h-24 text-blue-500 group-hover:scale-110 transition-transform duration-1000" />
-                </div>
-                {/* Info Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 flex flex-col justify-end p-10 text-center translate-y-10 group-hover:translate-y-0">
-                   <div className="font-heading font-black text-2xl mb-2">{p.name}</div>
-                   <div className="font-sans text-blue-500 text-sm font-bold tracking-widest uppercase">{p.role}</div>
-                </div>
-              </div>
-              <div className="text-center group-hover:opacity-0 transition-opacity duration-500">
-                <h3 className="font-heading font-black text-2xl mb-2 tracking-tight">{p.name}</h3>
-                <p className="font-sans text-muted-foreground/60 text-[10px] font-black uppercase tracking-[0.3em]">{p.role}</p>
-              </div>
-            </motion.div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
@@ -869,7 +951,9 @@ export default function Home() {
       <Services t={t} lang={lang} />
       <AboutSection t={t} lang={lang} />
       <TrackRecord t={t} lang={lang} />
+      <DigitalPlatforms t={t} lang={lang} />
       <Team t={t} lang={lang} />
+      <Governance t={t} lang={lang} />
       <Values t={t} lang={lang} />
       <CTA t={t} lang={lang} />
       <Footer t={t} lang={lang} />
