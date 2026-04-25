@@ -775,21 +775,21 @@ function Team({ t, lang }: { t: any, lang: string }) {
 
 function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
   const enImages = [
-    "/images/app-features/unnamed (7).webp",
-    "/images/app-features/unnamed (6).webp",
-    "/images/app-features/unnamed (5).webp",
-    "/images/app-features/unnamed (4).webp",
-    "/images/app-features/unnamed (3).webp",
     "/images/app-features/unnamed (2).webp",
+    "/images/app-features/unnamed (3).webp",
+    "/images/app-features/unnamed (4).webp",
+    "/images/app-features/unnamed (5).webp",
+    "/images/app-features/unnamed (6).webp",
+    "/images/app-features/unnamed (7).webp",
   ];
 
   const arImages = [
-    "/images/app-features/ar/Gemini_Generated_Image_yhal7yyhal7yyhal.png",
-    "/images/app-features/ar/Gemini_Generated_Image_y0qqs9y0qqs9y0qq.png",
-    "/images/app-features/ar/Gemini_Generated_Image_lav2djlav2djlav2.png",
-    "/images/app-features/ar/Gemini_Generated_Image_kmff24kmff24kmff.png",
-    "/images/app-features/ar/Gemini_Generated_Image_8spnxa8spnxa8spn.png",
     "/images/app-features/ar/Gemini_Generated_Image_7a2d2v7a2d2v7a2d.png",
+    "/images/app-features/ar/Gemini_Generated_Image_8spnxa8spnxa8spn.png",
+    "/images/app-features/ar/Gemini_Generated_Image_kmff24kmff24kmff.png",
+    "/images/app-features/ar/Gemini_Generated_Image_lav2djlav2djlav2.png",
+    "/images/app-features/ar/Gemini_Generated_Image_y0qqs9y0qqs9y0qq.png",
+    "/images/app-features/ar/Gemini_Generated_Image_yhal7yyhal7yyhal.png",
   ];
 
   const images = lang === 'en' ? enImages : arImages;
