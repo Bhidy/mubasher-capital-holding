@@ -598,7 +598,7 @@ function Services({ t, lang }: { t: any, lang: string }) {
 function AboutSection({ t, lang }: { t: any, lang: string }) {
   return (
     <section id="about" className="py-16 md:py-24 px-6 bg-secondary/15 relative z-10 overflow-hidden">
-      <div className={`max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-32 ${lang === 'ar' ? 'text-right' : ''}`}>
+      <div className={`max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-32`}>
         <motion.div
           className={`w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center ${lang === 'ar' ? 'lg:text-right lg:items-end' : 'lg:text-left lg:items-start'}`}
           initial={{ opacity: 0, x: lang === 'en' ? -60 : 60 }}
@@ -804,7 +804,7 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
   return (
     <section id="platforms" className="py-16 md:py-24 px-6 bg-background z-10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center ${lang === 'ar' ? 'text-right' : ''}`}>
+        <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-24`}>
           <motion.div
             className="w-full lg:w-1/2"
             initial={{ opacity: 0, x: lang === 'en' ? -40 : 40 }}
@@ -848,7 +848,7 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative w-full lg:w-1/2"
           >
             <div className="relative group p-4 lg:p-8">
                <div className="absolute -inset-20 bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
