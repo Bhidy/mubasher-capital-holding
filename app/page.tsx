@@ -800,18 +800,16 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
                 {t.platforms.btn}
               </button>
 
-              <div className={`flex flex-wrap gap-8 items-center ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                 <div className="flex gap-4 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                    <Globe className="w-6 h-6" />
-                    <Layers className="w-6 h-6" />
-                    <Zap className="w-6 h-6" />
-                    <Shield className="w-6 h-6" />
-                 </div>
+              <div className={`flex flex-wrap gap-6 items-center ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+                 <a href="https://rubixegypt.mubashertrade.com/" target="_blank" rel="noopener noreferrer" className="btn-outline h-12 flex items-center gap-2 px-6" style={{cursor:"none"}} data-hover>
+                    <Globe className="w-5 h-5 text-blue-500" />
+                    <span className="text-sm font-bold tracking-tight">{lang === 'en' ? "Web Trading" : "تداول الويب"}</span>
+                 </a>
                  <div className={`flex gap-4 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                    <a href="#" className="h-10 lg:h-12 block hover:scale-105 transition-transform" style={{cursor:"none"}} data-hover>
+                    <a href="https://play.google.com/store/apps/details?id=com.mfs.mtrade.twsl" target="_blank" rel="noopener noreferrer" className="h-10 lg:h-12 block hover:scale-105 transition-transform" style={{cursor:"none"}} data-hover>
                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-full w-auto" />
                     </a>
-                    <a href="#" className="h-10 lg:h-12 block hover:scale-105 transition-transform" style={{cursor:"none"}} data-hover>
+                    <a href="https://apps.apple.com/eg/app/mubasher-trade-invest/id1529304774" target="_blank" rel="noopener noreferrer" className="h-10 lg:h-12 block hover:scale-105 transition-transform" style={{cursor:"none"}} data-hover>
                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-full w-auto" />
                     </a>
                  </div>
