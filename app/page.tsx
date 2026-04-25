@@ -598,9 +598,9 @@ function Services({ t, lang }: { t: any, lang: string }) {
 function AboutSection({ t, lang }: { t: any, lang: string }) {
   return (
     <section id="about" className="py-16 md:py-24 px-6 bg-secondary/15 relative z-10 overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-32">
+      <div className={`max-w-7xl mx-auto flex flex-col items-center gap-12 lg:gap-32 ${lang === 'ar' ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
         <motion.div
-          className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-start"
+          className={`w-full lg:w-1/2 flex flex-col items-center text-center ${lang === 'ar' ? 'lg:items-end lg:text-right' : 'lg:items-start lg:text-left'}`}
           initial={{ opacity: 0, x: lang === 'en' ? -60 : 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
@@ -663,9 +663,9 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
 function TrackRecord({ t, lang }: { t: any, lang: string }) {
   return (
     <section id="track" className="py-16 md:py-24 px-6 z-10 relative bg-background">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+      <div className={`max-w-7xl mx-auto flex flex-col items-center gap-12 lg:gap-24 ${lang === 'ar' ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
         <motion.div
-          className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-start"
+          className={`w-full lg:w-1/2 flex flex-col items-center text-center ${lang === 'ar' ? 'lg:items-end lg:text-right' : 'lg:items-start lg:text-left'}`}
           initial={{ opacity: 0, x: lang === 'en' ? -60 : 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
@@ -805,9 +805,9 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
   return (
     <section id="platforms" className="py-16 md:py-24 px-6 bg-background z-10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+        <div className={`flex flex-col items-center gap-12 lg:gap-24 ${lang === 'ar' ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
           <motion.div
-            className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-start"
+            className={`w-full lg:w-1/2 flex flex-col items-center text-center ${lang === 'ar' ? 'lg:items-end lg:text-right' : 'lg:items-start lg:text-left'}`}
             initial={{ opacity: 0, x: lang === 'en' ? -40 : 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -822,7 +822,7 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
               {t.platforms.desc}
             </p>
             
-            <div className="flex flex-col gap-10 items-center lg:items-start">
+            <div className={`flex flex-col gap-10 items-center ${lang === 'ar' ? 'lg:items-end' : 'lg:items-start'}`}>
               <a href="https://mubasher-trade-ekyc-fe.ext.mmd-technology.com" target="_blank" rel="noopener noreferrer" className="btn-primary px-12 text-lg h-16 shadow-xl shadow-blue-500/20 flex items-center justify-center" style={{cursor:"none"}} data-hover>
                 {t.platforms.btn}
               </a>
