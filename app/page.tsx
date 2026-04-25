@@ -775,12 +775,12 @@ function Team({ t, lang }: { t: any, lang: string }) {
 
 function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
   const images = [
-    "/images/app-features/unnamed (2).webp",
-    "/images/app-features/unnamed (3).webp",
-    "/images/app-features/unnamed (4).webp",
-    "/images/app-features/unnamed (5).webp",
-    "/images/app-features/unnamed (6).webp",
     "/images/app-features/unnamed (7).webp",
+    "/images/app-features/unnamed (6).webp",
+    "/images/app-features/unnamed (5).webp",
+    "/images/app-features/unnamed (4).webp",
+    "/images/app-features/unnamed (3).webp",
+    "/images/app-features/unnamed (2).webp",
   ];
 
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -789,7 +789,7 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
     if (scrollRef.current) {
       const { scrollLeft, clientWidth } = scrollRef.current;
       const isAr = lang === 'ar';
-      const move = direction === 'next' ? (isAr ? -clientWidth * 0.8 : clientWidth * 0.8) : (isAr ? clientWidth * 0.8 : -clientWidth * 0.8);
+      const move = direction === 'next' ? (isAr ? -clientWidth * 0.7 : clientWidth * 0.7) : (isAr ? clientWidth * 0.7 : -clientWidth * 0.7);
       scrollRef.current.scrollTo({ left: scrollLeft + move, behavior: 'smooth' });
     }
   };
@@ -861,8 +861,8 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
                  style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                >
                  {images.map((img, i) => (
-                   <div key={i} className="flex-shrink-0 w-[78%] snap-center">
-                      <div className="relative aspect-[9/19] rounded-[3.5rem] overflow-hidden border-[8px] border-foreground/5 bg-secondary/30 shadow-2xl ring-1 ring-foreground/10 group/item">
+                   <div key={i} className="flex-shrink-0 w-[70%] snap-center">
+                      <div className="relative aspect-[9/16.5] rounded-[3rem] overflow-hidden border-[8px] border-foreground/5 bg-secondary/30 shadow-2xl ring-1 ring-foreground/10 group/item">
                         <img 
                           src={img} 
                           alt={`Feature ${i+1}`} 
