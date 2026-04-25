@@ -839,21 +839,6 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
                   <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 via-transparent to-transparent" />
                </div>
 
-               <motion.div 
-                 animate={{ y: [0, -20, 0] }}
-                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                 className="absolute -bottom-8 -right-8 glass p-6 rounded-3xl border-border/50 shadow-2xl hidden lg:block"
-               >
-                 <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-600/20 flex items-center justify-center">
-                       <Zap className="w-6 h-6 text-blue-500" />
-                    </div>
-                    <div>
-                       <div className="text-white font-bold text-sm">Ultra-Low Latency</div>
-                       <div className="text-muted-foreground text-xs">Real-time execution</div>
-                    </div>
-                 </div>
-               </motion.div>
             </div>
           </motion.div>
         </div>
@@ -1049,29 +1034,31 @@ function Media({ t, lang }: { t: any, lang: string }) {
 
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const scroll = (direction: 'left' | 'right') => {
+  const scroll = (direction: 'next' | 'prev') => {
     if (containerRef.current) {
       const { scrollLeft, clientWidth } = containerRef.current;
-      const scrollTo = direction === 'left' ? scrollLeft - clientWidth / 2 : scrollLeft + clientWidth / 2;
-      containerRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+      const isAr = lang === 'ar';
+      const scrollAmount = clientWidth / 1.5;
+      const move = direction === 'next' ? (isAr ? -scrollAmount : scrollAmount) : (isAr ? scrollAmount : -scrollAmount);
+      containerRef.current.scrollTo({ left: scrollLeft + move, behavior: 'smooth' });
     }
   };
 
   return (
     <section id="media" className="py-24 px-6 relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className={`flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 ${lang === 'ar' ? 'md:flex-row-reverse text-right' : ''}`}>
-          <div>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <div className={lang === 'ar' ? 'text-right' : ''}>
             <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.media.label}</span>
             <h2 className="font-heading text-4xl lg:text-6xl font-extrabold tracking-tightest mt-6 text-shine interactive-shine">
               {t.media.title}
             </h2>
           </div>
-          <div className="flex gap-4">
-            <button onClick={() => scroll('left')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300" style={{cursor:"none"}} data-hover>
+          <div className={`flex gap-4 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+            <button onClick={() => scroll('prev')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300" style={{cursor:"none"}} data-hover>
               <ArrowRight className={`w-6 h-6 transform ${lang === 'ar' ? '' : 'rotate-180'}`} />
             </button>
-            <button onClick={() => scroll('right')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300" style={{cursor:"none"}} data-hover>
+            <button onClick={() => scroll('next')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300" style={{cursor:"none"}} data-hover>
               <ArrowRight className={`w-6 h-6 transform ${lang === 'ar' ? 'rotate-180' : ''}`} />
             </button>
           </div>
