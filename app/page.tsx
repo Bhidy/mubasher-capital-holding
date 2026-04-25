@@ -915,6 +915,27 @@ function Governance({ t, lang }: { t: any, lang: string }) {
               <img src="/images/governance.jpeg" alt="Governance" className="absolute inset-0 w-full h-full object-cover object-top opacity-80 group-hover:scale-105 transition-all duration-1000" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
               <div className="absolute inset-0 grid-overlay opacity-30 mix-blend-overlay" />
+              
+              {/* Regulatory Logos - Ultra Premium Integration */}
+              <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end pointer-events-none">
+                <motion.div 
+                  className="bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-white/50 w-24 h-24 flex items-center justify-center group-hover:scale-110 transition-transform duration-700"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                >
+                  <img src="/images/fra-logo.png" alt="FRA Logo" className="w-full h-full object-contain" />
+                </motion.div>
+                
+                <motion.div 
+                  className="bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-white/50 w-24 h-24 flex items-center justify-center group-hover:scale-110 transition-transform duration-700"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                >
+                  <img src="/images/egx-logo.png" alt="EGX Logo" className="w-full h-full object-contain" />
+                </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>
