@@ -598,15 +598,15 @@ function Services({ t, lang }: { t: any, lang: string }) {
 function AboutSection({ t, lang }: { t: any, lang: string }) {
   return (
     <section id="about" className="py-16 md:py-24 px-6 bg-secondary/15 relative z-10 overflow-hidden">
-      <div className={`max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-32`}>
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-32">
         <motion.div
-          className={`w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center ${lang === 'ar' ? 'lg:text-right lg:items-end' : 'lg:text-left lg:items-start'}`}
+          className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-start"
           initial={{ opacity: 0, x: lang === 'en' ? -60 : 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-           <span className="section-label justify-center lg:justify-start">{t.about.label}</span>
+           <span className="section-label">{t.about.label}</span>
           <h2 className={`font-heading ${lang === 'ar' ? 'text-5xl lg:text-7xl leading-snug' : 'text-5xl lg:text-7xl leading-[1.05]'} font-extrabold tracking-tightest mt-4 md:mt-8 mb-6 md:mb-10 text-shine interactive-shine`}>
             {t.about.title}
           </h2>
@@ -614,11 +614,11 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
             {t.about.desc}
           </p>
           <div className="grid grid-cols-2 gap-12 mb-10 md:mb-16 w-full">
-            <div className="space-y-3 text-center lg:text-left">
+            <div className="space-y-3 text-center lg:text-start">
               <div className="font-heading text-5xl lg:text-6xl font-black text-foreground">19Y+</div>
               <div className="font-sans text-[11px] font-black tracking-[0.3em] text-blue-500 uppercase">{t.about.stat1}</div>
             </div>
-            <div className="space-y-3 text-center lg:text-left">
+            <div className="space-y-3 text-center lg:text-start">
               <div className="font-heading text-5xl lg:text-6xl font-black text-foreground">10K+</div>
               <div className="font-sans text-[11px] font-black tracking-[0.3em] text-blue-500 uppercase">{t.about.stat2}</div>
             </div>
@@ -664,13 +664,14 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
   return (
     <section id="track" className="py-16 md:py-24 px-6 z-10 relative bg-background">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
-          className={`w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center ${lang === 'ar' ? 'lg:text-right lg:items-end' : 'lg:text-left lg:items-start'}`}
+        <motion.div
+          className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-start"
           initial={{ opacity: 0, x: lang === 'en' ? -60 : 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <span className="section-label justify-center lg:justify-start">{t.track.label}</span>
+          <span className="section-label">{t.track.label}</span>
           <h2 className="font-heading text-5xl lg:text-7xl font-extrabold tracking-tightest mt-6 leading-tight mb-8 text-shine interactive-shine">
             {t.track.title}
           </h2>
@@ -804,29 +805,29 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
   return (
     <section id="platforms" className="py-16 md:py-24 px-6 bg-background z-10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-24`}>
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
           <motion.div
-            className="w-full lg:w-1/2"
+            className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-start"
             initial={{ opacity: 0, x: lang === 'en' ? -40 : 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.platforms.label}</span>
+            <span className="section-label">{t.platforms.label}</span>
             <h2 className="font-heading text-4xl lg:text-7xl font-extrabold tracking-tightest mt-6 mb-8 leading-tight text-shine interactive-shine">
               {t.platforms.title}
             </h2>
-            <div className={`h-1.5 w-24 bg-blue-600 mb-8 ${lang === 'ar' ? 'mr-0 ml-auto' : ''}`} />
+            <div className={`h-1.5 w-24 bg-blue-600 mb-8 mx-auto lg:mx-0`} />
             <p className="font-sans text-muted-foreground/90 text-xl leading-relaxed mb-10 max-w-lg">
               {t.platforms.desc}
             </p>
             
-            <div className={`flex flex-col gap-10 items-center lg:items-start ${lang === 'ar' ? 'lg:items-end' : 'lg:items-start'}`}>
+            <div className="flex flex-col gap-10 items-center lg:items-start">
               <a href="https://mubasher-trade-ekyc-fe.ext.mmd-technology.com" target="_blank" rel="noopener noreferrer" className="btn-primary px-12 text-lg h-16 shadow-xl shadow-blue-500/20 flex items-center justify-center" style={{cursor:"none"}} data-hover>
                 {t.platforms.btn}
               </a>
 
-              <div className={`flex flex-wrap gap-6 items-center justify-center lg:justify-start ${lang === 'ar' ? 'lg:flex-row-reverse' : ''}`}>
+              <div className="flex flex-wrap gap-6 items-center justify-center lg:justify-start">
                  <a href="https://rubixegypt.mubashertrade.com/" target="_blank" rel="noopener noreferrer" className="btn-outline h-12 flex items-center gap-2 px-6 bg-background/50 hover:bg-blue-600/10" style={{cursor:"none"}} data-hover>
                     <Globe className="w-5 h-5 text-blue-500" />
                     <span className="text-sm font-bold tracking-tight">{lang === 'en' ? "Web Trading" : "تداول الويب"}</span>
@@ -899,15 +900,15 @@ function Governance({ t, lang }: { t: any, lang: string }) {
   return (
     <section id="gov" className="py-16 md:py-24 px-6 bg-secondary/10 z-10 relative">
       <div className="max-w-7xl mx-auto">
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${lang === 'ar' ? 'text-right' : ''}`}>
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
           <motion.div
-            className={`w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center ${lang === 'ar' ? 'order-first lg:text-right lg:items-end' : 'order-last lg:text-left lg:items-start'}`}
-            initial={{ opacity: 0, x: lang === 'en' ? 40 : -40 }}
+            className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-start"
+            initial={{ opacity: 0, x: lang === 'en' ? -40 : 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="section-label justify-center lg:justify-start">{t.gov.label}</span>
+            <span className="section-label">{t.gov.label}</span>
             <h2 className="font-heading text-4xl lg:text-6xl font-extrabold tracking-tightest mt-6 mb-8 leading-tight text-shine interactive-shine">
               {t.gov.title}
             </h2>
@@ -916,7 +917,7 @@ function Governance({ t, lang }: { t: any, lang: string }) {
             </p>
           </motion.div>
           <motion.div
-            className={lang === 'ar' ? 'order-last' : 'order-first'}
+            className="w-full lg:w-1/2 relative"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
