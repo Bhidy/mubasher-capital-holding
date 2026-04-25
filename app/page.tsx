@@ -639,7 +639,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
              <img src="/images/cairo.jpeg" alt="Cairo" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700" />
              <div className="absolute inset-0 grid-overlay opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-             <div className={`absolute bottom-8 font-heading font-black text-3xl tracking-tighter z-10 ${lang === 'en' ? 'left-8' : 'right-8'}`}>
+             <div className={`absolute bottom-4 md:bottom-8 font-heading font-black text-xl sm:text-2xl lg:text-3xl tracking-tighter z-10 ${lang === 'en' ? 'left-4 md:left-8' : 'right-4 md:right-8'}`}>
                 {lang === 'en' ? 'EGYPT' : 'مصر'}
              </div>
           </div>
@@ -647,7 +647,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
              <img src="/images/regional.png" alt="Regional" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700" />
              <div className="absolute inset-0 grid-overlay opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-             <div className={`absolute bottom-8 font-heading font-black text-3xl tracking-tighter z-10 ${lang === 'en' ? 'left-8' : 'right-8'}`}>
+             <div className={`absolute bottom-4 md:bottom-8 font-heading font-black text-xl sm:text-2xl lg:text-3xl tracking-tighter z-10 ${lang === 'en' ? 'left-4 md:left-8' : 'right-4 md:right-8'}`}>
                 {lang === 'en' ? 'REGIONAL' : 'إقليمي'}
              </div>
           </div>
@@ -822,12 +822,12 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
               {t.platforms.desc}
             </p>
             
-            <div className={`flex flex-col gap-10 ${lang === 'ar' ? 'items-end' : 'items-start'}`}>
+            <div className={`flex flex-col gap-10 items-center lg:items-start ${lang === 'ar' ? 'lg:items-end' : 'lg:items-start'}`}>
               <a href="https://mubasher-trade-ekyc-fe.ext.mmd-technology.com" target="_blank" rel="noopener noreferrer" className="btn-primary px-12 text-lg h-16 shadow-xl shadow-blue-500/20 flex items-center justify-center" style={{cursor:"none"}} data-hover>
                 {t.platforms.btn}
               </a>
 
-              <div className={`flex flex-wrap gap-6 items-center ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+              <div className={`flex flex-wrap gap-6 items-center justify-center lg:justify-start ${lang === 'ar' ? 'lg:flex-row-reverse' : ''}`}>
                  <a href="https://rubixegypt.mubashertrade.com/" target="_blank" rel="noopener noreferrer" className="btn-outline h-12 flex items-center gap-2 px-6 bg-background/50 hover:bg-blue-600/10" style={{cursor:"none"}} data-hover>
                     <Globe className="w-5 h-5 text-blue-500" />
                     <span className="text-sm font-bold tracking-tight">{lang === 'en' ? "Web Trading" : "تداول الويب"}</span>
