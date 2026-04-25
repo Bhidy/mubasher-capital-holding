@@ -1015,73 +1015,151 @@ function News({ t, lang }: { t: any, lang: string }) {
   const newsItems = [
     {
       id: 1,
-      date: lang === 'en' ? "Oct 24, 2023" : "24 أكتوبر 2023",
-      title: lang === 'en' ? "Mubasher Capital Expands Fintech Ecosystem in the Region" : "مباشر كابيتال توسع منظومة التكنولوجيا المالية في المنطقة",
-      category: lang === 'en' ? "Innovation" : "ابتكار",
-      image: "/images/hero.jpeg"
+      date: lang === 'en' ? "Mar 18, 2026" : "18 مارس 2026",
+      timestamp: new Date("2026-03-18"),
+      title: lang === 'en' ? "«Mubasher Dollar» achieves full initial coverage on its first day" : "«دولار مباشر» يحقق تغطية أولية كاملة في يومه الأول",
+      category: lang === 'en' ? "Expansion" : "توسع",
+      image: "/images/hero.jpeg",
+      url: "https://www.mubasher.info/news/4580354/"
     },
     {
       id: 2,
-      date: lang === 'en' ? "Oct 12, 2023" : "12 أكتوبر 2023",
-      title: lang === 'en' ? "Global Market Outlook: Strategic Opportunities in Emerging Markets" : "توقعات الأسواق العالمية: فرص استراتيجية في الأسواق الناشئة",
-      category: lang === 'en' ? "Insights" : "رؤى",
-      image: "/images/global_markets.jpeg"
+      date: lang === 'en' ? "Mar 07, 2026" : "07 مارس 2026",
+      timestamp: new Date("2026-03-07"),
+      title: lang === 'en' ? "Mubasher Capital launches \"Mubasher Dollar\" fund for fixed income" : "مباشر كابيتال تُطلق صندوق \"دولار مباشر\" للاستثمار في أدوات الدخل الثابت",
+      category: lang === 'en' ? "Investment" : "استثمار",
+      image: "/images/global_markets.jpeg",
+      url: "https://www.mubasher.info/news/4564023/"
     },
     {
       id: 3,
+      date: lang === 'en' ? "Oct 25, 2025" : "25 أكتوبر 2025",
+      timestamp: new Date("2025-10-25"),
+      title: lang === 'en' ? "Mubasher Capital launches first AI-powered investment assistant" : "\"مباشر كابيتال\" تطلق أول مساعد استثماري يعتمد على ذكاء اصطناعي حقيقي",
+      category: lang === 'en' ? "Fintech" : "تكنولوجيا مالية",
+      image: "/images/trading_floor.jpeg",
+      url: "https://www.mubasher.info/news/4513127/"
+    },
+    {
+      id: 4,
+      date: lang === 'en' ? "Jul 22, 2025" : "22 يوليو 2025",
+      timestamp: new Date("2025-07-22"),
+      title: lang === 'en' ? "Mubasher Capital receives ISO 27001 certification for information security" : "\"مباشر كابيتال\" تحصل على شهادة الأيزو 27001 العالمية لأمن المعلومات",
+      category: lang === 'en' ? "Security" : "أمن",
+      image: "/images/governance.jpeg",
+      url: "https://www.mubasher.info/news/4471687/"
+    },
+    {
+      id: 5,
+      date: lang === 'en' ? "Jan 18, 2024" : "18 يناير 2024",
+      timestamp: new Date("2024-01-18"),
+      title: lang === 'en' ? "Mubasher Capital obtains license to establish investment funds" : "\"مباشر كابيتال\" تحصل على رخصة إنشاء صناديق الاستثمار",
+      category: lang === 'en' ? "Licenses" : "تراخيص",
+      image: "/images/ecosystem.png",
+      url: "https://www.mubasher.info/news/4236876/"
+    },
+    {
+      id: 6,
+      date: lang === 'en' ? "Oct 24, 2023" : "24 أكتوبر 2023",
+      timestamp: new Date("2023-10-24"),
+      title: lang === 'en' ? "Mubasher Capital Expands Fintech Ecosystem in the Region" : "مباشر كابيتال توسع منظومة التكنولوجيا المالية في المنطقة",
+      category: lang === 'en' ? "Innovation" : "ابتكار",
+      image: "/images/hero.jpeg",
+      url: "#"
+    },
+    {
+      id: 7,
+      date: lang === 'en' ? "Oct 12, 2023" : "12 أكتوبر 2023",
+      timestamp: new Date("2023-10-12"),
+      title: lang === 'en' ? "Global Market Outlook: Strategic Opportunities in Emerging Markets" : "توقعات الأسواق العالمية: فرص استراتيجية في الأسواق الناشئة",
+      category: lang === 'en' ? "Insights" : "رؤى",
+      image: "/images/global_markets.jpeg",
+      url: "#"
+    },
+    {
+      id: 8,
       date: lang === 'en' ? "Sep 28, 2023" : "28 سبتمبر 2023",
+      timestamp: new Date("2023-09-28"),
       title: lang === 'en' ? "Mubasher Capital Awarded Best Asset Management Firm 2023" : "مباشر كابيتال تحصد جائزة أفضل شركة لإدارة الأصول لعام 2023",
       category: lang === 'en' ? "Awards" : "جوائز",
-      image: "/images/trading_floor.jpeg"
+      image: "/images/trading_floor.jpeg",
+      url: "#"
     }
-  ];
+  ].sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'next' | 'prev') => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const isAr = lang === 'ar';
+      const move = direction === 'next' ? (isAr ? -clientWidth * 0.7 : clientWidth * 0.7) : (isAr ? clientWidth * 0.7 : -clientWidth * 0.7);
+      scrollRef.current.scrollTo({ left: scrollLeft + move, behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="news" className="py-16 md:py-24 px-6 bg-background z-10 relative">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
-          className={`mb-20 ${lang === 'ar' ? 'text-right' : ''}`}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.nav.news}</span>
-          <h2 className="font-heading text-5xl lg:text-7xl font-extrabold tracking-tightest mt-6 text-shine interactive-shine">
-            {lang === 'en' ? "News & Insights" : "الأخبار والتحليلات"}
-          </h2>
-        </motion.div>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <motion.div 
+            className={lang === 'ar' ? 'text-right' : ''}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.nav.news}</span>
+            <h2 className="font-heading text-5xl lg:text-7xl font-extrabold tracking-tightest mt-6 text-shine interactive-shine">
+              {lang === 'en' ? "News & Insights" : "الأخبار والتحليلات"}
+            </h2>
+          </motion.div>
+          <div className={`flex gap-4 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+            <button onClick={() => scroll('prev')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300" style={{cursor:"none"}} data-hover>
+              <ArrowRight className={`w-6 h-6 transform ${lang === 'ar' ? '' : 'rotate-180'}`} />
+            </button>
+            <button onClick={() => scroll('next')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300" style={{cursor:"none"}} data-hover>
+              <ArrowRight className={`w-6 h-6 transform ${lang === 'ar' ? 'rotate-180' : ''}`} />
+            </button>
+          </div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div 
+          ref={scrollRef}
+          className="flex gap-8 overflow-x-auto pb-12 scrollbar-hide snap-x snap-mandatory px-4"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {newsItems.map((item, i) => (
             <motion.div
               key={item.id}
-              className="group cursor-none"
+              className="flex-shrink-0 w-[85vw] md:w-[calc(48%-1.5rem)] lg:w-[calc(31%-2rem)] snap-start group cursor-none"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-8">
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full">
-                  {item.category}
+              <a href={item.url} target={item.url !== "#" ? "_blank" : "_self"} rel="noopener noreferrer" className="block no-underline">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-8">
+                  <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full">
+                    {item.category}
+                  </div>
                 </div>
-              </div>
-              <div className={`space-y-4 ${lang === 'ar' ? 'text-right' : ''}`}>
-                <div className="text-muted-foreground text-sm font-bold tracking-wider">{item.date}</div>
-                <h3 className={`font-heading text-xl lg:text-2xl font-bold leading-tight group-hover:text-blue-500 transition-colors duration-500`}>
-                  {item.title}
-                </h3>
-                <div className={`flex items-center gap-2 text-blue-500 text-sm font-black tracking-widest uppercase group-hover:translate-x-2 transition-transform duration-500 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                  {lang === 'en' ? "Read More" : "اقرأ المزيد"}
-                  <ArrowRight className={`w-4 h-4 ${lang === 'ar' ? 'rotate-180' : ''}`} />
+                <div className={`space-y-4 ${lang === 'ar' ? 'text-right' : ''}`}>
+                  <div className="text-muted-foreground text-sm font-bold tracking-wider">{item.date}</div>
+                  <h3 className={`font-heading text-xl lg:text-2xl font-bold leading-tight group-hover:text-blue-500 transition-colors duration-500 text-foreground`}>
+                    {item.title}
+                  </h3>
+                  <div className={`flex items-center gap-2 text-blue-500 text-sm font-black tracking-widest uppercase group-hover:translate-x-2 transition-transform duration-500 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+                    {lang === 'en' ? "Read More" : "اقرأ المزيد"}
+                    <ArrowRight className={`w-4 h-4 ${lang === 'ar' ? 'rotate-180' : ''}`} />
+                  </div>
                 </div>
-              </div>
+              </a>
             </motion.div>
           ))}
         </div>
