@@ -341,7 +341,7 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
                     className="absolute flex items-center justify-center font-heading"
                   >
                     {lang === 'en' ? (
-                      <span className="text-lg font-bold leading-none">ع</span>
+                      <span className="text-lg font-bold leading-none relative -top-[1px]">ع</span>
                     ) : (
                       <span className="text-[9px] font-black tracking-widest uppercase">EN</span>
                     )}
@@ -408,7 +408,7 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
                   className="flex flex-col items-center justify-center gap-3 p-6 rounded-[2rem] bg-secondary/20 border border-border/30 hover:border-blue-500/50 transition-all duration-500 group"
                 >
                   <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
-                    {lang === 'en' ? <span className="text-xl font-bold">ع</span> : <span className="text-xs font-black uppercase">EN</span>}
+                    {lang === 'en' ? <span className="text-xl font-bold relative -top-[1px]">ع</span> : <span className="text-xs font-black uppercase">EN</span>}
                   </div>
                   <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{lang === 'en' ? 'Arabic' : 'الإنجليزية'}</span>
                 </button>
