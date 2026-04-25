@@ -340,7 +340,7 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
                   className="absolute flex items-center justify-center font-heading"
                 >
                   {lang === 'en' ? (
-                    <span className="text-lg font-bold mt-0.5">ع</span>
+                    <span className="text-lg font-bold leading-none">ع</span>
                   ) : (
                     <span className="text-[9px] font-black tracking-widest uppercase">EN</span>
                   )}
