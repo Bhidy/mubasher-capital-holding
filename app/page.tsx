@@ -1015,21 +1015,12 @@ function News({ t, lang }: { t: any, lang: string }) {
   const newsItems = [
     {
       id: 1,
-      date: lang === 'en' ? "Mar 18, 2026" : "18 مارس 2026",
-      timestamp: new Date("2026-03-18"),
-      title: lang === 'en' ? "«Mubasher Dollar» achieves full initial coverage on its first day" : "«دولار مباشر» يحقق تغطية أولية كاملة في يومه الأول",
-      category: lang === 'en' ? "Expansion" : "توسع",
+      date: lang === 'en' ? "Feb 01, 2026" : "01 فبراير 2026",
+      timestamp: new Date("2026-02-01"),
+      title: lang === 'en' ? "Mubasher Trade captures 7.1% of trading value in Egyptian Exchange in January" : "\"مباشر تداول\" تقتنص 7.1% من قيم التداول ببورصة مصر في يناير",
+      category: lang === 'en' ? "Market Share" : "حصة سوقية",
       image: "/images/hero.jpeg",
-      url: "https://www.mubasher.info/news/4580354/"
-    },
-    {
-      id: 2,
-      date: lang === 'en' ? "Mar 07, 2026" : "07 مارس 2026",
-      timestamp: new Date("2026-03-07"),
-      title: lang === 'en' ? "Mubasher Capital launches \"Mubasher Dollar\" fund for fixed income" : "مباشر كابيتال تُطلق صندوق \"دولار مباشر\" للاستثمار في أدوات الدخل الثابت",
-      category: lang === 'en' ? "Investment" : "استثمار",
-      image: "/images/global_markets.jpeg",
-      url: "https://www.mubasher.info/news/4564023/"
+      url: "https://www.mubasher.info/news/4554341/"
     },
     {
       id: 3,
