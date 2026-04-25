@@ -324,34 +324,36 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
 
           {/* Actions */}
           <div className="flex items-center gap-4">
-            <button 
-              onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
-              className="relative w-9 h-9 rounded-full border border-border/50 bg-secondary/50 backdrop-blur-md flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-border transition-all duration-300 group overflow-hidden"
-              style={{cursor:"none"}}
-              data-hover
-            >
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={lang}
-                  initial={{ y: 15, opacity: 0, rotate: -10 }}
-                  animate={{ y: 0, opacity: 1, rotate: 0 }}
-                  exit={{ y: -15, opacity: 0, rotate: 10 }}
-                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute flex items-center justify-center font-heading"
-                >
-                  {lang === 'en' ? (
-                    <span className="text-lg font-bold leading-none">ع</span>
-                  ) : (
-                    <span className="text-[9px] font-black tracking-widest uppercase">EN</span>
-                  )}
-                </motion.span>
-              </AnimatePresence>
-              <span className="sr-only">Toggle Language</span>
-            </button>
-            <ThemeToggle />
-            <a href="https://rubixegypt.mubashertrade.com" target="_blank" rel="noopener noreferrer" className="btn-primary hidden md:inline-flex text-[10px] uppercase font-bold tracking-[0.2em] h-11 px-8" style={{cursor:"none"}}>
-              {t.nav.clientPortal}
-            </a>
+            <div className="hidden lg:flex items-center gap-4">
+              <button 
+                onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
+                className="relative w-9 h-9 rounded-full border border-border/50 bg-secondary/50 backdrop-blur-md flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-border transition-all duration-300 group overflow-hidden"
+                style={{cursor:"none"}}
+                data-hover
+              >
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={lang}
+                    initial={{ y: 15, opacity: 0, rotate: -10 }}
+                    animate={{ y: 0, opacity: 1, rotate: 0 }}
+                    exit={{ y: -15, opacity: 0, rotate: 10 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    className="absolute flex items-center justify-center font-heading"
+                  >
+                    {lang === 'en' ? (
+                      <span className="text-lg font-bold leading-none">ع</span>
+                    ) : (
+                      <span className="text-[9px] font-black tracking-widest uppercase">EN</span>
+                    )}
+                  </motion.span>
+                </AnimatePresence>
+                <span className="sr-only">Toggle Language</span>
+              </button>
+              <ThemeToggle />
+              <a href="https://rubixegypt.mubashertrade.com" target="_blank" rel="noopener noreferrer" className="btn-primary text-[10px] uppercase font-bold tracking-[0.2em] h-11 px-8" style={{cursor:"none"}}>
+                {t.nav.clientPortal}
+              </a>
+            </div>
             <button
               onClick={() => setMenuOpen(v => !v)}
               className="lg:hidden p-2.5 rounded-xl border border-border/50 bg-secondary/30 text-muted-foreground hover:text-foreground transition-all duration-300"
@@ -399,17 +401,27 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
                 </motion.a>
               ))}
             </div>
-            <div className="mt-auto space-y-4">
-              <a href="https://rubixegypt.mubashertrade.com" target="_blank" rel="noopener noreferrer" className="btn-primary w-full py-5 text-center text-lg font-bold">
+            <div className="mt-auto pt-10 border-t border-border/30 space-y-6">
+              <div className="grid grid-cols-2 gap-4">
+                <button 
+                  onClick={() => { setLang(lang === 'en' ? 'ar' : 'en'); setMenuOpen(false); }}
+                  className="flex flex-col items-center justify-center gap-3 p-6 rounded-[2rem] bg-secondary/20 border border-border/30 hover:border-blue-500/50 transition-all duration-500 group"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
+                    {lang === 'en' ? <span className="text-xl font-bold">ع</span> : <span className="text-xs font-black uppercase">EN</span>}
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{lang === 'en' ? 'Arabic' : 'الإنجليزية'}</span>
+                </button>
+                <div className="flex flex-col items-center justify-center gap-3 p-6 rounded-[2rem] bg-secondary/20 border border-border/30 hover:border-blue-500/50 transition-all duration-500 group">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
+                    <ThemeToggle />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{lang === 'en' ? 'Appearance' : 'المظهر'}</span>
+                </div>
+              </div>
+              <a href="https://rubixegypt.mubashertrade.com" target="_blank" rel="noopener noreferrer" className="btn-primary w-full py-5 text-center text-lg font-bold rounded-[2rem] shadow-xl shadow-blue-500/10">
                 {t.nav.clientPortal}
               </a>
-              <button 
-                onClick={() => { setLang(lang === 'en' ? 'ar' : 'en'); setMenuOpen(false); }}
-                className="w-full py-4 border border-border rounded-2xl font-bold flex items-center justify-center gap-3"
-              >
-                <Languages className="w-5 h-5" />
-                {lang === 'en' ? 'العربية' : 'English'}
-              </button>
             </div>
           </motion.div>
         )}
