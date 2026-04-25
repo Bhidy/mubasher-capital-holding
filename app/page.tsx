@@ -789,7 +789,7 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
     if (scrollRef.current) {
       const { scrollLeft, clientWidth } = scrollRef.current;
       const isAr = lang === 'ar';
-      const move = direction === 'next' ? (isAr ? -clientWidth : clientWidth) : (isAr ? clientWidth : -clientWidth);
+      const move = direction === 'next' ? (isAr ? -clientWidth * 0.8 : clientWidth * 0.8) : (isAr ? clientWidth * 0.8 : -clientWidth * 0.8);
       scrollRef.current.scrollTo({ left: scrollLeft + move, behavior: 'smooth' });
     }
   };
@@ -809,27 +809,27 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
             <h2 className="font-heading text-4xl lg:text-7xl font-extrabold tracking-tightest mt-6 mb-8 leading-tight text-shine interactive-shine">
               {t.platforms.title}
             </h2>
-            <div className={`h-1 w-20 bg-blue-600 mb-8 ${lang === 'ar' ? 'mr-0 ml-auto' : ''}`} />
-            <p className="font-sans text-muted-foreground/80 text-xl leading-relaxed mb-10 max-w-lg">
+            <div className={`h-1.5 w-24 bg-blue-600 mb-8 ${lang === 'ar' ? 'mr-0 ml-auto' : ''}`} />
+            <p className="font-sans text-muted-foreground/90 text-xl leading-relaxed mb-10 max-w-lg">
               {t.platforms.desc}
             </p>
             
             <div className={`flex flex-col gap-10 ${lang === 'ar' ? 'items-end' : 'items-start'}`}>
-              <button className="btn-primary px-12 text-lg h-16 shadow-blue-500/40" style={{cursor:"none"}} data-hover>
+              <button className="btn-primary px-12 text-lg h-16 shadow-xl shadow-blue-500/20" style={{cursor:"none"}} data-hover>
                 {t.platforms.btn}
               </button>
 
               <div className={`flex flex-wrap gap-6 items-center ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                 <a href="https://rubixegypt.mubashertrade.com/" target="_blank" rel="noopener noreferrer" className="btn-outline h-12 flex items-center gap-2 px-6" style={{cursor:"none"}} data-hover>
+                 <a href="https://rubixegypt.mubashertrade.com/" target="_blank" rel="noopener noreferrer" className="btn-outline h-12 flex items-center gap-2 px-6 bg-background/50 hover:bg-blue-600/10" style={{cursor:"none"}} data-hover>
                     <Globe className="w-5 h-5 text-blue-500" />
                     <span className="text-sm font-bold tracking-tight">{lang === 'en' ? "Web Trading" : "تداول الويب"}</span>
                  </a>
                  <div className={`flex gap-4 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-                    <a href="https://play.google.com/store/apps/details?id=com.mfs.mtrade.twsl" target="_blank" rel="noopener noreferrer" className="h-10 lg:h-12 block hover:scale-105 transition-transform" style={{cursor:"none"}} data-hover>
-                       <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-full w-auto" />
+                    <a href="https://play.google.com/store/apps/details?id=com.mfs.mtrade.twsl" target="_blank" rel="noopener noreferrer" className="h-10 lg:h-12 block hover:scale-110 transition-all duration-300 active:scale-95" style={{cursor:"none"}} data-hover>
+                       <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-full w-auto drop-shadow-lg" />
                     </a>
-                    <a href="https://apps.apple.com/eg/app/mubasher-trade-invest/id1529304774" target="_blank" rel="noopener noreferrer" className="h-10 lg:h-12 block hover:scale-105 transition-transform" style={{cursor:"none"}} data-hover>
-                       <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-full w-auto" />
+                    <a href="https://apps.apple.com/eg/app/mubasher-trade-invest/id1529304774" target="_blank" rel="noopener noreferrer" className="h-10 lg:h-12 block hover:scale-110 transition-all duration-300 active:scale-95" style={{cursor:"none"}} data-hover>
+                       <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-full w-auto drop-shadow-lg" />
                     </a>
                  </div>
               </div>
@@ -837,44 +837,47 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: lang === 'en' ? 40 : -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative group">
-               {/* Decorative background glow */}
-               <div className="absolute -inset-10 bg-blue-500/10 blur-[100px] rounded-full" />
+            <div className="relative group p-4 lg:p-8">
+               <div className="absolute -inset-20 bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
                
-               {/* Scroll Buttons */}
-               <div className={`absolute top-1/2 -translate-y-1/2 -left-6 lg:-left-12 -right-6 lg:-right-12 flex justify-between items-center z-20 pointer-events-none`}>
-                  <button onClick={() => scroll('prev')} className="w-12 lg:w-14 h-12 lg:h-14 rounded-full glass border border-border/50 flex items-center justify-center text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 pointer-events-auto shadow-2xl" style={{cursor:"none"}} data-hover>
-                    <ArrowRight className="w-6 h-6 transform rotate-180" />
+               <div className={`absolute top-1/2 -translate-y-1/2 -left-2 lg:-left-6 -right-2 lg:-right-6 flex justify-between items-center z-30 pointer-events-none`}>
+                  <button onClick={() => scroll('prev')} className="w-12 lg:w-16 h-12 lg:h-16 rounded-full bg-background/80 backdrop-blur-xl border border-foreground/10 flex items-center justify-center text-foreground hover:bg-blue-600 hover:text-white hover:border-blue-600 shadow-2xl transition-all duration-500 pointer-events-auto group/btn" style={{cursor:"none"}} data-hover>
+                    <ArrowRight className="w-6 h-6 lg:w-8 lg:h-8 transform rotate-180 group-hover/btn:-translate-x-1 transition-transform" />
                   </button>
-                  <button onClick={() => scroll('next')} className="w-12 lg:w-14 h-12 lg:h-14 rounded-full glass border border-border/50 flex items-center justify-center text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 pointer-events-auto shadow-2xl" style={{cursor:"none"}} data-hover>
-                    <ArrowRight className="w-6 h-6" />
+                  <button onClick={() => scroll('next')} className="w-12 lg:w-16 h-12 lg:h-16 rounded-full bg-background/80 backdrop-blur-xl border border-foreground/10 flex items-center justify-center text-foreground hover:bg-blue-600 hover:text-white hover:border-blue-600 shadow-2xl transition-all duration-500 pointer-events-auto group/btn" style={{cursor:"none"}} data-hover>
+                    <ArrowRight className="w-6 h-6 lg:w-8 lg:h-8 group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                </div>
 
-               {/* Feature Gallery Container */}
                <div 
                  ref={scrollRef}
-                 className="flex gap-6 overflow-x-auto pb-12 scrollbar-hide snap-x snap-mandatory"
+                 className="flex gap-8 overflow-x-auto pb-12 scrollbar-hide snap-x snap-mandatory px-4"
                  style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                >
                  {images.map((img, i) => (
-                   <div key={i} className="flex-shrink-0 w-[80%] snap-start">
-                      <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-border/50 shadow-2xl shadow-blue-500/10 bg-secondary/20">
+                   <div key={i} className="flex-shrink-0 w-[78%] snap-center">
+                      <div className="relative aspect-[9/19] rounded-[3.5rem] overflow-hidden border-[8px] border-foreground/5 bg-secondary/30 shadow-2xl ring-1 ring-foreground/10 group/item">
                         <img 
                           src={img} 
                           alt={`Feature ${i+1}`} 
-                          className="absolute inset-0 w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-1000" 
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover/item:scale-105" 
                         />
-                        <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 via-transparent to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none" />
                       </div>
                    </div>
                  ))}
+               </div>
+
+               <div className="flex justify-center gap-2 mt-4">
+                  {images.map((_, i) => (
+                    <div key={i} className="w-1.5 h-1.5 rounded-full bg-foreground/10" />
+                  ))}
                </div>
             </div>
           </motion.div>
