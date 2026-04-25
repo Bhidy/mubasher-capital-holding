@@ -774,9 +774,10 @@ function Team({ t, lang }: { t: any, lang: string }) {
 }
 
 function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
-  const images = Array.from({ length: 6 }, (_, i) => 
-    `/images/app-features/${lang === 'ar' ? `ar/${i + 1}.png` : `${i + 1}.webp`}`
-  );
+  const images = Array.from({ length: 6 }, (_, i) => {
+    const num = lang === 'en' ? 6 - i : i + 1;
+    return `/images/app-features/${lang === 'ar' ? `ar/${num}.png` : `${num}.webp`}`;
+  });
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
