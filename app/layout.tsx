@@ -29,7 +29,7 @@ const alexandria = Alexandria({
 });
 
 export const metadata: Metadata = {
-  title: "Mubasher Capital Holding | Ultra-Premium Corporate Excellence",
+  title: "Mubasher Capital Holding",
   description: "Mubasher Capital Holding — a premier global financial holding group delivering world-class investment strategies, institutional advisory, and market intelligence.",
   keywords: "capital holding, investment, corporate finance, global markets, institutional advisory",
   icons: { icon: "/favicon.ico" },
