@@ -438,7 +438,7 @@ function Hero({ t, lang }: { t: any, lang: string }) {
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-20 overflow-hidden noise">
+    <section ref={ref} className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-12 md:pb-20 overflow-hidden noise">
       {/* Premium Minimalist Mesh Background */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute inset-0 bg-background" />
@@ -461,7 +461,7 @@ function Hero({ t, lang }: { t: any, lang: string }) {
           <div className="h-[1px] w-12 bg-blue-500/50" />
         </motion.div>
 
-        <div className="mb-10">
+        <div className="mb-6 md:mb-10">
           <motion.h1
             className={`font-heading ${lang === 'ar' ? 'text-[clamp(3rem,10vw,7.5rem)] leading-[1.15]' : 'text-[clamp(3.5rem,11vw,9rem)] leading-[0.9]'} font-extrabold tracking-tightest text-gradient-main`}
             initial={{ y: 100, opacity: 0 }}
@@ -475,7 +475,7 @@ function Hero({ t, lang }: { t: any, lang: string }) {
         </div>
 
         <motion.p
-          className="font-sans text-[clamp(1.1rem,2.5vw,1.5rem)] text-muted-foreground/80 max-w-3xl mx-auto leading-relaxed mb-16 px-4"
+          className="font-sans text-[clamp(1.1rem,2.5vw,1.5rem)] text-muted-foreground/80 max-w-3xl mx-auto leading-relaxed mb-10 md:mb-16 px-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -499,7 +499,7 @@ function Hero({ t, lang }: { t: any, lang: string }) {
 
         {/* Stats Grid - Now properly spaced and in flow */}
         <motion.div 
-          className="mt-28 grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-24 border-t border-border/30 pt-16"
+          className="mt-12 md:mt-28 grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-24 border-t border-border/30 pt-12 md:pt-16"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
@@ -534,13 +534,13 @@ function Services({ t, lang }: { t: any, lang: string }) {
   ];
 
   return (
-    <section id="services" className="py-24 px-6 bg-background relative z-10 overflow-hidden">
+    <section id="services" className="py-16 md:py-24 px-6 bg-background relative z-10 overflow-hidden">
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none mix-blend-overlay">
         <img src="/images/ecosystem.png" alt="Ecosystem" className="w-full h-full object-cover" />
       </div>
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
-          className="mb-24 text-center max-w-4xl mx-auto"
+          className="mb-12 md:mb-24 text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -597,23 +597,23 @@ function Services({ t, lang }: { t: any, lang: string }) {
 /* ─── About Section ─── */
 function AboutSection({ t, lang }: { t: any, lang: string }) {
   return (
-    <section id="about" className="py-24 px-6 bg-secondary/15 relative z-10 overflow-hidden">
-      <div className={`max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-24 lg:gap-32 ${lang === 'ar' ? 'lg:flex-row-reverse text-right' : ''}`}>
+    <section id="about" className="py-16 md:py-24 px-6 bg-secondary/15 relative z-10 overflow-hidden">
+      <div className={`max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-32 ${lang === 'ar' ? 'lg:flex-row-reverse text-right' : ''}`}>
         <motion.div
-          className="lg:w-1/2"
+          className="w-full lg:w-1/2"
           initial={{ opacity: 0, x: lang === 'en' ? -60 : 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
           <span className={`section-label ${lang === 'ar' ? 'justify-end' : ''}`}>{t.about.label}</span>
-          <h2 className={`font-heading ${lang === 'ar' ? 'text-5xl lg:text-7xl leading-snug' : 'text-5xl lg:text-7xl leading-[1.05]'} font-extrabold tracking-tightest mt-8 mb-10 text-shine interactive-shine`}>
+          <h2 className={`font-heading ${lang === 'ar' ? 'text-5xl lg:text-7xl leading-snug' : 'text-5xl lg:text-7xl leading-[1.05]'} font-extrabold tracking-tightest mt-4 md:mt-8 mb-6 md:mb-10 text-shine interactive-shine`}>
             {t.about.title}
           </h2>
           <p className="font-sans text-muted-foreground/90 text-xl leading-relaxed mb-12">
             {t.about.desc}
           </p>
-          <div className="grid grid-cols-2 gap-12 mb-16">
+          <div className="grid grid-cols-2 gap-12 mb-10 md:mb-16">
             <div className="space-y-3">
               <div className="font-heading text-5xl lg:text-6xl font-black text-foreground">19Y+</div>
               <div className="font-sans text-[11px] font-black tracking-[0.3em] text-blue-500 uppercase">{t.about.stat1}</div>
@@ -629,7 +629,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
         </motion.div>
 
         <motion.div
-          className="lg:w-1/2 grid grid-cols-2 gap-6 relative"
+          className="w-full lg:w-1/2 grid grid-cols-2 gap-6 relative"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
@@ -643,7 +643,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
                 {lang === 'en' ? 'EGYPT' : 'مصر'}
              </div>
           </div>
-          <div className="aspect-[3/4] rounded-[3rem] bg-gradient-to-br from-emerald-500/20 via-emerald-600/10 to-transparent border border-border/50 mt-16 overflow-hidden relative group">
+          <div className="aspect-[3/4] rounded-[3rem] bg-gradient-to-br from-emerald-500/20 via-emerald-600/10 to-transparent border border-border/50 mt-8 md:mt-16 overflow-hidden relative group">
              <img src="/images/regional.png" alt="Regional" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700" />
              <div className="absolute inset-0 grid-overlay opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
@@ -662,10 +662,10 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
 /* ─── Track Record ─── */
 function TrackRecord({ t, lang }: { t: any, lang: string }) {
   return (
-    <section id="track" className="py-24 px-6 z-10 relative bg-background">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+    <section id="track" className="py-16 md:py-24 px-6 z-10 relative bg-background">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
         <motion.div
-          className={`lg:w-1/2 ${lang === 'ar' ? 'order-last text-right' : ''}`}
+          className={`w-full lg:w-1/2 ${lang === 'ar' ? 'order-last text-right' : ''}`}
           initial={{ opacity: 0, x: lang === 'en' ? -60 : 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
@@ -691,7 +691,7 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
         </motion.div>
         
         <motion.div
-          className="lg:w-1/2 w-full relative"
+          className="w-full lg:w-1/2 relative"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
@@ -736,10 +736,10 @@ function Team({ t, lang }: { t: any, lang: string }) {
   ];
 
   return (
-    <section id="team" className="py-24 px-6 bg-secondary/10 z-10 relative">
+    <section id="team" className="py-16 md:py-24 px-6 bg-secondary/10 z-10 relative">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          className="text-center mb-24 max-w-3xl mx-auto"
+          className="text-center mb-12 md:mb-24 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -803,9 +803,9 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
   };
 
   return (
-    <section id="platforms" className="py-24 px-6 bg-background z-10 relative overflow-hidden">
+    <section id="platforms" className="py-16 md:py-24 px-6 bg-background z-10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center ${lang === 'ar' ? 'text-right' : ''}`}>
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center ${lang === 'ar' ? 'text-right' : ''}`}>
           <motion.div
             className={lang === 'ar' ? 'order-last' : ''}
             initial={{ opacity: 0, x: lang === 'en' ? -40 : 40 }}
@@ -898,9 +898,9 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
 /* ─── Governance Section ─── */
 function Governance({ t, lang }: { t: any, lang: string }) {
   return (
-    <section id="gov" className="py-24 px-6 bg-secondary/10 z-10 relative">
+    <section id="gov" className="py-16 md:py-24 px-6 bg-secondary/10 z-10 relative">
       <div className="max-w-7xl mx-auto">
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${lang === 'ar' ? 'text-right' : ''}`}>
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${lang === 'ar' ? 'text-right' : ''}`}>
           <motion.div
             className={lang === 'ar' ? 'order-first' : 'order-last'}
             initial={{ opacity: 0, x: lang === 'en' ? 40 : -40 }}
@@ -966,10 +966,10 @@ function Values({ t, lang }: { t: any, lang: string }) {
   ];
 
   return (
-    <section id="values" className="py-24 px-6 z-10 relative bg-background">
+    <section id="values" className="py-16 md:py-24 px-6 z-10 relative bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          className={`mb-28 ${lang === 'ar' ? 'text-right' : ''}`}
+          className={`mb-12 md:mb-28 ${lang === 'ar' ? 'text-right' : ''}`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -1037,7 +1037,7 @@ function News({ t, lang }: { t: any, lang: string }) {
   ];
 
   return (
-    <section id="news" className="py-24 px-6 bg-background z-10 relative">
+    <section id="news" className="py-16 md:py-24 px-6 bg-background z-10 relative">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           className={`mb-20 ${lang === 'ar' ? 'text-right' : ''}`}
@@ -1114,7 +1114,7 @@ function Media({ t, lang }: { t: any, lang: string }) {
   };
 
   return (
-    <section id="media" className="py-24 px-6 relative z-10 overflow-hidden">
+    <section id="media" className="py-16 md:py-24 px-6 relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div className={lang === 'ar' ? 'text-right' : ''}>
@@ -1171,7 +1171,7 @@ function Media({ t, lang }: { t: any, lang: string }) {
 /* ─── CTA Banner ─── */
 function CTA({ t, lang }: { t: any, lang: string }) {
   return (
-    <section id="contact" className="relative py-52 px-6 z-10 overflow-hidden bg-secondary/5">
+    <section id="contact" className="relative py-24 md:py-40 px-6 z-10 overflow-hidden bg-secondary/5">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[600px] bg-blue-600/[0.08] rounded-full blur-[160px] animate-pulse-glow" />
         <div className="absolute inset-0 grid-overlay opacity-[0.07]" />
@@ -1222,7 +1222,7 @@ function Footer({ t, lang }: { t: any, lang: string }) {
   ];
 
   return (
-    <footer className={`relative z-10 bg-background border-t border-border/50 pt-32 pb-16 px-6 ${lang === 'ar' ? 'text-right' : ''}`}>
+    <footer className={`relative z-10 bg-background border-t border-border/50 pt-20 md:pt-32 pb-12 md:pb-16 px-6 ${lang === 'ar' ? 'text-right' : ''}`}>
       <div className="max-w-7xl mx-auto">
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-20 mb-28 ${lang === 'ar' ? 'lg:flex lg:flex-row-reverse lg:justify-between' : ''}`}>
           <div className="lg:col-span-2 space-y-10">
