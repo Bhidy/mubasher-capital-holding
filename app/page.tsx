@@ -598,7 +598,7 @@ function Services({ t, lang }: { t: any, lang: string }) {
 function AboutSection({ t, lang }: { t: any, lang: string }) {
   return (
     <section id="about" className="py-16 md:py-24 px-6 bg-secondary/15 relative z-10 overflow-hidden">
-      <div className={`max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-32 ${lang === 'ar' ? 'lg:flex-row-reverse text-right' : ''}`}>
+      <div className={`max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-32 ${lang === 'ar' ? 'text-right' : ''}`}>
         <motion.div
           className={`w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center ${lang === 'ar' ? 'lg:text-right lg:items-end' : 'lg:text-left lg:items-start'}`}
           initial={{ opacity: 0, x: lang === 'en' ? -60 : 60 }}
@@ -664,8 +664,7 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
   return (
     <section id="track" className="py-16 md:py-24 px-6 z-10 relative bg-background">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
-        <motion.div
-          className={`w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center ${lang === 'ar' ? 'order-last lg:text-right lg:items-end' : 'lg:text-left lg:items-start'}`}
+          className={`w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center ${lang === 'ar' ? 'lg:text-right lg:items-end' : 'lg:text-left lg:items-start'}`}
           initial={{ opacity: 0, x: lang === 'en' ? -60 : 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
@@ -807,7 +806,7 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
       <div className="max-w-7xl mx-auto">
         <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center ${lang === 'ar' ? 'text-right' : ''}`}>
           <motion.div
-            className={lang === 'ar' ? 'order-last' : ''}
+            className="w-full lg:w-1/2"
             initial={{ opacity: 0, x: lang === 'en' ? -40 : 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
