@@ -773,8 +773,27 @@ function Team({ t, lang }: { t: any, lang: string }) {
   );
 }
 
-/* ─── Digital Platforms ─── */
 function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
+  const images = [
+    "/images/app-features/unnamed (2).webp",
+    "/images/app-features/unnamed (3).webp",
+    "/images/app-features/unnamed (4).webp",
+    "/images/app-features/unnamed (5).webp",
+    "/images/app-features/unnamed (6).webp",
+    "/images/app-features/unnamed (7).webp",
+  ];
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'next' | 'prev') => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const isAr = lang === 'ar';
+      const move = direction === 'next' ? (isAr ? -clientWidth : clientWidth) : (isAr ? clientWidth : -clientWidth);
+      scrollRef.current.scrollTo({ left: scrollLeft + move, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="platforms" className="py-24 px-6 bg-background z-10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -825,18 +844,38 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
             className="relative"
           >
             <div className="relative group">
+               {/* Decorative background glow */}
                <div className="absolute -inset-10 bg-blue-500/10 blur-[100px] rounded-full" />
                
-               <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden border border-border/50 shadow-2xl shadow-blue-500/10">
-                  <img 
-                    src="/images/platforms.jpeg" 
-                    alt="Digital Platforms" 
-                    className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000" 
-                    style={{ objectPosition: 'center top' }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 via-transparent to-transparent" />
+               {/* Scroll Buttons */}
+               <div className={`absolute top-1/2 -translate-y-1/2 -left-6 lg:-left-12 -right-6 lg:-right-12 flex justify-between items-center z-20 pointer-events-none`}>
+                  <button onClick={() => scroll('prev')} className="w-12 lg:w-14 h-12 lg:h-14 rounded-full glass border border-border/50 flex items-center justify-center text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 pointer-events-auto shadow-2xl" style={{cursor:"none"}} data-hover>
+                    <ArrowRight className="w-6 h-6 transform rotate-180" />
+                  </button>
+                  <button onClick={() => scroll('next')} className="w-12 lg:w-14 h-12 lg:h-14 rounded-full glass border border-border/50 flex items-center justify-center text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 pointer-events-auto shadow-2xl" style={{cursor:"none"}} data-hover>
+                    <ArrowRight className="w-6 h-6" />
+                  </button>
                </div>
 
+               {/* Feature Gallery Container */}
+               <div 
+                 ref={scrollRef}
+                 className="flex gap-6 overflow-x-auto pb-12 scrollbar-hide snap-x snap-mandatory"
+                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+               >
+                 {images.map((img, i) => (
+                   <div key={i} className="flex-shrink-0 w-[80%] snap-start">
+                      <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-border/50 shadow-2xl shadow-blue-500/10 bg-secondary/20">
+                        <img 
+                          src={img} 
+                          alt={`Feature ${i+1}`} 
+                          className="absolute inset-0 w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-1000" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 via-transparent to-transparent" />
+                      </div>
+                   </div>
+                 ))}
+               </div>
             </div>
           </motion.div>
         </div>
