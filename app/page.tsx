@@ -811,9 +811,9 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
             </p>
             
             <div className={`flex flex-col gap-10 ${lang === 'ar' ? 'items-end' : 'items-start'}`}>
-              <button className="btn-primary px-12 text-lg h-16 shadow-xl shadow-blue-500/20" style={{cursor:"none"}} data-hover>
+              <a href="https://mubasher-trade-ekyc-fe.ext.mmd-technology.com" target="_blank" rel="noopener noreferrer" className="btn-primary px-12 text-lg h-16 shadow-xl shadow-blue-500/20 flex items-center justify-center" style={{cursor:"none"}} data-hover>
                 {t.platforms.btn}
-              </button>
+              </a>
 
               <div className={`flex flex-wrap gap-6 items-center ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
                  <a href="https://rubixegypt.mubashertrade.com/" target="_blank" rel="noopener noreferrer" className="btn-outline h-12 flex items-center gap-2 px-6 bg-background/50 hover:bg-blue-600/10" style={{cursor:"none"}} data-hover>
