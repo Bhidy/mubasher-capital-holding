@@ -787,6 +787,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
 
 function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
   const images = Array.from({ length: 6 }, (_, i) => {
+    // Arabic images follow 1-6 sequence as requested
     const num = lang === 'en' ? 6 - i : i + 1;
     return `/images/app-features/${lang === 'ar' ? `ar/${num}.png` : `${num}.webp`}`;
   });
