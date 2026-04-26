@@ -600,7 +600,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
     <section id="about" className="py-16 md:py-24 px-6 bg-secondary/15 relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-32">
         <motion.div
-          className={`w-full lg:w-1/2 flex flex-col items-center text-center ${lang === 'ar' ? 'lg:items-end lg:text-right' : 'lg:items-start lg:text-left'}`}
+          className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-start"
           initial={{ opacity: 0, x: lang === 'en' ? -60 : 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
@@ -665,7 +665,7 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
     <section id="track" className="py-16 md:py-24 px-6 z-10 relative bg-background">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
         <motion.div
-          className={`w-full lg:w-1/2 flex flex-col items-center text-center ${lang === 'ar' ? 'lg:items-end lg:text-right' : 'lg:items-start lg:text-left'}`}
+          className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-start"
           initial={{ opacity: 0, x: lang === 'en' ? -60 : 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
@@ -808,7 +808,7 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
           <motion.div
-            className={`w-full lg:w-1/2 flex flex-col items-center text-center ${lang === 'ar' ? 'lg:items-end lg:text-right' : 'lg:items-start lg:text-left'}`}
+            className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-start"
             initial={{ opacity: 0, x: lang === 'en' ? -40 : 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -818,12 +818,12 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
             <h2 className="font-heading text-4xl lg:text-7xl font-extrabold tracking-tightest mt-6 mb-8 leading-tight text-shine interactive-shine">
               {t.platforms.title}
             </h2>
-            <div className={`h-1.5 w-24 bg-blue-600 mb-8 mx-auto lg:mx-0`} />
+            <div className="h-1.5 w-24 bg-blue-600 mb-8 mx-auto lg:ms-0" />
             <p className="font-sans text-muted-foreground/90 text-xl leading-relaxed mb-10 max-w-lg">
               {t.platforms.desc}
             </p>
             
-            <div className={`flex flex-col gap-10 items-center ${lang === 'ar' ? 'lg:items-end' : 'lg:items-start'}`}>
+            <div className="flex flex-col gap-10 items-center lg:items-start">
               <a href="https://mubasher-trade-ekyc-fe.ext.mmd-technology.com" target="_blank" rel="noopener noreferrer" className="btn-primary px-12 text-lg h-16 shadow-xl shadow-blue-500/20 flex items-center justify-center" style={{cursor:"none"}} data-hover>
                 {t.platforms.btn}
               </a>
@@ -833,7 +833,7 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
                     <Globe className="w-5 h-5 text-blue-500" />
                     <span className="text-sm font-bold tracking-tight">{lang === 'en' ? "Web Trading" : "تداول الويب"}</span>
                  </a>
-                 <div className={`flex gap-4 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
+                 <div className="flex gap-4">
                     <a href="https://play.google.com/store/apps/details?id=com.mfs.mtrade.twsl" target="_blank" rel="noopener noreferrer" className="h-10 lg:h-12 block hover:scale-110 transition-all duration-300 active:scale-95" style={{cursor:"none"}} data-hover>
                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-full w-auto drop-shadow-lg" />
                     </a>
@@ -903,7 +903,7 @@ function Governance({ t, lang }: { t: any, lang: string }) {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
           <motion.div
-            className={`w-full lg:w-1/2 flex flex-col items-center text-center ${lang === 'ar' ? 'lg:items-end lg:text-right' : 'lg:items-start lg:text-left'}`}
+            className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-start"
             initial={{ opacity: 0, x: lang === 'en' ? -40 : 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
