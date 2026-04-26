@@ -302,7 +302,7 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 inset-x-0 z-[100] transition-all duration-500 ${
-          scrolled ? "glass shadow-2xl shadow-black/10 py-3" : "bg-transparent py-6"
+          scrolled ? "glass py-3" : "bg-transparent py-6"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -761,7 +761,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
                   transition={{ duration: 0.8, delay: i * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="aspect-[4/4.8] rounded-[2rem] bg-gradient-to-b from-blue-600/5 to-blue-900/10 border border-border/50 overflow-hidden mb-6 group-hover:border-blue-500/50 transition-all duration-700 relative shadow-lg shadow-blue-500/5">
+                  <div className="aspect-[4/4.8] rounded-[2rem] bg-gradient-to-b from-primary/5 to-primary/10 border border-border/50 overflow-hidden mb-6 group-hover:border-blue-500/50 transition-all duration-700 relative shadow-lg shadow-blue-500/5">
                     {p.image ? (
                       <img src={p.image} alt={p.name} className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000" />
                     ) : (
