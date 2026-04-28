@@ -754,13 +754,13 @@ function TradeEgyptServices({ t, lang }: { t: any, lang: string }) {
     <section id="trade-services" className="py-16 md:py-24 px-6 bg-secondary/5 relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          className="mb-16 md:mb-24 text-center max-w-4xl mx-auto"
+          className={`mb-16 md:mb-24 max-w-4xl mx-auto ${lang === 'ar' ? 'text-center md:text-right' : 'text-center md:text-left'}`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <span className="section-label justify-center">{t.tradeServices.label}</span>
+          <span className={`section-label ${lang === 'ar' ? 'justify-center md:justify-start' : 'justify-center md:justify-start'}`}>{t.tradeServices.label}</span>
           <h2 className={`font-heading ${lang === 'ar' ? 'text-4xl lg:text-7xl' : 'text-5xl lg:text-7xl'} font-extrabold tracking-tightest mt-6 leading-tight text-shine interactive-shine`}>
             {t.tradeServices.title}
           </h2>
@@ -775,14 +775,14 @@ function TradeEgyptServices({ t, lang }: { t: any, lang: string }) {
             return (
               <motion.div
                 key={cat.id}
-                className="premium-card p-10 rounded-[3rem] flex flex-col group relative overflow-hidden transition-all duration-700"
+                className={`premium-card p-10 rounded-[3rem] flex flex-col group relative overflow-hidden transition-all duration-700 ${lang === 'ar' ? 'text-right' : 'text-left'}`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: i * 0.1 }}
                 viewport={{ once: true }}
                 data-hover
               >
-                <div className="flex justify-between items-start mb-10">
+                <div className={`flex justify-between items-start mb-10 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
                   <span className="font-heading text-6xl font-black text-foreground/[0.03] group-hover:text-blue-500/10 transition-colors duration-700">
                     {cat.id}
                   </span>
@@ -799,7 +799,7 @@ function TradeEgyptServices({ t, lang }: { t: any, lang: string }) {
                 
                 <ul className="space-y-4">
                   {cat.items.map((item: string, idx: number) => (
-                    <li key={idx} className={`flex items-start gap-3 text-muted-foreground/90 ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                    <li key={idx} className={`flex items-start gap-3 text-muted-foreground/90`}>
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-500/40 mt-2.5 shrink-0" />
                       <span className="font-sans text-lg">{item}</span>
                     </li>
