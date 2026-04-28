@@ -87,6 +87,7 @@ const translations = {
       desc: "Mubasher Capital Holding orchestrates a seamless, end-to-end investment experience. Our subsidiaries operate synergistically to provide comprehensive financial environments for retail and institutional investors alike.",
       stat1: "Years of Heritage",
       stat2: "Annual Trading Volume",
+      stat2Value: "Tens of Billions",
       btn: "Discover Our Vision"
     },
     tradeServices: {
@@ -191,6 +192,7 @@ const translations = {
       desc: "تقوم مباشر كابيتال القابضة بتنسيق تجربة استثمارية متكاملة وسلسة. تعمل شركاتنا التابعة بتآزر لتوفير بيئات مالية شاملة للمستثمرين الأفراد والمؤسسات على حد سواء.",
       stat1: "سنوات من التراث",
       stat2: "حجم التداول السنوي",
+      stat2Value: "عشرات المليارات",
       btn: "اكتشف رؤيتنا"
     },
     tradeServices: {
@@ -635,7 +637,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
               <div className="font-sans text-[11px] font-black tracking-[0.3em] text-blue-500 uppercase">{t.about.stat1}</div>
             </div>
             <div className="space-y-3 text-center lg:text-start">
-              <div className="font-heading text-4xl lg:text-5xl font-black text-foreground">Tens of Billions</div>
+              <div className="font-heading text-4xl lg:text-5xl font-black text-foreground">{t.about.stat2Value}</div>
               <div className="font-sans text-[11px] font-black tracking-[0.3em] text-blue-500 uppercase">{t.about.stat2}</div>
             </div>
           </div>
