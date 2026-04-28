@@ -86,8 +86,16 @@ const translations = {
       title: "Building the Fortress of Trust",
       desc: "Mubasher Capital Holding orchestrates a seamless, end-to-end investment experience. Our subsidiaries operate synergistically to provide comprehensive financial environments for retail and institutional investors alike.",
       stat1: "Years of Heritage",
-      stat2: "Subsidiaries",
+      stat2: "Annual Trading Volume",
       btn: "Discover Our Vision"
+    },
+    tradeServices: {
+      label: "Individual Services",
+      title: "A successful investor leaves nothing to chance",
+      desc: "At Mubasher for Securities and Bonds, we offer a comprehensive suite of exceptional services designed to meet the diverse aspirations of individual investors, guiding them through every phase of their investment journey.",
+      s1: { title: "Brokerage & Trading", items: ["Same-Day Trading (T0+)", "Margin Trading", "Multiple Trading Channels", "Dedicated Account Manager"] },
+      s2: { title: "Research & Analysis", items: ["Professional Daily Reports", "Real-Time Recommendations", "Daily Audio Briefings"] },
+      s3: { title: "Technical Support", items: ["7/24 Support", "Direct Communication", "Instant Issue Resolution"] }
     },
     track: {
       label: "Subsidiary Spotlight",
@@ -182,8 +190,16 @@ const translations = {
       title: "بناء قلعة من الثقة",
       desc: "تقوم مباشر كابيتال القابضة بتنسيق تجربة استثمارية متكاملة وسلسة. تعمل شركاتنا التابعة بتآزر لتوفير بيئات مالية شاملة للمستثمرين الأفراد والمؤسسات على حد سواء.",
       stat1: "سنوات من التراث",
-      stat2: "شركات تابعة",
+      stat2: "حجم التداول السنوي",
       btn: "اكتشف رؤيتنا"
+    },
+    tradeServices: {
+      label: "خدمات الأفراد",
+      title: "المستثمر الناجح لا يترك شيئاً للصدفة",
+      desc: "في مباشر لتداول الأوراق المالية والسندات، نقدم مجموعة شاملة من الخدمات الاستثنائية المصممة لتلبية التطلعات المتنوعة للمستثمرين الأفراد، ونرشدهم في كل مرحلة من مراحل رحلتهم الاستثمارية.",
+      s1: { title: "الوساطة والتداول", items: ["التداول في نفس اليوم (T+0)", "التداول بالهامش", "قنوات تداول متعددة", "مدير حساب مخصص"] },
+      s2: { title: "البحوث والتحليل", items: ["تقارير يومية مهنية", "توصيات وتنبيهات فورية", "ملخصات صوتية يومية"] },
+      s3: { title: "الدعم الفني", items: ["دعم على مدار الساعة 7/24", "قنوات اتصال مباشرة", "حل فوري للمشكلات"] }
     },
     track: {
       label: "تسليط الضوء على الشركات التابعة",
@@ -619,7 +635,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
               <div className="font-sans text-[11px] font-black tracking-[0.3em] text-blue-500 uppercase">{t.about.stat1}</div>
             </div>
             <div className="space-y-3 text-center lg:text-start">
-              <div className="font-heading text-5xl lg:text-6xl font-black text-foreground">10K+</div>
+              <div className="font-heading text-4xl lg:text-5xl font-black text-foreground">Tens of Billions</div>
               <div className="font-sans text-[11px] font-black tracking-[0.3em] text-blue-500 uppercase">{t.about.stat2}</div>
             </div>
           </div>
@@ -703,6 +719,99 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
              <div className="absolute inset-0 grid-overlay opacity-30 mix-blend-overlay" />
           </div>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Trade Egypt Services Section ─── */
+function TradeEgyptServices({ t, lang }: { t: any, lang: string }) {
+  const serviceCategories = [
+    { 
+      id: "01", 
+      title: t.tradeServices.s1.title, 
+      items: t.tradeServices.s1.items, 
+      icon: TrendingUp,
+      color: "blue"
+    },
+    { 
+      id: "02", 
+      title: t.tradeServices.s2.title, 
+      items: t.tradeServices.s2.items, 
+      icon: Search,
+      color: "emerald"
+    },
+    { 
+      id: "03", 
+      title: t.tradeServices.s3.title, 
+      items: t.tradeServices.s3.items, 
+      icon: MessageSquare,
+      color: "blue"
+    }
+  ];
+
+  return (
+    <section id="trade-services" className="py-16 md:py-24 px-6 bg-secondary/5 relative z-10 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          className="mb-16 md:mb-24 text-center max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <span className="section-label justify-center">{t.tradeServices.label}</span>
+          <h2 className={`font-heading ${lang === 'ar' ? 'text-4xl lg:text-7xl' : 'text-5xl lg:text-7xl'} font-extrabold tracking-tightest mt-6 leading-tight text-shine interactive-shine`}>
+            {t.tradeServices.title}
+          </h2>
+          <p className="font-sans text-muted-foreground/80 text-xl leading-relaxed mt-8">
+            {t.tradeServices.desc}
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+          {serviceCategories.map((cat, i) => {
+            const Icon = cat.icon;
+            return (
+              <motion.div
+                key={cat.id}
+                className="premium-card p-10 rounded-[3rem] flex flex-col group relative overflow-hidden transition-all duration-700"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                data-hover
+              >
+                <div className="flex justify-between items-start mb-10">
+                  <span className="font-heading text-6xl font-black text-foreground/[0.03] group-hover:text-blue-500/10 transition-colors duration-700">
+                    {cat.id}
+                  </span>
+                  <div className={`w-14 h-14 rounded-[1.25rem] flex items-center justify-center transition-all duration-700 group-hover:scale-110 group-hover:rotate-6 ${
+                    cat.color === "blue" ? "bg-blue-500/10 text-blue-500 group-hover:bg-blue-600 group-hover:text-white" : "bg-emerald-500/10 text-emerald-500 group-hover:bg-emerald-600 group-hover:text-white"
+                  }`}>
+                    <Icon className="w-7 h-7" />
+                  </div>
+                </div>
+                
+                <h3 className={`font-heading ${lang === 'ar' ? 'text-2xl' : 'text-3xl'} font-bold tracking-tight mb-8 group-hover:text-blue-500 transition-colors duration-500`}>
+                  {cat.title}
+                </h3>
+                
+                <ul className="space-y-4">
+                  {cat.items.map((item: string, idx: number) => (
+                    <li key={idx} className={`flex items-start gap-3 text-muted-foreground/90 ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500/40 mt-2.5 shrink-0" />
+                      <span className="font-sans text-lg">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                {/* Visual Accent */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 blur-[50px] rounded-full group-hover:bg-blue-500/15 transition-all duration-700" />
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
@@ -1361,6 +1470,7 @@ export default function Home() {
       <Services t={t} lang={lang} />
       <AboutSection t={t} lang={lang} />
       <TrackRecord t={t} lang={lang} />
+      <TradeEgyptServices t={t} lang={lang} />
       <DigitalPlatforms t={t} lang={lang} />
       <News t={t} lang={lang} />
       <Media t={t} lang={lang} />
