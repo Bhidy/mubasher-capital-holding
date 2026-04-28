@@ -637,7 +637,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
               <div className="font-sans text-[11px] font-black tracking-[0.3em] text-blue-500 uppercase">{t.about.stat1}</div>
             </div>
             <div className="space-y-3 text-center lg:text-start">
-              <div className="font-heading text-4xl lg:text-5xl font-black text-foreground">{t.about.stat2Value}</div>
+              <div className="font-heading text-2xl lg:text-3xl font-black text-foreground leading-tight">{t.about.stat2Value}</div>
               <div className="font-sans text-[11px] font-black tracking-[0.3em] text-blue-500 uppercase">{t.about.stat2}</div>
             </div>
           </div>
