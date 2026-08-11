@@ -146,7 +146,6 @@
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
     overflow-x: hidden;
-    cursor: none;
     transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -157,43 +156,17 @@
     letter-spacing: -0.03em;
   }
 
+  /* Tailwind's reset leaves buttons with the default arrow. Restore the
+     pointer affordance users expect on anything clickable. */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+
   ::selection {
     background: rgba(37, 99, 235, 0.3);
     color: #f0f4ff;
   }
-}
-
-/* ═══════════════════════════════════════════
-   CUSTOM CURSOR
-═══════════════════════════════════════════ */
-.cursor-dot {
-  width: 6px;
-  height: 6px;
-  background: #10b981;
-  border-radius: 50%;
-  position: fixed;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.1s ease;
-}
-
-.cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid rgba(37, 99, 235, 0.6);
-  border-radius: 50%;
-  position: fixed;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 9998;
-  transition: transform 0.12s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
-}
-
-.cursor-ring.hover {
-  width: 56px;
-  height: 56px;
-  border-color: rgba(16, 185, 129, 0.7);
 }
 
 /* ═══════════════════════════════════════════
@@ -304,7 +277,7 @@
   background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   color: #ffffff;
   border: none;
-  cursor: none;
+  cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -332,7 +305,7 @@
   background: transparent;
   color: var(--foreground);
   border: 1px solid var(--border);
-  cursor: none;
+  cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
@@ -354,7 +327,7 @@
   font-weight: 500;
   color: var(--muted-foreground);
   transition: color 0.2s ease;
-  cursor: none;
+  cursor: pointer;
   position: relative;
   padding-bottom: 2px;
   text-decoration: none;

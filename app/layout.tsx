@@ -3,7 +3,6 @@ import { Sora, Manrope, IBM_Plex_Sans_Arabic, Alexandria } from "next/font/googl
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SmoothScroll } from "@/components/smooth-scroll";
-import { Cursor } from "@/components/cursor";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -42,7 +41,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={`${sora.variable} ${manrope.variable} ${ibmPlexArabic.variable} ${alexandria.variable} antialiased font-sans lang-ar`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <SmoothScroll>
-            <Cursor />
             {children}
           </SmoothScroll>
         </ThemeProvider>

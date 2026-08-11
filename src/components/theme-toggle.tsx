@@ -22,8 +22,8 @@ export function ThemeToggle() {
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label="Toggle theme"
-      data-hover
-      style={{ cursor: "none" }}
+     
+     
       className="relative w-9 h-9 rounded-full border border-border/50 bg-secondary/50 backdrop-blur-md flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-border transition-all duration-300 overflow-hidden"
     >
       <Sun

@@ -198,7 +198,6 @@ export default function CalculatorPage() {
                     value={investment || ''}
                     onChange={(e) => setInvestment(Number(e.target.value))}
                     className="w-full bg-secondary/50 border border-border/50 text-foreground font-heading font-bold text-xl rounded-2xl p-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300"
-                    style={{ cursor: "none" }}
                   />
                 </div>
                 <div>
@@ -210,7 +209,6 @@ export default function CalculatorPage() {
                     value={buyPrice || ''}
                     onChange={(e) => setBuyPrice(Number(e.target.value))}
                     className="w-full bg-secondary/50 border border-border/50 text-foreground font-heading font-bold text-xl rounded-2xl p-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300"
-                    style={{ cursor: "none" }}
                   />
                 </div>
                 <div>
@@ -222,7 +220,6 @@ export default function CalculatorPage() {
                     value={sellPrice || ''}
                     onChange={(e) => setSellPrice(Number(e.target.value))}
                     className="w-full bg-secondary/50 border border-border/50 text-foreground font-heading font-bold text-xl rounded-2xl p-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300"
-                    style={{ cursor: "none" }}
                   />
                 </div>
 
@@ -243,7 +240,6 @@ export default function CalculatorPage() {
                     value={days}
                     onChange={(e) => setDays(Number(e.target.value))}
                     className="w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer accent-blue-600 outline-none"
-                    style={{ cursor: "none" }}
                   />
                   
                   <div className="flex flex-wrap gap-2 mt-6">
@@ -256,7 +252,6 @@ export default function CalculatorPage() {
                             ? "bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-500/20"
                             : "bg-transparent text-muted-foreground border-border/50 hover:border-blue-500/30 hover:bg-secondary"
                         }`}
-                        style={{ cursor: "none" }}
                       >
                         {p.label}
                       </button>

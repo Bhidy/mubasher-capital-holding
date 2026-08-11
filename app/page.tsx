@@ -300,40 +300,6 @@ export const translations = {
   }
 };
 
-/* ─── Custom Cursor ─── */
-function Cursor() {
-  const dot = useRef<HTMLDivElement>(null);
-  const ring = useRef<HTMLDivElement>(null);
-  const [hovering, setHovering] = useState(false);
-
-  useEffect(() => {
-    const moveCursor = (e: MouseEvent) => {
-      const { clientX: x, clientY: y } = e;
-      if (dot.current) {
-        dot.current.style.transform = `translate3d(${x - 3}px, ${y - 3}px, 0)`;
-      }
-      if (ring.current) {
-        ring.current.style.transform = `translate3d(${x - 18}px, ${y - 18}px, 0)`;
-      }
-    };
-    const onEnter = () => setHovering(true);
-    const onLeave = () => setHovering(false);
-    window.addEventListener("mousemove", moveCursor);
-    document.querySelectorAll("a,button,[data-hover]").forEach(el => {
-      el.addEventListener("mouseenter", onEnter);
-      el.addEventListener("mouseleave", onLeave);
-    });
-    return () => window.removeEventListener("mousemove", moveCursor);
-  }, []);
-
-  return (
-    <>
-      <div ref={dot} className="cursor-dot hidden lg:block" />
-      <div ref={ring} className={`cursor-ring hidden lg:block ${hovering ? "hover" : ""}`} />
-    </>
-  );
-}
-
 /* ─── Navbar ─── */
 type NavLink = {
   key: string;
@@ -374,7 +340,7 @@ export function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="group flex items-center no-underline outline-none" style={{cursor:"none"}}>
+          <a href="/" className="group flex items-center no-underline outline-none">
             <img 
               src="/images/logo.png" 
               alt="Mubasher Holding" 
@@ -411,8 +377,8 @@ export function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string
               <button
                 onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
                 className="relative w-9 h-9 rounded-full border border-border/50 bg-secondary/50 backdrop-blur-md flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-border transition-all duration-300 group overflow-hidden"
-                style={{cursor:"none"}}
-                data-hover
+               
+               
               >
                 <AnimatePresence mode="wait">
                   <motion.span
@@ -433,14 +399,14 @@ export function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string
                 <span className="sr-only">Toggle Language</span>
               </button>
               <ThemeToggle />
-              <a href="https://rubixegypt.mubashertrade.com" target="_blank" rel="noopener noreferrer" className="btn-primary text-[10px] uppercase font-bold tracking-[0.2em] h-11 px-8" style={{cursor:"none"}}>
+              <a href="https://rubixegypt.mubashertrade.com" target="_blank" rel="noopener noreferrer" className="btn-primary text-[10px] uppercase font-bold tracking-[0.2em] h-11 px-8">
                 {t.nav.clientPortal}
               </a>
             </div>
             <button
               onClick={() => setMenuOpen(v => !v)}
               className="lg:hidden p-2.5 rounded-xl border border-border/50 bg-secondary/30 text-muted-foreground hover:text-foreground transition-all duration-300"
-              style={{cursor:"none"}}
+             
             >
               {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -656,7 +622,7 @@ function Services({ t, lang }: { t: any, lang: string }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                data-hover
+               
               >
                 <div className="flex justify-between items-start mb-12">
                   <span className="font-heading text-7xl font-black text-foreground/[0.03] group-hover:text-blue-500/10 transition-colors duration-700">
@@ -857,7 +823,7 @@ function TradeEgyptServices({ t, lang }: { t: any, lang: string }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                data-hover
+               
               >
                 <div className={`flex justify-between items-start mb-10 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
                   <span className="font-heading text-6xl font-black text-foreground/[0.03] group-hover:text-blue-500/10 transition-colors duration-700">
@@ -1010,20 +976,20 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
             </p>
             
             <div className="flex flex-col gap-10 items-center lg:items-start">
-              <a href="https://mubasher-trade-ekyc-fe.ext.mmd-technology.com" target="_blank" rel="noopener noreferrer" className="btn-primary px-12 text-lg h-16 shadow-xl shadow-blue-500/20 flex items-center justify-center" style={{cursor:"none"}} data-hover>
+              <a href="https://mubasher-trade-ekyc-fe.ext.mmd-technology.com" target="_blank" rel="noopener noreferrer" className="btn-primary px-12 text-lg h-16 shadow-xl shadow-blue-500/20 flex items-center justify-center">
                 {t.platforms.btn}
               </a>
 
               <div className="flex flex-wrap gap-6 items-center justify-center lg:justify-start">
-                 <a href="https://rubixegypt.mubashertrade.com/" target="_blank" rel="noopener noreferrer" className="btn-outline h-12 flex items-center gap-2 px-6 bg-background/50 hover:bg-blue-600/10" style={{cursor:"none"}} data-hover>
+                 <a href="https://rubixegypt.mubashertrade.com/" target="_blank" rel="noopener noreferrer" className="btn-outline h-12 flex items-center gap-2 px-6 bg-background/50 hover:bg-blue-600/10">
                     <Globe className="w-5 h-5 text-blue-500" />
                     <span className="text-sm font-bold tracking-tight">{lang === 'en' ? "Web Trading" : "تداول الويب"}</span>
                  </a>
                  <div className="flex gap-4">
-                    <a href="https://play.google.com/store/apps/details?id=com.mfs.mtrade.twsl" target="_blank" rel="noopener noreferrer" className="h-10 lg:h-12 block hover:scale-110 transition-all duration-300 active:scale-95" style={{cursor:"none"}} data-hover>
+                    <a href="https://play.google.com/store/apps/details?id=com.mfs.mtrade.twsl" target="_blank" rel="noopener noreferrer" className="h-10 lg:h-12 block hover:scale-110 transition-all duration-300 active:scale-95">
                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-full w-auto drop-shadow-lg" />
                     </a>
-                    <a href="https://apps.apple.com/eg/app/mubasher-trade-invest/id1529304774" target="_blank" rel="noopener noreferrer" className="h-10 lg:h-12 block hover:scale-110 transition-all duration-300 active:scale-95" style={{cursor:"none"}} data-hover>
+                    <a href="https://apps.apple.com/eg/app/mubasher-trade-invest/id1529304774" target="_blank" rel="noopener noreferrer" className="h-10 lg:h-12 block hover:scale-110 transition-all duration-300 active:scale-95">
                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-full w-auto drop-shadow-lg" />
                     </a>
                  </div>
@@ -1042,10 +1008,10 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
                <div className="absolute -inset-20 bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
                
                <div className={`absolute top-1/2 -translate-y-1/2 -left-2 lg:-left-6 -right-2 lg:-right-6 flex justify-between items-center z-30 pointer-events-none`}>
-                  <button onClick={() => scroll('prev')} className="w-12 lg:w-16 h-12 lg:h-16 rounded-full bg-background/80 backdrop-blur-xl border border-foreground/10 flex items-center justify-center text-foreground hover:bg-blue-600 hover:text-white hover:border-blue-600 shadow-2xl transition-all duration-500 pointer-events-auto group/btn" style={{cursor:"none"}} data-hover>
+                  <button onClick={() => scroll('prev')} className="w-12 lg:w-16 h-12 lg:h-16 rounded-full bg-background/80 backdrop-blur-xl border border-foreground/10 flex items-center justify-center text-foreground hover:bg-blue-600 hover:text-white hover:border-blue-600 shadow-2xl transition-all duration-500 pointer-events-auto group/btn">
                     <ArrowRight className="w-6 h-6 lg:w-8 lg:h-8 transform rotate-180 group-hover/btn:-translate-x-1 transition-transform" />
                   </button>
-                  <button onClick={() => scroll('next')} className="w-12 lg:w-16 h-12 lg:h-16 rounded-full bg-background/80 backdrop-blur-xl border border-foreground/10 flex items-center justify-center text-foreground hover:bg-blue-600 hover:text-white hover:border-blue-600 shadow-2xl transition-all duration-500 pointer-events-auto group/btn" style={{cursor:"none"}} data-hover>
+                  <button onClick={() => scroll('next')} className="w-12 lg:w-16 h-12 lg:h-16 rounded-full bg-background/80 backdrop-blur-xl border border-foreground/10 flex items-center justify-center text-foreground hover:bg-blue-600 hover:text-white hover:border-blue-600 shadow-2xl transition-all duration-500 pointer-events-auto group/btn">
                     <ArrowRight className="w-6 h-6 lg:w-8 lg:h-8 group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                </div>
@@ -1293,10 +1259,10 @@ function News({ t, lang }: { t: any, lang: string }) {
             </h2>
           </motion.div>
           <div className={`flex gap-4 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-            <button onClick={() => scroll('prev')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300" style={{cursor:"none"}} data-hover>
+            <button onClick={() => scroll('prev')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300">
               <ArrowRight className={`w-6 h-6 transform ${lang === 'ar' ? '' : 'rotate-180'}`} />
             </button>
-            <button onClick={() => scroll('next')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300" style={{cursor:"none"}} data-hover>
+            <button onClick={() => scroll('next')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300">
               <ArrowRight className={`w-6 h-6 transform ${lang === 'ar' ? 'rotate-180' : ''}`} />
             </button>
           </div>
@@ -1310,7 +1276,7 @@ function News({ t, lang }: { t: any, lang: string }) {
           {newsItems.map((item, i) => (
             <motion.div
               key={item.id}
-              className="flex-shrink-0 w-[85vw] md:w-[calc(48%-1.5rem)] lg:w-[calc(31%-2rem)] snap-start group cursor-none"
+              className="flex-shrink-0 w-[85vw] md:w-[calc(48%-1.5rem)] lg:w-[calc(31%-2rem)] snap-start group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
@@ -1380,10 +1346,10 @@ function Media({ t, lang }: { t: any, lang: string }) {
             </h2>
           </div>
           <div className={`flex gap-4 ${lang === 'ar' ? 'flex-row-reverse' : ''}`}>
-            <button onClick={() => scroll('prev')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300" style={{cursor:"none"}} data-hover>
+            <button onClick={() => scroll('prev')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300">
               <ArrowRight className={`w-6 h-6 transform ${lang === 'ar' ? '' : 'rotate-180'}`} />
             </button>
-            <button onClick={() => scroll('next')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300" style={{cursor:"none"}} data-hover>
+            <button onClick={() => scroll('next')} className="w-14 h-14 rounded-full border border-border/50 bg-secondary/30 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300">
               <ArrowRight className={`w-6 h-6 transform ${lang === 'ar' ? 'rotate-180' : ''}`} />
             </button>
           </div>
@@ -1564,7 +1530,7 @@ function Careers({ t, lang }: { t: { careers: CareersCopy }, lang: string }) {
               </p>
 
               <div className="mt-10 md:mt-12">
-                <a href={href} {...EXTERNAL_LINK_PROPS} className="btn-primary h-14 px-10 text-base" data-hover>
+                <a href={href} {...EXTERNAL_LINK_PROPS} className="btn-primary h-14 px-10 text-base">
                   {t.careers.btn}
                   <ArrowUpRight className={`w-5 h-5 ${isAr ? '-scale-x-100' : ''}`} aria-hidden="true" />
                   <span className="sr-only">{t.careers.newTab}</span>
@@ -1672,7 +1638,7 @@ export function Footer({ t, lang }: { t: any, lang: string }) {
                  { Icon: SocialIcons.Twitter, href: "https://x.com/MubasherTrade" },
                  { Icon: SocialIcons.Youtube, href: "https://www.youtube.com/user/Mubashertrade" }
                ].map((item, i) => (
-                 <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-2xl border border-border/50 bg-secondary/20 flex items-center justify-center text-muted-foreground hover:text-blue-500 hover:border-blue-500 transition-all duration-500 group" data-hover style={{cursor:"none"}}>
+                 <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-2xl border border-border/50 bg-secondary/20 flex items-center justify-center text-muted-foreground hover:text-blue-500 hover:border-blue-500 transition-all duration-500 group">
                     <item.Icon />
                  </a>
                ))}
@@ -1688,7 +1654,7 @@ export function Footer({ t, lang }: { t: any, lang: string }) {
                       href={l.href ?? "#"}
                       {...(l.external ? EXTERNAL_LINK_PROPS : {})}
                       className="font-sans text-muted-foreground text-lg hover:text-blue-500 transition-colors duration-300 block"
-                      style={{cursor:"none"}}
+                     
                     >
                       {l.label}
                       {l.external && <span className="sr-only"> {t.careers.newTab}</span>}
