@@ -399,6 +399,66 @@
 }
 
 /* ═══════════════════════════════════════════
+   CAREERS SLAB
+   The one inverted surface on the page. Reads as an institutional
+   prospectus panel in light mode and as an elevated panel in dark mode,
+   so it stays a point of contrast under both themes.
+═══════════════════════════════════════════ */
+.careers-slab {
+  /* Scoped tokens: the global --muted-foreground is tuned for light
+     backgrounds and drops below AA contrast on this surface. */
+  --slab-fg: #f2f6ff;
+  --slab-muted: rgba(223, 233, 255, 0.74);
+  --slab-faint: rgba(223, 233, 255, 0.54);
+  --slab-hair: rgba(255, 255, 255, 0.1);
+
+  position: relative;
+  overflow: hidden;
+  color: var(--slab-fg);
+  background:
+    radial-gradient(120% 120% at 12% 0%, rgba(37, 99, 235, 0.3) 0%, transparent 55%),
+    radial-gradient(100% 100% at 100% 100%, rgba(16, 185, 129, 0.16) 0%, transparent 52%),
+    linear-gradient(135deg, #060c1a 0%, #0a1428 55%, #071022 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 40px 120px -40px rgba(15, 23, 42, 0.55);
+}
+
+.dark .careers-slab {
+  background:
+    radial-gradient(120% 120% at 12% 0%, rgba(37, 99, 235, 0.38) 0%, transparent 55%),
+    radial-gradient(100% 100% at 100% 100%, rgba(16, 185, 129, 0.2) 0%, transparent 52%),
+    linear-gradient(135deg, #071022 0%, #0d1933 55%, #081228 100%);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 40px 120px -40px rgba(0, 0, 0, 0.85);
+}
+
+.careers-slab .slab-muted { color: var(--slab-muted); }
+.careers-slab .slab-faint { color: var(--slab-faint); }
+
+/* Hairline rules between the numbered pillars. */
+.careers-slab .slab-divide > * + * {
+  border-top: 1px solid var(--slab-hair);
+}
+
+/* Ambient mesh drift — deliberately slow so it reads as light, not motion. */
+.careers-slab .slab-aura {
+  animation: slabDrift 18s ease-in-out infinite;
+}
+
+@keyframes slabDrift {
+  0%, 100% { opacity: 0.5; transform: translate3d(0, 0, 0) scale(1); }
+  50% { opacity: 0.85; transform: translate3d(2%, -3%, 0) scale(1.08); }
+}
+
+/* Respect the OS reduced-motion setting for this section's CSS animation.
+   The React-driven motion is gated separately via useReducedMotion(). */
+@media (prefers-reduced-motion: reduce) {
+  .careers-slab .slab-aura {
+    animation: none;
+  }
+}
+
+/* ═══════════════════════════════════════════
    ANIMATIONS
    ═══════════════════════════════════════════ */
 @keyframes shimmer {

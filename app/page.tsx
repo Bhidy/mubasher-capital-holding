@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { careersPortalUrl, EXTERNAL_LINK_PROPS } from "@/lib/site-config";
 import { 
   ArrowRight, 
   ArrowUpRight, 
@@ -24,7 +25,8 @@ import {
   Handshake,
   Heart,
   Languages,
-  User
+  User,
+  Calculator
 } from "lucide-react";
 
 const SocialIcons = {
@@ -46,7 +48,7 @@ const SocialIcons = {
 };
 
 /* ─── Dictionary ─── */
-const translations = {
+export const translations = {
   en: {
     nav: {
       services: "Ecosystem",
@@ -55,6 +57,7 @@ const translations = {
       team: "Leadership",
       news: "News",
       media: "Media",
+      careers: "Career",
       contact: "Contact",
       clientPortal: "Client Portal"
     },
@@ -150,6 +153,24 @@ const translations = {
       terms: "Terms of Use",
       fra: "FRA Disclosures",
       cookies: "Cookie Policy"
+    },
+    calculatorPromo: {
+      label: "Investment Tools",
+      title: "Mubasher Fadda Calculator",
+      desc: "Simulate your investments and see how our zero-fee structure on long-term holdings can maximize your returns with the Mubasher Fadda fund.",
+      btn: "Calculate Your Returns"
+    },
+    careers: {
+      label: "Join Our Team",
+      title: "Discover Career Opportunities",
+      desc: "Nineteen years spent building Egypt's digital trading infrastructure — from pioneering online trading in 2006 to serving investors across more than 90 global markets. The next chapter is written by the people who join us now.",
+      p1: { title: "An integrated group", desc: "Build across brokerage, asset management, custody, and the region's leading financial media platform." },
+      p2: { title: "Regulated by design", desc: "FRA-licensed and ISO 27001 certified — the standards we are held to are the ones you will build to." },
+      p3: { title: "Built for the long term", desc: "Eighteen branches, a top-three position on the Egyptian Exchange, and nineteen years of compounding trust." },
+      teamsLabel: "Teams across the group",
+      teams: ["Brokerage & Trading", "Technology & Product", "Research & Analysis", "Client Experience", "Compliance & Risk"],
+      btn: "View Open Positions",
+      newTab: "(opens in a new tab)"
     }
   },
   ar: {
@@ -160,6 +181,7 @@ const translations = {
       team: "القيادة",
       news: "أبرز الأخبار",
       media: "الوسائط",
+      careers: "توظيف",
       contact: "اتصل بنا",
       clientPortal: "بوابة العملاء"
     },
@@ -256,6 +278,24 @@ const translations = {
       terms: "شروط الاستخدام",
       fra: "إفصاحات الرقابة المالية",
       cookies: "سياسة ملفات التعريف"
+    },
+    calculatorPromo: {
+      label: "أدوات الاستثمار",
+      title: "حاسبة فضة مباشر",
+      desc: "قم بمحاكاة استثماراتك واكتشف كيف يمكن لهيكل الإعفاء من الرسوم على الاستثمارات طويلة الأجل أن يزيد من عوائدك مع صندوق فضة مباشر.",
+      btn: "احسب عوائدك الآن"
+    },
+    careers: {
+      label: "انضم لفريقنا",
+      title: "اكتشف الفرص الوظيفية",
+      desc: "تسعة عشر عاماً في بناء البنية التحتية للتداول الرقمي في مصر — من ريادة التداول عبر الإنترنت عام 2006 إلى خدمة المستثمرين في أكثر من 90 سوقاً عالمياً. والفصل التالي يكتبه من ينضمون إلينا اليوم.",
+      p1: { title: "مجموعة متكاملة", desc: "اعمل عبر الوساطة وإدارة الأصول وأمناء الحفظ وأقوى منصة إعلام مالي في المنطقة." },
+      p2: { title: "الالتزام في صميم العمل", desc: "مرخصون من الهيئة العامة للرقابة المالية وحاصلون على شهادة الأيزو 27001 — المعايير التي نلتزم بها هي المعايير التي ستبني عليها." },
+      p3: { title: "بناء طويل الأجل", desc: "ثمانية عشر فرعاً، ومركز ضمن أكبر ثلاث شركات وساطة في البورصة المصرية، وتسعة عشر عاماً من الثقة المتراكمة." },
+      teamsLabel: "فرق العمل في المجموعة",
+      teams: ["الوساطة والتداول", "التكنولوجيا والمنتجات", "البحوث والتحليل", "خدمة العملاء", "الالتزام وإدارة المخاطر"],
+      btn: "استعرض الوظائف الشاغرة",
+      newTab: "(يفتح في نافذة جديدة)"
     }
   }
 };
@@ -295,16 +335,25 @@ function Cursor() {
 }
 
 /* ─── Navbar ─── */
-function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => void, t: any }) {
+type NavLink = {
+  key: string;
+  name: string;
+  href: string;
+  /** External destinations leave the site and open in a new tab. */
+  external?: boolean;
+};
+
+export function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => void, t: any }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const links = [
-    { name: t.nav.services, id: "services" },
-    { name: t.nav.about, id: "about" },
-    { name: t.nav.news, id: "news" },
-    { name: t.nav.media, id: "media" },
-    { name: t.nav.team, id: "team" },
-    { name: t.nav.contact, id: "contact" }
+  // Single source of truth for both the desktop bar and the mobile sheet.
+  const links: NavLink[] = [
+    { key: "about", name: t.nav.about, href: "#about" },
+    { key: "news", name: t.nav.news, href: "#news" },
+    { key: "media", name: t.nav.media, href: "#media" },
+    { key: "team", name: t.nav.team, href: "#team" },
+    { key: "careers", name: t.nav.careers, href: careersPortalUrl(lang), external: true },
+    { key: "contact", name: t.nav.contact, href: "#contact" }
   ];
 
   useEffect(() => {
@@ -333,17 +382,33 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
             />
           </a>
 
-          {/* Desktop Links */}
-          <div className="hidden lg:flex items-center gap-10">
+          {/* Desktop Links — gap steps up with width so labels never wrap at 1024px */}
+          <div className="hidden lg:flex items-center gap-4 xl:gap-8 2xl:gap-10">
             {links.map(l => (
-              <a key={l.id} href={`#${l.id}`} className="nav-link text-sm font-bold uppercase tracking-widest">{l.name}</a>
+              <a
+                key={l.key}
+                href={l.href}
+                {...(l.external ? EXTERNAL_LINK_PROPS : {})}
+                className="nav-link text-sm font-bold uppercase tracking-widest inline-flex items-center gap-1 whitespace-nowrap"
+              >
+                {l.name}
+                {l.external && (
+                  <>
+                    <ArrowUpRight
+                      className={`w-3 h-3 opacity-50 ${lang === 'ar' ? '-scale-x-100' : ''}`}
+                      aria-hidden="true"
+                    />
+                    <span className="sr-only">{t.careers.newTab}</span>
+                  </>
+                )}
+              </a>
             ))}
           </div>
 
           {/* Actions */}
           <div className="flex items-center gap-4">
-            <div className="hidden lg:flex items-center gap-4">
-              <button 
+            <div className="hidden lg:flex items-center gap-3 xl:gap-4">
+              <button
                 onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
                 className="relative w-9 h-9 rounded-full border border-border/50 bg-secondary/50 backdrop-blur-md flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-border transition-all duration-300 group overflow-hidden"
                 style={{cursor:"none"}}
@@ -391,7 +456,7 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[110] bg-background/98 backdrop-blur-xl flex flex-col p-10 lg:hidden"
+            className="fixed inset-0 z-[110] bg-background/98 backdrop-blur-xl flex flex-col p-10 lg:hidden overflow-y-auto overscroll-contain"
           >
             <div className="flex justify-between items-center mb-16">
               <div className="flex items-center gap-3">
@@ -404,18 +469,28 @@ function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string) => vo
                 <X className="w-6 h-6" />
               </button>
             </div>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-6">
               {links.map((l, i) => (
                 <motion.a
-                  key={l.id}
-                  href={`#${l.id}`}
-                  className="font-heading text-4xl font-extrabold hover:text-blue-500 transition-colors tracking-tight"
+                  key={l.key}
+                  href={l.href}
+                  {...(l.external ? EXTERNAL_LINK_PROPS : {})}
+                  className="font-heading text-4xl font-extrabold hover:text-blue-500 transition-colors tracking-tight inline-flex items-center gap-3"
                   initial={{ opacity: 0, x: lang === 'en' ? 40 : -40 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1, duration: 0.6 }}
                   onClick={() => setMenuOpen(false)}
                 >
                   {l.name}
+                  {l.external && (
+                    <>
+                      <ArrowUpRight
+                        className={`w-6 h-6 text-blue-500 ${lang === 'ar' ? '-scale-x-100' : ''}`}
+                        aria-hidden="true"
+                      />
+                      <span className="sr-only">{t.careers.newTab}</span>
+                    </>
+                  )}
                 </motion.a>
               ))}
             </div>
@@ -1394,12 +1469,184 @@ function CTA({ t, lang }: { t: any, lang: string }) {
   );
 }
 
+/* ─── Calculator Promo ─── */
+function CalculatorPromo({ t, lang }: { t: any, lang: string }) {
+  return (
+    <section className="py-24 px-6 relative z-10 bg-background overflow-hidden">
+      <div className="absolute inset-0 bg-blue-600/5" />
+      <div className="absolute inset-0 grid-overlay opacity-20" />
+      <div className="max-w-7xl mx-auto relative z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="glass border-blue-500/20 p-12 md:p-20 rounded-[3rem] shadow-2xl shadow-blue-500/10"
+        >
+          <div className="w-20 h-20 mx-auto rounded-3xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-8 shadow-inner shadow-blue-500/20">
+            <Calculator className="w-10 h-10" />
+          </div>
+          <span className="section-label justify-center">{t.calculatorPromo.label}</span>
+          <h2 className={`font-heading ${lang === 'ar' ? 'text-4xl md:text-6xl' : 'text-5xl md:text-7xl'} font-extrabold tracking-tightest mt-6 mb-8 text-gradient-main`}>
+            {t.calculatorPromo.title}
+          </h2>
+          <p className="font-sans text-muted-foreground/90 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed">
+            {t.calculatorPromo.desc}
+          </p>
+          <a href="/calculator" className="btn-primary min-w-[280px] py-6 text-lg font-black tracking-widest uppercase shadow-2xl shadow-blue-600/30">
+            {t.calculatorPromo.btn}
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Careers ─── */
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
+/** Copy contract for this section, derived from the dictionary so the two cannot drift. */
+type CareersCopy = typeof translations.en.careers;
+
+function Careers({ t, lang }: { t: { careers: CareersCopy }, lang: string }) {
+  const prefersReducedMotion = useReducedMotion();
+  const isAr = lang === 'ar';
+  const pillars = [t.careers.p1, t.careers.p2, t.careers.p3];
+  const href = careersPortalUrl(lang);
+
+  // Reduced motion keeps the reveal — so nothing is left permanently invisible —
+  // but drops the travel and the stagger.
+  const reveal = (delay = 0) =>
+    prefersReducedMotion
+      ? { initial: { opacity: 0 }, whileInView: { opacity: 1 }, transition: { duration: 0.3 } }
+      : { initial: { opacity: 0, y: 28 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay, ease: EASE } };
+
+  return (
+    <section id="careers" aria-labelledby="careers-heading" className="py-16 md:py-24 px-6 bg-background relative z-10">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          className="careers-slab rounded-[2rem] md:rounded-[3rem] p-8 sm:p-12 md:p-16 lg:p-20"
+          initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: prefersReducedMotion ? 0.3 : 1, ease: EASE }}
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          {/* Ambient light + grid, purely decorative */}
+          <div className="slab-aura absolute -top-1/3 start-[-10%] w-[70%] h-[140%] bg-blue-500/20 blur-[140px] rounded-full pointer-events-none" aria-hidden="true" />
+          <div className="absolute inset-0 grid-overlay opacity-[0.15] pointer-events-none" aria-hidden="true" />
+
+          {/* Signature motion: a hairline draws across the top edge on entry */}
+          <motion.div
+            className="absolute top-0 inset-x-0 h-px origin-left bg-gradient-to-r from-transparent via-blue-400/70 to-emerald-400/50"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: prefersReducedMotion ? 0 : 1.4, delay: 0.1, ease: EASE }}
+            viewport={{ once: true }}
+            aria-hidden="true"
+          />
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+            {/* Lead */}
+            <motion.div
+              className="lg:col-span-7"
+              {...reveal(0)}
+              viewport={{ once: true, amount: 0.25 }}
+            >
+              <span className="section-label">{t.careers.label}</span>
+              <h2
+                id="careers-heading"
+                className={`font-heading font-extrabold leading-[1.08] ${isAr ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-4xl sm:text-5xl lg:text-6xl'}`}
+              >
+                {t.careers.title}
+              </h2>
+              <p className="slab-muted font-sans text-lg md:text-xl leading-relaxed mt-6 md:mt-8 max-w-xl">
+                {t.careers.desc}
+              </p>
+
+              <div className="mt-10 md:mt-12">
+                <a href={href} {...EXTERNAL_LINK_PROPS} className="btn-primary h-14 px-10 text-base" data-hover>
+                  {t.careers.btn}
+                  <ArrowUpRight className={`w-5 h-5 ${isAr ? '-scale-x-100' : ''}`} aria-hidden="true" />
+                  <span className="sr-only">{t.careers.newTab}</span>
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Pillars — numbered editorial rows, not another card grid */}
+            <div className="lg:col-span-5 slab-divide">
+              {pillars.map((p: { title: string; desc: string }, i: number) => (
+                <motion.div
+                  key={p.title}
+                  className="flex gap-5 py-6 first:pt-0 last:pb-0"
+                  {...reveal(0.1 + i * 0.1)}
+                  viewport={{ once: true, amount: 0.4 }}
+                >
+                  <span className="slab-faint font-heading text-xs font-black tracking-[0.2em] pt-1.5 tabular-nums shrink-0">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3 className="font-heading text-lg md:text-xl font-bold leading-snug">{p.title}</h3>
+                    <p className="slab-muted font-sans text-[15px] md:text-base leading-relaxed mt-2">{p.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Where our people work */}
+          <motion.div
+            className="relative z-10 mt-12 md:mt-16 pt-8 border-t"
+            style={{ borderColor: 'var(--slab-hair)' }}
+            {...reveal(0.35)}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <div className="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-8">
+              <span className="slab-faint font-sans text-[11px] font-black tracking-[0.3em] uppercase shrink-0">
+                {t.careers.teamsLabel}
+              </span>
+              <div className="flex flex-wrap gap-2.5">
+                {t.careers.teams.map((team: string) => (
+                  <span
+                    key={team}
+                    className="slab-muted font-sans text-sm px-4 py-2 rounded-full border"
+                    style={{ borderColor: 'var(--slab-hair)' }}
+                  >
+                    {team}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Footer ─── */
-function Footer({ t, lang }: { t: any, lang: string }) {
-  const footerLinks = [
-    { title: t.footer.businessAreas, links: [t.services.s1.title, t.services.s2.title, t.services.s5.title, t.services.s4.title, t.services.s3.title] },
-    { title: t.footer.company, links: [t.nav.about, t.nav.team, t.nav.news, t.footer.careers, t.nav.contact] },
-    { title: t.footer.legal, links: [t.footer.privacy, t.footer.terms, t.footer.fra, t.footer.cookies] },
+export function Footer({ t, lang }: { t: any, lang: string }) {
+  type FooterLink = { label: string; href?: string; external?: boolean };
+  const footerLinks: { title: string; links: FooterLink[] }[] = [
+    {
+      title: t.footer.businessAreas,
+      links: [t.services.s1.title, t.services.s2.title, t.services.s5.title, t.services.s4.title, t.services.s3.title]
+        .map((label: string) => ({ label }))
+    },
+    {
+      title: t.footer.company,
+      links: [
+        { label: t.nav.about },
+        { label: t.nav.team },
+        { label: t.nav.news },
+        { label: t.footer.careers, href: careersPortalUrl(lang), external: true },
+        { label: t.nav.contact },
+      ]
+    },
+    {
+      title: t.footer.legal,
+      links: [t.footer.privacy, t.footer.terms, t.footer.fra, t.footer.cookies]
+        .map((label: string) => ({ label }))
+    },
   ];
 
   return (
@@ -1436,8 +1683,16 @@ function Footer({ t, lang }: { t: any, lang: string }) {
               <h4 className="font-heading font-black text-[12px] tracking-[0.4em] uppercase text-foreground/40">{col.title}</h4>
               <ul className="space-y-6">
                 {col.links.map(l => (
-                  <li key={l}>
-                    <a href="#" className="font-sans text-muted-foreground text-lg hover:text-blue-500 transition-colors duration-300 block" style={{cursor:"none"}}>{l}</a>
+                  <li key={l.label}>
+                    <a
+                      href={l.href ?? "#"}
+                      {...(l.external ? EXTERNAL_LINK_PROPS : {})}
+                      className="font-sans text-muted-foreground text-lg hover:text-blue-500 transition-colors duration-300 block"
+                      style={{cursor:"none"}}
+                    >
+                      {l.label}
+                      {l.external && <span className="sr-only"> {t.careers.newTab}</span>}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -1454,19 +1709,20 @@ function Footer({ t, lang }: { t: any, lang: string }) {
 
 /* ─── Main Export ─── */
 export default function Home() {
-  const [lang, setLang] = useState('en');
+  // Arabic is the site's default language; the root layout ships matching
+  // lang/dir/body attributes so the first paint is already correct.
+  const [lang, setLang] = useState('ar');
   const t = translations[lang as keyof typeof translations];
 
   useEffect(() => {
-    // Sync attributes to avoid hydration mismatch
-    document.body.className = lang === 'ar' ? 'lang-ar' : '';
+    // Toggle only the language class so next/font's variable classes on <body> survive.
+    document.body.classList.toggle('lang-ar', lang === 'ar');
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = lang;
   }, [lang]);
 
   return (
     <div className={`min-h-screen bg-background text-foreground selection:bg-blue-500/30`}>
-      <Cursor />
       <Navbar lang={lang} setLang={setLang} t={t} />
       <Hero t={t} lang={lang} />
       <Services t={t} lang={lang} />
@@ -1479,6 +1735,8 @@ export default function Home() {
       <Team t={t} lang={lang} />
       <Governance t={t} lang={lang} />
       <Values t={t} lang={lang} />
+      <Careers t={t} lang={lang} />
+      <CalculatorPromo t={t} lang={lang} />
       <CTA t={t} lang={lang} />
       <Footer t={t} lang={lang} />
     </div>
