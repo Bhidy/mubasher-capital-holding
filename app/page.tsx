@@ -79,10 +79,10 @@ export const translations = {
       title: "Comprehensive Financial Powerhouse",
       s1: { title: "Mubasher Trade - Egypt", desc: "Egypt's Top 3 Brokerage Firm delivering rapid execution and digital trading innovation." },
       s2: { title: "Mubasher Media", desc: "The region's leading financial media powerhouse. Its flagship product, Mubasher Info, delivers real-time data to over 2.5M monthly visitors." },
-      s3: { title: "Mubasher Global", desc: "Your secure gateway to over 90 international financial markets." },
+      s3: { title: "Mubasher Global", desc: "Based in Bahrain, your secure gateway to over 90 international financial markets." },
       s4: { title: "Mubasher Asset Mgmt", desc: "Tailored institutional and private investment portfolios designed for growth." },
       s5: { title: "Mubasher Custody", desc: "The trusted guardian of client assets with unparalleled transparency and security." },
-      s6: { title: "Mubasher Capital - Bahrain", desc: "Global investment partner providing elite institutional trading solutions." }
+      s6: { title: "Mubasher Advisory", desc: "Expert market signals and real-time trading insights to guide every investment decision." }
     },
     about: {
       label: "Group Overview",
@@ -90,8 +90,7 @@ export const translations = {
       desc: "Mubasher Capital Holding orchestrates a seamless, end-to-end investment experience. Our subsidiaries operate synergistically to provide comprehensive financial environments for retail and institutional investors alike.",
       stat1: "Years of Heritage",
       stat2: "Annual Trading Volume",
-      stat2Value: "Tens of Billions",
-      btn: "Discover Our Vision"
+      stat2Value: "Hundreds of Billions"
     },
     tradeServices: {
       label: "Individual Services",
@@ -111,6 +110,15 @@ export const translations = {
       title: "Trade with Us",
       desc: "Unlike other online trading platforms, Mubasher Trade provides you with all trading tools in one integrated application. Experience impressive features across Desktop, Web, Android, and iOS—tailored for both retail and institutional excellence.",
       btn: "Open a Live Account"
+    },
+    products: {
+      label: "What We Offer",
+      title: "Our Products",
+      btn: "Visit Website",
+      p1: { tag: "Digital Platforms", title: "Mubasher Trade", desc: "The Group's digital trading platform for the stock market, giving investors the freedom and ease to trade seamlessly across Desktop, Web, Android, and iOS—built for both retail and institutional investors." },
+      p2: { heading: "Mubasher Advisory", tag: "Trading Signals", title: "Smart Signals", desc: "A built-in market signals service inside Mubasher Trade, offering expert calls and real-time tools that keep investors informed at every step:", bullets: ["Expert signals & instant push alerts", "Live prices & interactive charts", "Syncs instantly with your web account"] },
+      p3: { tag: "Media & Data", title: "Mubasher Info", desc: "The Group's media arm and the largest Arabic app covering the stock exchange and equities market, delivering the latest financial market figures, local and global market indices, and company IPO news." },
+      p4: { tag: "Education", title: "Mubasher Academy", desc: "The Group's educational arm, helping investors analyze the market and master how to trade—from technical analysis to chart reading—building skills step by step toward professional trading." }
     },
     team: {
       label: "Group Leadership",
@@ -203,10 +211,10 @@ export const translations = {
       title: "قوة مالية شاملة",
       s1: { title: "مباشر تريد - مصر", desc: "من أفضل 3 شركات وساطة في مصر، تقدم تنفيذ سريع وابتكار في التداول الرقمي." },
       s2: { title: "مباشر ميديا", desc: "القوة الإعلامية المالية الرائدة في المنطقة. منتجها الرائد، مباشر إنفو، يقدم بيانات واخبار اقتصادية شاملة لأكثر من 2.5 مليون زائر شهرياً." },
-      s3: { title: "مباشر جلوبال", desc: "بوابتك الآمنة لأكثر من 90 سوقاً مالياً دولياً." },
+      s3: { title: "مباشر جلوبال", desc: "انطلاقاً من مقرها في البحرين، بوابتك الآمنة لأكثر من 90 سوقاً مالياً دولياً." },
       s4: { title: "مباشر لإدارة الأصول", desc: "محافظ استثمارية مؤسسية وخاصة مصممة خصيصاً للنمو." },
       s5: { title: "مباشر للحفظ", desc: "الحارس الموثوق لأصول العملاء بشفافية وأمان لا مثيل لهما." },
-      s6: { title: "مباشر كابيتال - البحرين", desc: "شريك استثماري عالمي يقدم حلول تداول مؤسسية رائدة." }
+      s6: { title: "مباشر للاستشارات", desc: "إشارات سوق من الخبراء ورؤى تداول لحظية لتوجيه كل قرار استثماري." }
     },
     about: {
       label: "نظرة عامة على المجموعة",
@@ -214,8 +222,7 @@ export const translations = {
       desc: "تقوم مباشر كابيتال القابضة بتنسيق تجربة استثمارية متكاملة وسلسة. تعمل شركاتنا التابعة بتآزر لتوفير بيئات مالية شاملة للمستثمرين الأفراد والمؤسسات على حد سواء.",
       stat1: "سنوات من التراث",
       stat2: "حجم التداول السنوي",
-      stat2Value: "عشرات المليارات",
-      btn: "اكتشف رؤيتنا"
+      stat2Value: "مئات المليارات"
     },
     tradeServices: {
       label: "خدمات الأفراد",
@@ -235,6 +242,15 @@ export const translations = {
       title: "تداول معنا",
       desc: "على عكس منصات التداول الأخرى، توفر لك مباشر تريد جميع أدوات التداول في تطبيق واحد متكامل. استمتع بميزات مبهرة عبر منصات الكمبيوتر والويب والأندرويد وiOS - مصممة للتميز على مستوى الأفراد والمؤسسات.",
       btn: "افتح حساباً حقيقياً"
+    },
+    products: {
+      label: "ماذا نقدم",
+      title: "منتجاتنا",
+      btn: "زيارة الموقع",
+      p1: { tag: "المنصات الرقمية", title: "مباشر تريد", desc: "منصة التداول الرقمية للمجموعة في سوق الأوراق المالية، تمنح المستثمرين حرية وسهولة التداول بسلاسة عبر الكمبيوتر والويب والأندرويد وiOS — مصممة للمستثمرين الأفراد والمؤسسات على حد سواء." },
+      p2: { heading: "مباشر للاستشارات", tag: "إشارات التداول", title: "الإشارات الذكية", desc: "خدمة إشارات سوق مدمجة داخل مباشر تريد، تقدم توصيات الخبراء وأدوات لحظية تُبقي المستثمرين على اطلاع في كل خطوة:", bullets: ["إشارات من الخبراء وتنبيهات فورية", "أسعار لحظية ورسوم بيانية تفاعلية", "مزامنة فورية مع حسابك على الويب"] },
+      p3: { tag: "الإعلام والبيانات", title: "مباشر إنفو", desc: "الذراع الإعلامية للمجموعة وأكبر تطبيق عربي يغطي البورصة وسوق الأسهم، يقدم أحدث أرقام الأسواق المالية والمؤشرات المحلية والعالمية وأخبار الطروحات الأولية للشركات." },
+      p4: { tag: "التعليم", title: "أكاديمية مباشر", desc: "الذراع التعليمية للمجموعة، تساعد المستثمرين على تحليل السوق وإتقان التداول — من التحليل الفني إلى قراءة الرسوم البيانية — لبناء المهارات خطوة بخطوة نحو التداول الاحترافي." }
     },
     team: {
       label: "قيادة المجموعة",
@@ -572,7 +588,7 @@ function Hero({ t, lang }: { t: any, lang: string }) {
             <div className="font-sans text-[11px] font-bold tracking-[0.3em] text-muted-foreground uppercase">{t.hero.stat2}</div>
           </div>
           <div className="space-y-2">
-            <div className="font-heading text-4xl lg:text-6xl font-black text-gradient-main">10B+</div>
+            <div className="font-heading text-4xl lg:text-6xl font-black text-gradient-main">40B+</div>
             <div className="font-sans text-[11px] font-bold tracking-[0.3em] text-muted-foreground uppercase">{t.hero.stat3}</div>
           </div>
         </motion.div>
@@ -617,7 +633,7 @@ function Services({ t, lang }: { t: any, lang: string }) {
             return (
               <motion.div
                 key={s.id}
-                className="premium-card p-12 rounded-[3rem] flex flex-col min-h-[450px] group relative overflow-hidden transition-all duration-700"
+                className="premium-card p-12 rounded-[2rem] flex flex-col min-h-[450px] group relative overflow-hidden transition-all duration-700"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: i * 0.1 }}
@@ -625,7 +641,7 @@ function Services({ t, lang }: { t: any, lang: string }) {
                
               >
                 <div className="flex justify-between items-start mb-12">
-                  <span className="font-heading text-7xl font-black text-foreground/[0.03] group-hover:text-blue-500/10 transition-colors duration-700">
+                  <span className="font-heading text-7xl font-black leading-none text-foreground/[0.08] group-hover:text-blue-500/20 transition-colors duration-700">
                     {s.id}
                   </span>
                   <div className={`w-16 h-16 rounded-[1.5rem] flex items-center justify-center transition-all duration-700 group-hover:scale-110 group-hover:rotate-6 ${
@@ -682,9 +698,6 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
               <div className="font-sans text-[11px] font-black tracking-[0.3em] text-blue-500 uppercase">{t.about.stat2}</div>
             </div>
           </div>
-          <a href="#contact" className="btn-primary min-w-[260px] py-5 text-base">
-            {t.about.btn}
-          </a>
         </motion.div>
 
         <motion.div
@@ -737,15 +750,18 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
           <p className="font-sans text-muted-foreground/80 text-xl leading-relaxed mb-10">
             {t.track.desc}
           </p>
-          <div className={`grid grid-cols-2 gap-8 ${lang === 'ar' ? 'text-right' : ''}`}>
-            <div className="premium-card p-6 rounded-3xl">
-              <div className="font-heading text-4xl lg:text-5xl font-black text-blue-500 mb-2">10%</div>
-              <div className="font-sans text-sm font-bold text-muted-foreground uppercase">{lang === 'en' ? 'Market Share' : 'الحصة السوقية'}</div>
-            </div>
-            <div className="premium-card p-6 rounded-3xl">
-              <div className="font-heading text-4xl lg:text-5xl font-black text-emerald-500 mb-2">18</div>
-              <div className="font-sans text-sm font-bold text-muted-foreground uppercase">{lang === 'en' ? 'Branches' : 'فروع'}</div>
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
+            {[
+              { value: "7.1%", label: lang === 'en' ? 'Market Share' : 'الحصة السوقية', color: "text-blue-500" },
+              { value: "18", label: lang === 'en' ? 'Branches' : 'فروع', color: "text-emerald-500" },
+              { value: lang === 'en' ? '3rd' : 'الثالث', label: lang === 'en' ? 'Main Market 2026' : 'السوق الرئيسي 2026', color: "text-blue-500" },
+              { value: lang === 'en' ? '3rd' : 'الثالث', label: lang === 'en' ? 'Retail Market 2026' : 'سوق الأفراد 2026', color: "text-emerald-500" },
+            ].map((stat) => (
+              <div key={stat.label} className="premium-card p-5 rounded-3xl flex flex-col items-center justify-center text-center">
+                <div className={`font-heading text-3xl lg:text-4xl font-black mb-2 ${stat.color}`}>{stat.value}</div>
+                <div className="font-sans text-[11px] lg:text-xs font-bold tracking-wide text-muted-foreground uppercase leading-snug">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </motion.div>
         
@@ -1043,6 +1059,110 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
             </div>
           </motion.div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Our Products Section ─── */
+const PRODUCT_ITEMS = (t: any) => [
+  { data: t.products.p1, href: "https://egypt.mubashertrade.com/ar/", image: "/images/products/mubasher-trade.png", imgClass: "max-w-[500px]" },
+  { data: t.products.p2, href: "https://mubashersignals.com/", image: "/images/products/smart-signals.png", imgClass: "max-w-[560px]" },
+  { data: t.products.p3, href: "https://www.mubasher.info/", image: "/images/products/mubasher-info.png", imgClass: "max-w-[640px]" },
+  { data: t.products.p4, href: "https://mubasher-academy.acadimiat.com/", image: "/images/products/mubasher-academy.png", imgClass: "max-w-[560px]" },
+];
+
+function ProductRow({ p, index, t, lang }: { p: any, index: number, t: any, lang: string }) {
+  const reversed = index % 2 === 1;
+  const slideFrom = (reversed ? 60 : -60) * (lang === 'ar' ? -1 : 1);
+  return (
+    <div>
+      {p.data.heading && (
+        <motion.h3
+          className={`font-heading ${lang === 'ar' ? 'text-4xl lg:text-6xl' : 'text-5xl lg:text-7xl'} font-extrabold tracking-tightest text-center mb-12 md:mb-20 text-shine interactive-shine`}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          {p.data.heading}
+        </motion.h3>
+      )}
+      <div className={`flex flex-col ${reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-24`}>
+        <motion.div
+          className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-start"
+          initial={{ opacity: 0, x: slideFrom }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <span className="section-label">{p.data.tag}</span>
+          <h3 className={`font-heading ${lang === 'ar' ? 'text-4xl lg:text-6xl' : 'text-5xl lg:text-7xl'} font-extrabold tracking-tightest mt-4 leading-tight text-shine interactive-shine`}>
+            {p.data.title}
+          </h3>
+          <div className="w-24 h-1.5 bg-blue-600 rounded-full mt-6 mb-8" />
+          <p className="font-sans text-muted-foreground/80 text-xl leading-relaxed mb-8">
+            {p.data.desc}
+          </p>
+          {p.data.bullets && (
+            <ul className="space-y-4 mb-10 text-start">
+              {p.data.bullets.map((b: string) => (
+                <li key={b} className="flex items-start gap-3">
+                  <span className="w-2 h-2 rounded-full bg-blue-500/60 mt-2.5 shrink-0" />
+                  <span className="font-sans text-muted-foreground/90 text-lg leading-relaxed">{b}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          <a href={p.href} {...EXTERNAL_LINK_PROPS} className="btn-primary py-4 px-9 text-base">
+            {t.products.btn} <ArrowRight className={`w-5 h-5 ${lang === 'ar' ? 'rotate-180 ms-2' : 'ms-2'}`} />
+          </a>
+        </motion.div>
+        <motion.div
+          className="w-full lg:w-1/2"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <img src={p.image} alt={p.data.title} className={`w-full h-auto mx-auto ${p.imgClass}`} />
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
+function OurProducts({ t, lang }: { t: any, lang: string }) {
+  const first = PRODUCT_ITEMS(t)[0];
+  return (
+    <section id="products" className="py-16 md:py-24 px-6 bg-background relative z-10 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          className="mb-16 md:mb-32 text-center max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <span className="section-label justify-center">{t.products.label}</span>
+          <h2 className={`font-heading ${lang === 'ar' ? 'text-5xl lg:text-7xl' : 'text-5xl lg:text-8xl'} font-extrabold tracking-tightest mt-6 leading-tight text-shine interactive-shine`}>
+            {t.products.title}
+          </h2>
+        </motion.div>
+        <ProductRow p={first} index={0} t={t} lang={lang} />
+      </div>
+    </section>
+  );
+}
+
+function OurProductsMore({ t, lang }: { t: any, lang: string }) {
+  const rest = PRODUCT_ITEMS(t).slice(1);
+  return (
+    <section className="py-16 md:py-24 px-6 bg-background relative z-10 overflow-hidden">
+      <div className="max-w-7xl mx-auto space-y-24 md:space-y-40">
+        {rest.map((p, i) => (
+          <ProductRow key={p.image} p={p} index={i + 1} t={t} lang={lang} />
+        ))}
       </div>
     </section>
   );
@@ -1694,8 +1814,10 @@ export default function Home() {
       <Services t={t} lang={lang} />
       <AboutSection t={t} lang={lang} />
       <TrackRecord t={t} lang={lang} />
+      <OurProducts t={t} lang={lang} />
       <TradeEgyptServices t={t} lang={lang} />
       <DigitalPlatforms t={t} lang={lang} />
+      <OurProductsMore t={t} lang={lang} />
       <News t={t} lang={lang} />
       <Media t={t} lang={lang} />
       <Team t={t} lang={lang} />
