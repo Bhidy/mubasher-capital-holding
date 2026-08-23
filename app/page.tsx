@@ -121,6 +121,19 @@ export const translations = {
       p3: { tag: "Media & Data", title: "Mubasher Info", desc: "The Group's media arm and the largest Arabic app covering the stock exchange and equities market, delivering the latest financial market figures, local and global market indices, and company IPO news." },
       p4: { tag: "Education", title: "Mubasher Academy", desc: "The Group's educational arm, helping investors analyze the market and master how to trade—from technical analysis to chart reading—building skills step by step toward professional trading." }
     },
+    funds: {
+      label: "Investment Funds",
+      title: "Mubasher Mutual Funds",
+      desc: "A range of mutual funds managed by the Group, offering diversified investment options across asset classes. Select a fund to view its details.",
+      detailsLabel: "Fund Details",
+      knowMore: "Know More",
+      fields: { inception: "Inception Date", nominal: "Nominal Unit Value", subscription: "Subscription", redemption: "Redemption", subFees: "Subscription Fees", redFees: "Redemption Fees", minSub: "Minimum Subscription", maxSub: "Maximum Subscription", distributions: "Distributions" },
+      f1: { name: "Gold Mubasher", inception: "August 2025", nominal: "EGP 10", subscription: "Monday to Thursday", redemption: "Monday to Thursday", subFees: "Zero / No Fees", redFees: "Zero / No Fees", minSub: "1 Investment Unit", maxSub: "No Maximum", distributions: "Accumulated Returns" },
+      f2: { name: "Silver Mubasher", inception: "June 2026", nominal: "EGP 10", subscription: "Monday to Thursday", redemption: "Monday to Thursday", subFees: "Zero / No Fees", redFees: "Zero / No Fees", minSub: "1 Investment Unit", maxSub: "No Maximum", distributions: "Accumulated Returns" },
+      f3: { name: "Dollar Mubasher", inception: "May 11, 2026", nominal: "USD 1", subscription: "Daily", redemption: "Weekly – every Monday", subFees: "Zero / No Fees", redFees: "Zero / No Fees", minSub: "1 Investment Unit", maxSub: "No Maximum", distributions: "Accumulated Returns" },
+      f4: { name: "Cash Mubasher", inception: "November 2022", nominal: "EGP 10", subscription: "Daily", redemption: "Daily", subFees: "Zero / No Fees", redFees: "Zero / No Fees", minSub: "1 Investment Unit", maxSub: "No Maximum", distributions: "Accumulated Returns" },
+      f5: { name: "Mubasher Equity Funds", inception: "September 2024", nominal: "EGP 1", subscription: "Daily", redemption: "Weekly", subFees: "Zero / No Fees", redFees: "Zero / No Fees", minSub: "1 Investment Unit", maxSub: "No Maximum", distributions: "Accumulated Returns" }
+    },
     team: {
       label: "Group Leadership",
       title: "Visionary Minds"
@@ -252,6 +265,19 @@ export const translations = {
       p2: { heading: "مباشر للاستشارات", tag: "إشارات التداول", title: "الإشارات الذكية", desc: "خدمة إشارات سوق مدمجة داخل مباشر تريد، تقدم توصيات الخبراء وأدوات لحظية تُبقي المستثمرين على اطلاع في كل خطوة:", bullets: ["إشارات من الخبراء وتنبيهات فورية", "أسعار لحظية ورسوم بيانية تفاعلية", "مزامنة فورية مع حسابك على الويب"] },
       p3: { tag: "الإعلام والبيانات", title: "مباشر إنفو", desc: "الذراع الإعلامية للمجموعة وأكبر تطبيق عربي يغطي البورصة وسوق الأسهم، يقدم أحدث أرقام الأسواق المالية والمؤشرات المحلية والعالمية وأخبار الطروحات الأولية للشركات." },
       p4: { tag: "التعليم", title: "أكاديمية مباشر", desc: "الذراع التعليمية للمجموعة، تساعد المستثمرين على تحليل السوق وإتقان التداول — من التحليل الفني إلى قراءة الرسوم البيانية — لبناء المهارات خطوة بخطوة نحو التداول الاحترافي." }
+    },
+    funds: {
+      label: "صناديق الاستثمار",
+      title: "صناديق مباشر للاستثمار",
+      desc: "مجموعة من صناديق الاستثمار التي تديرها المجموعة، تتيح خيارات استثمارية متنوعة عبر مختلف فئات الأصول. اختر صندوقاً لعرض تفاصيله.",
+      detailsLabel: "تفاصيل الصندوق",
+      knowMore: "اعرف المزيد",
+      fields: { inception: "تاريخ الإنشاء", nominal: "القيمة الاسمية للوثيقة", subscription: "الاكتتاب", redemption: "الاسترداد", subFees: "رسوم الاكتتاب", redFees: "رسوم الاسترداد", minSub: "الحد الأدنى للاكتتاب", maxSub: "الحد الأقصى للاكتتاب", distributions: "التوزيعات" },
+      f1: { name: "مباشر ذهب", inception: "أغسطس 2025", nominal: "10 جنيهات مصرية", subscription: "من الاثنين إلى الخميس", redemption: "من الاثنين إلى الخميس", subFees: "بدون رسوم", redFees: "بدون رسوم", minSub: "وثيقة استثمار واحدة", maxSub: "بدون حد أقصى", distributions: "عوائد تراكمية" },
+      f2: { name: "مباشر فضة", inception: "يونيو 2026", nominal: "10 جنيهات مصرية", subscription: "من الاثنين إلى الخميس", redemption: "من الاثنين إلى الخميس", subFees: "بدون رسوم", redFees: "بدون رسوم", minSub: "وثيقة استثمار واحدة", maxSub: "بدون حد أقصى", distributions: "عوائد تراكمية" },
+      f3: { name: "مباشر دولار", inception: "11 مايو 2026", nominal: "1 دولار أمريكي", subscription: "يومياً", redemption: "أسبوعياً — كل يوم اثنين", subFees: "بدون رسوم", redFees: "بدون رسوم", minSub: "وثيقة استثمار واحدة", maxSub: "بدون حد أقصى", distributions: "عوائد تراكمية" },
+      f4: { name: "مباشر كاش", inception: "نوفمبر 2022", nominal: "10 جنيهات مصرية", subscription: "يومياً", redemption: "يومياً", subFees: "بدون رسوم", redFees: "بدون رسوم", minSub: "وثيقة استثمار واحدة", maxSub: "بدون حد أقصى", distributions: "عوائد تراكمية" },
+      f5: { name: "مباشر أسهم", inception: "سبتمبر 2024", nominal: "1 جنيه مصري", subscription: "يومياً", redemption: "أسبوعياً", subFees: "بدون رسوم", redFees: "بدون رسوم", minSub: "وثيقة استثمار واحدة", maxSub: "بدون حد أقصى", distributions: "عوائد تراكمية" }
     },
     team: {
       label: "قيادة المجموعة",
@@ -1174,6 +1200,132 @@ function OurProductsMore({ t, lang }: { t: any, lang: string }) {
   );
 }
 
+/* ─── Mutual Funds Section ─── */
+function MutualFunds({ t, lang }: { t: any, lang: string }) {
+  const funds = [
+    { key: "gold", logo: "/images/funds/gold.png", data: t.funds.f1 },
+    { key: "silver", logo: "/images/funds/silver.png", data: t.funds.f2 },
+    { key: "dollar", logo: "/images/funds/dollar.png", data: t.funds.f3 },
+    { key: "cash", logo: "/images/funds/cash.png", data: t.funds.f4 },
+    { key: "equity", logo: "/images/funds/equity.png", data: t.funds.f5 },
+  ];
+  const [activeKey, setActiveKey] = useState("gold");
+  const fund = funds.find(f => f.key === activeKey)!;
+  const F = t.funds.fields;
+  const rows: [string, string][] = [
+    [F.inception, fund.data.inception],
+    [F.nominal, fund.data.nominal],
+    [F.subscription, fund.data.subscription],
+    [F.redemption, fund.data.redemption],
+    [F.subFees, fund.data.subFees],
+    [F.redFees, fund.data.redFees],
+    [F.minSub, fund.data.minSub],
+    [F.maxSub, fund.data.maxSub],
+    [F.distributions, fund.data.distributions],
+  ];
+
+  return (
+    <section id="funds" className="py-16 md:py-24 px-6 bg-secondary/15 relative z-10 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          className="mb-12 md:mb-20 text-center max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <span className="section-label justify-center">{t.funds.label}</span>
+          <h2 className={`font-heading ${lang === 'ar' ? 'text-5xl lg:text-7xl' : 'text-5xl lg:text-8xl'} font-extrabold tracking-tightest mt-6 leading-tight text-shine interactive-shine`}>
+            {t.funds.title}
+          </h2>
+          <p className="font-sans text-muted-foreground/80 text-lg lg:text-xl leading-relaxed mt-8">
+            {t.funds.desc}
+          </p>
+        </motion.div>
+
+        {/* Fund selector rail */}
+        <motion.div
+          className="flex flex-wrap justify-center gap-x-6 gap-y-8 md:gap-x-10 mb-12 md:mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          viewport={{ once: true }}
+        >
+          {funds.map((f) => {
+            const isActive = f.key === activeKey;
+            return (
+              <button
+                key={f.key}
+                type="button"
+                onClick={() => setActiveKey(f.key)}
+                aria-pressed={isActive}
+                className="group flex flex-col items-center gap-3 outline-none"
+              >
+                <span className={`w-20 h-20 md:w-24 md:h-24 rounded-3xl border-2 bg-white dark:bg-white/95 p-2.5 flex items-center justify-center transition-all duration-500 ${
+                  isActive
+                    ? "border-blue-600 shadow-xl shadow-blue-500/20 scale-105"
+                    : "border-border/60 group-hover:border-blue-400/60 group-hover:scale-105 shadow-sm"
+                }`}>
+                  <Image src={f.logo} alt="" width={512} height={512} className="w-full h-full object-contain" />
+                </span>
+                <span className={`font-heading text-sm md:text-base font-bold transition-colors duration-300 ${
+                  isActive ? "text-blue-600 dark:text-blue-400" : "text-foreground group-hover:text-blue-500"
+                }`}>
+                  {f.data.name}
+                </span>
+              </button>
+            );
+          })}
+        </motion.div>
+
+        {/* Fund details card */}
+        <motion.div
+          className="max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.25 }}
+          viewport={{ once: true }}
+        >
+          <div className="premium-card rounded-[2rem] p-6 md:p-10 overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={fund.key + lang}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <div className="flex items-center gap-4 mb-8 md:mb-10">
+                  <span className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white dark:bg-white/95 border border-border/50 p-1.5 flex items-center justify-center shrink-0">
+                    <Image src={fund.logo} alt="" width={512} height={512} className="w-full h-full object-contain" />
+                  </span>
+                  <div>
+                    <div className="font-sans text-[11px] font-black tracking-[0.3em] text-blue-500 uppercase mb-1">{t.funds.detailsLabel}</div>
+                    <h3 className="font-heading text-2xl md:text-3xl font-bold tracking-tight">{fund.data.name}</h3>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {rows.map(([label, value], i) => (
+                    <div key={label} className={`flex items-center justify-between gap-4 py-4 px-5 rounded-2xl ${i % 4 === 0 || i % 4 === 3 ? "bg-blue-500/[0.06]" : "bg-secondary/40"}`}>
+                      <span className="font-sans text-muted-foreground/80 text-sm md:text-[15px]">{label}</span>
+                      <span className="font-heading font-bold text-foreground text-sm md:text-[15px] text-end">{value}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <a href="#contact" className="btn-primary w-full h-14 mt-8 flex items-center justify-center gap-2 text-base">
+                  {t.funds.knowMore} <ArrowRight className={`w-5 h-5 ${lang === 'ar' ? 'rotate-180' : ''}`} />
+                </a>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Governance Section ─── */
 function Governance({ t, lang }: { t: any, lang: string }) {
   return (
@@ -1760,8 +1912,12 @@ export function Footer({ t, lang }: { t: any, lang: string }) {
     },
     {
       title: t.footer.legal,
-      links: [t.footer.privacy, t.footer.terms, t.footer.fra, t.footer.cookies]
-        .map((label: string) => ({ label }))
+      links: [
+        { label: t.footer.privacy, href: lang === 'en' ? '/privacy?lang=en' : '/privacy' },
+        { label: t.footer.terms, href: lang === 'en' ? '/terms?lang=en' : '/terms' },
+        { label: t.footer.fra, href: lang === 'en' ? '/fra-disclosures?lang=en' : '/fra-disclosures' },
+        { label: t.footer.cookies },
+      ]
     },
   ];
 
@@ -1833,6 +1989,12 @@ export default function Home() {
   const t = translations[lang as keyof typeof translations];
 
   useEffect(() => {
+    // Legal pages link back with ?lang= so the visitor keeps their language.
+    const q = new URLSearchParams(window.location.search).get('lang');
+    if (q === 'en' || q === 'ar') setLang(q);
+  }, []);
+
+  useEffect(() => {
     // Toggle only the language class so next/font's variable classes on <body> survive.
     document.body.classList.toggle('lang-ar', lang === 'ar');
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -1850,6 +2012,7 @@ export default function Home() {
       <TradeEgyptServices t={t} lang={lang} />
       <DigitalPlatforms t={t} lang={lang} />
       <OurProductsMore t={t} lang={lang} />
+      <MutualFunds t={t} lang={lang} />
       <News t={t} lang={lang} />
       <Media t={t} lang={lang} />
       <Team t={t} lang={lang} />
