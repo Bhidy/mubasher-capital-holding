@@ -125,7 +125,7 @@ export const translations = {
     funds: {
       label: "Investment Funds",
       title: "Mubasher Mutual Funds",
-      desc: "A range of mutual funds managed by the Group, offering diversified investment options across asset classes.",
+      desc: "A range of mutual funds offering diversified investment options across asset classes.",
       detailsLabel: "Fund Details",
       tba: "To be announced",
       fields: { unitPrice: "Unit Price", inception: "Inception Date", nominal: "Nominal Unit Value", subscription: "Subscription", redemption: "Redemption", subFees: "Subscription Fees", redFees: "Redemption Fees", minSub: "Minimum Subscription", maxSub: "Maximum Subscription", distributions: "Distributions" }
@@ -265,7 +265,7 @@ export const translations = {
     funds: {
       label: "صناديق الاستثمار",
       title: "صناديق مباشر للاستثمار",
-      desc: "مجموعة من صناديق الاستثمار التي تديرها المجموعة، تتيح خيارات استثمارية متنوعة عبر مختلف فئات الأصول.",
+      desc: "مجموعة من صناديق الاستثمار تتيح خيارات استثمارية متنوعة عبر مختلف فئات الأصول",
       detailsLabel: "تفاصيل الصندوق",
       tba: "يُعلن قريباً",
       fields: { unitPrice: "سعر الوثيقة", inception: "تاريخ الإنشاء", nominal: "القيمة الاسمية للوثيقة", subscription: "الاكتتاب", redemption: "الاسترداد", subFees: "رسوم الاكتتاب", redFees: "رسوم الاسترداد", minSub: "الحد الأدنى للاكتتاب", maxSub: "الحد الأقصى للاكتتاب", distributions: "التوزيعات" }
