@@ -1,45 +1,165 @@
 {
-  "updatedAt": "2026-08-23T00:00:00.000Z",
+  "updatedAt": "2026-08-23T15:17:38.185Z",
   "funds": [
     {
       "key": "gold",
       "logo": "/images/funds/gold.png",
       "logoVersion": "",
       "knowMoreUrl": "",
-      "en": { "name": "Gold Mubasher", "unitPrice": "", "inception": "August 2025", "nominal": "EGP 10", "subscription": "Monday to Thursday", "redemption": "Monday to Thursday", "subFees": "Zero / No Fees", "redFees": "Zero / No Fees", "minSub": "1 Investment Unit", "maxSub": "No Maximum", "distributions": "Accumulated Returns" },
-      "ar": { "name": "مباشر ذهب", "unitPrice": "", "inception": "أغسطس 2025", "nominal": "10 جنيهات مصرية", "subscription": "من الاثنين إلى الخميس", "redemption": "من الاثنين إلى الخميس", "subFees": "بدون رسوم", "redFees": "بدون رسوم", "minSub": "وثيقة استثمار واحدة", "maxSub": "بدون حد أقصى", "distributions": "عوائد تراكمية" }
+      "en": {
+        "name": "Gold Mubasher",
+        "unitPrice": "23.97",
+        "inception": "August 2025",
+        "nominal": "EGP 10",
+        "subscription": "Monday to Thursday",
+        "redemption": "Monday to Thursday",
+        "subFees": "Zero / No Fees",
+        "redFees": "Zero / No Fees",
+        "minSub": "1 Investment Unit",
+        "maxSub": "No Maximum",
+        "distributions": "Accumulated Returns"
+      },
+      "ar": {
+        "name": "مباشر ذهب",
+        "unitPrice": "23.97",
+        "inception": "أغسطس 2025",
+        "nominal": "10 جنيهات مصرية",
+        "subscription": "من الاثنين إلى الخميس",
+        "redemption": "من الاثنين إلى الخميس",
+        "subFees": "بدون رسوم",
+        "redFees": "بدون رسوم",
+        "minSub": "وثيقة استثمار واحدة",
+        "maxSub": "بدون حد أقصى",
+        "distributions": "عوائد تراكمية"
+      }
     },
     {
       "key": "silver",
       "logo": "/images/funds/silver.png",
       "logoVersion": "",
       "knowMoreUrl": "",
-      "en": { "name": "Silver Mubasher", "unitPrice": "", "inception": "June 2026", "nominal": "EGP 10", "subscription": "Monday to Thursday", "redemption": "Monday to Thursday", "subFees": "Zero / No Fees", "redFees": "Zero / No Fees", "minSub": "1 Investment Unit", "maxSub": "No Maximum", "distributions": "Accumulated Returns" },
-      "ar": { "name": "مباشر فضة", "unitPrice": "", "inception": "يونيو 2026", "nominal": "10 جنيهات مصرية", "subscription": "من الاثنين إلى الخميس", "redemption": "من الاثنين إلى الخميس", "subFees": "بدون رسوم", "redFees": "بدون رسوم", "minSub": "وثيقة استثمار واحدة", "maxSub": "بدون حد أقصى", "distributions": "عوائد تراكمية" }
+      "en": {
+        "name": "Silver Mubasher",
+        "unitPrice": "",
+        "inception": "June 2026",
+        "nominal": "EGP 10",
+        "subscription": "Monday to Thursday",
+        "redemption": "Monday to Thursday",
+        "subFees": "Zero / No Fees",
+        "redFees": "Zero / No Fees",
+        "minSub": "1 Investment Unit",
+        "maxSub": "No Maximum",
+        "distributions": "Accumulated Returns"
+      },
+      "ar": {
+        "name": "مباشر فضة",
+        "unitPrice": "",
+        "inception": "يونيو 2026",
+        "nominal": "10 جنيهات مصرية",
+        "subscription": "من الاثنين إلى الخميس",
+        "redemption": "من الاثنين إلى الخميس",
+        "subFees": "بدون رسوم",
+        "redFees": "بدون رسوم",
+        "minSub": "وثيقة استثمار واحدة",
+        "maxSub": "بدون حد أقصى",
+        "distributions": "عوائد تراكمية"
+      }
     },
     {
       "key": "dollar",
       "logo": "/images/funds/dollar.png",
       "logoVersion": "",
       "knowMoreUrl": "",
-      "en": { "name": "Dollar Mubasher", "unitPrice": "", "inception": "May 11, 2026", "nominal": "USD 1", "subscription": "Daily", "redemption": "Weekly – every Monday", "subFees": "Zero / No Fees", "redFees": "Zero / No Fees", "minSub": "1 Investment Unit", "maxSub": "No Maximum", "distributions": "Accumulated Returns" },
-      "ar": { "name": "مباشر دولار", "unitPrice": "", "inception": "11 مايو 2026", "nominal": "1 دولار أمريكي", "subscription": "يومياً", "redemption": "أسبوعياً — كل يوم اثنين", "subFees": "بدون رسوم", "redFees": "بدون رسوم", "minSub": "وثيقة استثمار واحدة", "maxSub": "بدون حد أقصى", "distributions": "عوائد تراكمية" }
+      "en": {
+        "name": "Dollar Mubasher",
+        "unitPrice": "",
+        "inception": "May 11, 2026",
+        "nominal": "USD 1",
+        "subscription": "Daily",
+        "redemption": "Weekly – every Monday",
+        "subFees": "Zero / No Fees",
+        "redFees": "Zero / No Fees",
+        "minSub": "1 Investment Unit",
+        "maxSub": "No Maximum",
+        "distributions": "Accumulated Returns"
+      },
+      "ar": {
+        "name": "مباشر دولار",
+        "unitPrice": "",
+        "inception": "11 مايو 2026",
+        "nominal": "1 دولار أمريكي",
+        "subscription": "يومياً",
+        "redemption": "أسبوعياً — كل يوم اثنين",
+        "subFees": "بدون رسوم",
+        "redFees": "بدون رسوم",
+        "minSub": "وثيقة استثمار واحدة",
+        "maxSub": "بدون حد أقصى",
+        "distributions": "عوائد تراكمية"
+      }
     },
     {
       "key": "cash",
       "logo": "/images/funds/cash.png",
       "logoVersion": "",
       "knowMoreUrl": "",
-      "en": { "name": "Cash Mubasher", "unitPrice": "", "inception": "November 2022", "nominal": "EGP 10", "subscription": "Daily", "redemption": "Daily", "subFees": "Zero / No Fees", "redFees": "Zero / No Fees", "minSub": "1 Investment Unit", "maxSub": "No Maximum", "distributions": "Accumulated Returns" },
-      "ar": { "name": "مباشر كاش", "unitPrice": "", "inception": "نوفمبر 2022", "nominal": "10 جنيهات مصرية", "subscription": "يومياً", "redemption": "يومياً", "subFees": "بدون رسوم", "redFees": "بدون رسوم", "minSub": "وثيقة استثمار واحدة", "maxSub": "بدون حد أقصى", "distributions": "عوائد تراكمية" }
+      "en": {
+        "name": "Cash Mubasher",
+        "unitPrice": "",
+        "inception": "November 2022",
+        "nominal": "EGP 10",
+        "subscription": "Daily",
+        "redemption": "Daily",
+        "subFees": "Zero / No Fees",
+        "redFees": "Zero / No Fees",
+        "minSub": "1 Investment Unit",
+        "maxSub": "No Maximum",
+        "distributions": "Accumulated Returns"
+      },
+      "ar": {
+        "name": "مباشر كاش",
+        "unitPrice": "",
+        "inception": "نوفمبر 2022",
+        "nominal": "10 جنيهات مصرية",
+        "subscription": "يومياً",
+        "redemption": "يومياً",
+        "subFees": "بدون رسوم",
+        "redFees": "بدون رسوم",
+        "minSub": "وثيقة استثمار واحدة",
+        "maxSub": "بدون حد أقصى",
+        "distributions": "عوائد تراكمية"
+      }
     },
     {
       "key": "equity",
       "logo": "/images/funds/equity.png",
       "logoVersion": "",
       "knowMoreUrl": "",
-      "en": { "name": "Mubasher Equity Funds", "unitPrice": "", "inception": "September 2024", "nominal": "EGP 1", "subscription": "Daily", "redemption": "Weekly", "subFees": "Zero / No Fees", "redFees": "Zero / No Fees", "minSub": "1 Investment Unit", "maxSub": "No Maximum", "distributions": "Accumulated Returns" },
-      "ar": { "name": "مباشر أسهم", "unitPrice": "", "inception": "سبتمبر 2024", "nominal": "1 جنيه مصري", "subscription": "يومياً", "redemption": "أسبوعياً", "subFees": "بدون رسوم", "redFees": "بدون رسوم", "minSub": "وثيقة استثمار واحدة", "maxSub": "بدون حد أقصى", "distributions": "عوائد تراكمية" }
+      "en": {
+        "name": "Mubasher Equity Funds",
+        "unitPrice": "",
+        "inception": "September 2024",
+        "nominal": "EGP 1",
+        "subscription": "Daily",
+        "redemption": "Weekly",
+        "subFees": "Zero / No Fees",
+        "redFees": "Zero / No Fees",
+        "minSub": "1 Investment Unit",
+        "maxSub": "No Maximum",
+        "distributions": "Accumulated Returns"
+      },
+      "ar": {
+        "name": "مباشر أسهم",
+        "unitPrice": "",
+        "inception": "سبتمبر 2024",
+        "nominal": "1 جنيه مصري",
+        "subscription": "يومياً",
+        "redemption": "أسبوعياً",
+        "subFees": "بدون رسوم",
+        "redFees": "بدون رسوم",
+        "minSub": "وثيقة استثمار واحدة",
+        "maxSub": "بدون حد أقصى",
+        "distributions": "عوائد تراكمية"
+      }
     }
   ]
 }
