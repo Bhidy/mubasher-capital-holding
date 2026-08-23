@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import fundsData from "@/data/funds.json";
 import { motion, useScroll, useTransform, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { careersPortalUrl, EXTERNAL_LINK_PROPS } from "@/lib/site-config";
@@ -127,12 +128,7 @@ export const translations = {
       desc: "A range of mutual funds managed by the Group, offering diversified investment options across asset classes. Select a fund to view its details.",
       detailsLabel: "Fund Details",
       knowMore: "Know More",
-      fields: { inception: "Inception Date", nominal: "Nominal Unit Value", subscription: "Subscription", redemption: "Redemption", subFees: "Subscription Fees", redFees: "Redemption Fees", minSub: "Minimum Subscription", maxSub: "Maximum Subscription", distributions: "Distributions" },
-      f1: { name: "Gold Mubasher", inception: "August 2025", nominal: "EGP 10", subscription: "Monday to Thursday", redemption: "Monday to Thursday", subFees: "Zero / No Fees", redFees: "Zero / No Fees", minSub: "1 Investment Unit", maxSub: "No Maximum", distributions: "Accumulated Returns" },
-      f2: { name: "Silver Mubasher", inception: "June 2026", nominal: "EGP 10", subscription: "Monday to Thursday", redemption: "Monday to Thursday", subFees: "Zero / No Fees", redFees: "Zero / No Fees", minSub: "1 Investment Unit", maxSub: "No Maximum", distributions: "Accumulated Returns" },
-      f3: { name: "Dollar Mubasher", inception: "May 11, 2026", nominal: "USD 1", subscription: "Daily", redemption: "Weekly – every Monday", subFees: "Zero / No Fees", redFees: "Zero / No Fees", minSub: "1 Investment Unit", maxSub: "No Maximum", distributions: "Accumulated Returns" },
-      f4: { name: "Cash Mubasher", inception: "November 2022", nominal: "EGP 10", subscription: "Daily", redemption: "Daily", subFees: "Zero / No Fees", redFees: "Zero / No Fees", minSub: "1 Investment Unit", maxSub: "No Maximum", distributions: "Accumulated Returns" },
-      f5: { name: "Mubasher Equity Funds", inception: "September 2024", nominal: "EGP 1", subscription: "Daily", redemption: "Weekly", subFees: "Zero / No Fees", redFees: "Zero / No Fees", minSub: "1 Investment Unit", maxSub: "No Maximum", distributions: "Accumulated Returns" }
+      fields: { unitPrice: "Unit Price", inception: "Inception Date", nominal: "Nominal Unit Value", subscription: "Subscription", redemption: "Redemption", subFees: "Subscription Fees", redFees: "Redemption Fees", minSub: "Minimum Subscription", maxSub: "Maximum Subscription", distributions: "Distributions" }
     },
     team: {
       label: "Group Leadership",
@@ -272,12 +268,7 @@ export const translations = {
       desc: "مجموعة من صناديق الاستثمار التي تديرها المجموعة، تتيح خيارات استثمارية متنوعة عبر مختلف فئات الأصول. اختر صندوقاً لعرض تفاصيله.",
       detailsLabel: "تفاصيل الصندوق",
       knowMore: "اعرف المزيد",
-      fields: { inception: "تاريخ الإنشاء", nominal: "القيمة الاسمية للوثيقة", subscription: "الاكتتاب", redemption: "الاسترداد", subFees: "رسوم الاكتتاب", redFees: "رسوم الاسترداد", minSub: "الحد الأدنى للاكتتاب", maxSub: "الحد الأقصى للاكتتاب", distributions: "التوزيعات" },
-      f1: { name: "مباشر ذهب", inception: "أغسطس 2025", nominal: "10 جنيهات مصرية", subscription: "من الاثنين إلى الخميس", redemption: "من الاثنين إلى الخميس", subFees: "بدون رسوم", redFees: "بدون رسوم", minSub: "وثيقة استثمار واحدة", maxSub: "بدون حد أقصى", distributions: "عوائد تراكمية" },
-      f2: { name: "مباشر فضة", inception: "يونيو 2026", nominal: "10 جنيهات مصرية", subscription: "من الاثنين إلى الخميس", redemption: "من الاثنين إلى الخميس", subFees: "بدون رسوم", redFees: "بدون رسوم", minSub: "وثيقة استثمار واحدة", maxSub: "بدون حد أقصى", distributions: "عوائد تراكمية" },
-      f3: { name: "مباشر دولار", inception: "11 مايو 2026", nominal: "1 دولار أمريكي", subscription: "يومياً", redemption: "أسبوعياً — كل يوم اثنين", subFees: "بدون رسوم", redFees: "بدون رسوم", minSub: "وثيقة استثمار واحدة", maxSub: "بدون حد أقصى", distributions: "عوائد تراكمية" },
-      f4: { name: "مباشر كاش", inception: "نوفمبر 2022", nominal: "10 جنيهات مصرية", subscription: "يومياً", redemption: "يومياً", subFees: "بدون رسوم", redFees: "بدون رسوم", minSub: "وثيقة استثمار واحدة", maxSub: "بدون حد أقصى", distributions: "عوائد تراكمية" },
-      f5: { name: "مباشر أسهم", inception: "سبتمبر 2024", nominal: "1 جنيه مصري", subscription: "يومياً", redemption: "أسبوعياً", subFees: "بدون رسوم", redFees: "بدون رسوم", minSub: "وثيقة استثمار واحدة", maxSub: "بدون حد أقصى", distributions: "عوائد تراكمية" }
+      fields: { unitPrice: "سعر الوثيقة", inception: "تاريخ الإنشاء", nominal: "القيمة الاسمية للوثيقة", subscription: "الاكتتاب", redemption: "الاسترداد", subFees: "رسوم الاكتتاب", redFees: "رسوم الاسترداد", minSub: "الحد الأدنى للاكتتاب", maxSub: "الحد الأقصى للاكتتاب", distributions: "التوزيعات" }
     },
     team: {
       label: "قيادة المجموعة",
@@ -1202,27 +1193,37 @@ function OurProductsMore({ t, lang }: { t: any, lang: string }) {
 
 /* ─── Mutual Funds Section ─── */
 function MutualFunds({ t, lang }: { t: any, lang: string }) {
-  const funds = [
-    { key: "gold", logo: "/images/funds/gold.png", data: t.funds.f1 },
-    { key: "silver", logo: "/images/funds/silver.png", data: t.funds.f2 },
-    { key: "dollar", logo: "/images/funds/dollar.png", data: t.funds.f3 },
-    { key: "cash", logo: "/images/funds/cash.png", data: t.funds.f4 },
-    { key: "equity", logo: "/images/funds/equity.png", data: t.funds.f5 },
-  ];
+  // Content is managed from /admin; the build-time JSON is the fallback and
+  // the live copy is overlaid on mount so saves appear without a redeploy.
+  const [fundsDoc, setFundsDoc] = useState<any>(fundsData);
   const [activeKey, setActiveKey] = useState("gold");
-  const fund = funds.find(f => f.key === activeKey)!;
+
+  useEffect(() => {
+    fetch("/api/funds")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => { if (d?.funds?.length) setFundsDoc(d); })
+      .catch(() => {});
+  }, []);
+
+  const funds = fundsDoc.funds as any[];
+  const fund = funds.find(f => f.key === activeKey) ?? funds[0];
+  const data = fund[lang === 'ar' ? 'ar' : 'en'];
+  const logoSrc = (f: any) => `${f.logo}${f.logoVersion ? `?v=${f.logoVersion}` : ""}`;
   const F = t.funds.fields;
   const rows: [string, string][] = [
-    [F.inception, fund.data.inception],
-    [F.nominal, fund.data.nominal],
-    [F.subscription, fund.data.subscription],
-    [F.redemption, fund.data.redemption],
-    [F.subFees, fund.data.subFees],
-    [F.redFees, fund.data.redFees],
-    [F.minSub, fund.data.minSub],
-    [F.maxSub, fund.data.maxSub],
-    [F.distributions, fund.data.distributions],
+    [F.inception, data.inception],
+    [F.nominal, data.nominal],
+    [F.subscription, data.subscription],
+    [F.redemption, data.redemption],
+    [F.subFees, data.subFees],
+    [F.redFees, data.redFees],
+    [F.minSub, data.minSub],
+    [F.maxSub, data.maxSub],
+    [F.distributions, data.distributions],
   ];
+  const knowMoreProps = fund.knowMoreUrl
+    ? { href: fund.knowMoreUrl, ...EXTERNAL_LINK_PROPS }
+    : { href: "#contact" };
 
   return (
     <section id="funds" className="py-16 md:py-24 px-6 bg-secondary/15 relative z-10 overflow-hidden">
@@ -1266,12 +1267,12 @@ function MutualFunds({ t, lang }: { t: any, lang: string }) {
                     ? "border-blue-600 shadow-xl shadow-blue-500/20 scale-105"
                     : "border-border/60 group-hover:border-blue-400/60 group-hover:scale-105 shadow-sm"
                 }`}>
-                  <Image src={f.logo} alt="" width={512} height={512} className="w-full h-full object-contain" />
+                  <Image src={logoSrc(f)} alt="" width={512} height={512} className="w-full h-full object-contain" />
                 </span>
                 <span className={`font-heading text-sm md:text-base font-bold transition-colors duration-300 ${
                   isActive ? "text-blue-600 dark:text-blue-400" : "text-foreground group-hover:text-blue-500"
                 }`}>
-                  {f.data.name}
+                  {f[lang === 'ar' ? 'ar' : 'en'].name}
                 </span>
               </button>
             );
@@ -1297,13 +1298,20 @@ function MutualFunds({ t, lang }: { t: any, lang: string }) {
               >
                 <div className="flex items-center gap-4 mb-8 md:mb-10">
                   <span className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white dark:bg-white/95 border border-border/50 p-1.5 flex items-center justify-center shrink-0">
-                    <Image src={fund.logo} alt="" width={512} height={512} className="w-full h-full object-contain" />
+                    <Image src={logoSrc(fund)} alt="" width={512} height={512} className="w-full h-full object-contain" />
                   </span>
                   <div>
                     <div className="font-sans text-[11px] font-black tracking-[0.3em] text-blue-500 uppercase mb-1">{t.funds.detailsLabel}</div>
-                    <h3 className="font-heading text-2xl md:text-3xl font-bold tracking-tight">{fund.data.name}</h3>
+                    <h3 className="font-heading text-2xl md:text-3xl font-bold tracking-tight">{data.name}</h3>
                   </div>
                 </div>
+
+                {data.unitPrice && (
+                  <div className="flex items-center justify-between gap-4 rounded-2xl border-2 border-blue-500/40 bg-blue-500/[0.07] px-5 md:px-7 py-5 mb-4">
+                    <span className="font-sans text-sm md:text-base font-bold text-blue-700 dark:text-blue-300">{F.unitPrice}</span>
+                    <span className="font-heading text-xl md:text-2xl font-black text-blue-700 dark:text-blue-300 text-end">{data.unitPrice}</span>
+                  </div>
+                )}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {rows.map(([label, value], i) => (
@@ -1314,7 +1322,7 @@ function MutualFunds({ t, lang }: { t: any, lang: string }) {
                   ))}
                 </div>
 
-                <a href="#contact" className="btn-primary w-full h-14 mt-8 flex items-center justify-center gap-2 text-base">
+                <a {...knowMoreProps} className="btn-primary w-full h-14 mt-8 flex items-center justify-center gap-2 text-base">
                   {t.funds.knowMore} <ArrowRight className={`w-5 h-5 ${lang === 'ar' ? 'rotate-180' : ''}`} />
                 </a>
               </motion.div>
