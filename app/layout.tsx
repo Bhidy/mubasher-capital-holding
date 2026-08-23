@@ -7,19 +7,19 @@ import { SmoothScroll } from "@/components/smooth-scroll";
 const sora = Sora({
   subsets: ["latin"],
   variable: "--font-heading",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "700", "800"],
 });
 
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const ibmPlexArabic = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
   variable: "--font-arabic",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const alexandria = Alexandria({

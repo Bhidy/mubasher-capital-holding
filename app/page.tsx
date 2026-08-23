@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -357,10 +358,13 @@ export function Navbar({ lang, setLang, t }: { lang: string, setLang: (l: string
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="group flex items-center no-underline outline-none">
-            <img 
-              src="/images/logo.png" 
-              alt="Mubasher Holding" 
-              className="h-10 md:h-12 w-auto group-hover:scale-105 transition-transform duration-500 dark:brightness-110" 
+            <Image
+              src="/images/logo.png"
+              alt="Mubasher Holding"
+              width={400}
+              height={174}
+              loading="eager"
+              className="h-10 md:h-12 w-auto group-hover:scale-105 transition-transform duration-500 dark:brightness-110"
             />
           </a>
 
@@ -611,7 +615,7 @@ function Services({ t, lang }: { t: any, lang: string }) {
   return (
     <section id="services" className="py-16 md:py-24 px-6 bg-background relative z-10 overflow-hidden">
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none mix-blend-overlay">
-        <img src="/images/ecosystem.png" alt="Ecosystem" className="w-full h-full object-cover" />
+        <Image src="/images/ecosystem.png" alt="" fill sizes="50vw" className="object-cover" />
       </div>
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -708,7 +712,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
           viewport={{ once: true }}
         >
           <div className="aspect-[3/4] rounded-[3rem] bg-gradient-to-br from-blue-600/20 via-blue-700/10 to-transparent border border-border/50 overflow-hidden relative group">
-             <img src="/images/cairo.jpeg" alt="Cairo" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700" />
+             <Image src="/images/cairo.jpeg" alt="Cairo" fill sizes="(max-width: 1023px) 45vw, 300px" className="object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700" />
              <div className="absolute inset-0 grid-overlay opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
              <div className={`absolute bottom-4 md:bottom-8 font-heading font-black text-xl sm:text-2xl lg:text-3xl tracking-tighter z-10 ${lang === 'en' ? 'left-4 md:left-8' : 'right-4 md:right-8'}`}>
@@ -716,7 +720,7 @@ function AboutSection({ t, lang }: { t: any, lang: string }) {
              </div>
           </div>
           <div className="aspect-[3/4] rounded-[3rem] bg-gradient-to-br from-emerald-500/20 via-emerald-600/10 to-transparent border border-border/50 mt-8 md:mt-16 overflow-hidden relative group">
-             <img src="/images/regional.png" alt="Regional" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700" />
+             <Image src="/images/regional.png" alt="Regional" fill sizes="(max-width: 1023px) 45vw, 300px" className="object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700" />
              <div className="absolute inset-0 grid-overlay opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
              <div className={`absolute bottom-4 md:bottom-8 font-heading font-black text-xl sm:text-2xl lg:text-3xl tracking-tighter z-10 ${lang === 'en' ? 'left-4 md:left-8' : 'right-4 md:right-8'}`}>
@@ -773,7 +777,7 @@ function TrackRecord({ t, lang }: { t: any, lang: string }) {
           viewport={{ once: true }}
         >
           <div className="aspect-square lg:aspect-[4/5] rounded-[3rem] overflow-hidden relative border border-border/50 group">
-             <img src="/images/mubasher_trade.jpeg" alt="Mubasher Trade" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+             <Image src="/images/mubasher_trade.jpeg" alt="Mubasher Trade" fill sizes="(max-width: 1023px) 90vw, 620px" className="object-cover group-hover:scale-105 transition-transform duration-1000" />
              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
              <div className="absolute inset-0 grid-overlay opacity-30 mix-blend-overlay" />
           </div>
@@ -931,7 +935,7 @@ function Team({ t, lang }: { t: any, lang: string }) {
                 >
                   <div className="aspect-[4/4.8] rounded-[2rem] bg-gradient-to-b from-primary/5 to-primary/10 border border-border/50 overflow-hidden mb-6 group-hover:border-blue-500/50 transition-all duration-700 relative shadow-lg shadow-blue-500/5">
                     {p.image ? (
-                      <img src={p.image} alt={p.name} className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000" />
+                      <Image src={p.image} alt={p.name} fill sizes="(max-width: 767px) 45vw, (max-width: 1023px) 30vw, 280px" className="object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-1000" />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center bg-secondary/20">
                         <User className="w-16 h-16 text-blue-500/20 group-hover:text-blue-500/40 transition-colors duration-700" />
@@ -1003,10 +1007,10 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
                  </a>
                  <div className="flex gap-4">
                     <a href="https://play.google.com/store/apps/details?id=com.mfs.mtrade.twsl" target="_blank" rel="noopener noreferrer" className="h-10 lg:h-12 block hover:scale-110 transition-all duration-300 active:scale-95">
-                       <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-full w-auto drop-shadow-lg" />
+                       <img src="/images/badges/google-play.svg" alt="Google Play" width={180} height={53} loading="lazy" className="h-full w-auto drop-shadow-lg" />
                     </a>
                     <a href="https://apps.apple.com/eg/app/mubasher-trade-invest/id1529304774" target="_blank" rel="noopener noreferrer" className="h-10 lg:h-12 block hover:scale-110 transition-all duration-300 active:scale-95">
-                       <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-full w-auto drop-shadow-lg" />
+                       <img src="/images/badges/app-store.svg" alt="App Store" width={120} height={40} loading="lazy" className="h-full w-auto drop-shadow-lg" />
                     </a>
                  </div>
               </div>
@@ -1040,10 +1044,12 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
                  {images.map((img, i) => (
                    <div key={i} className="flex-shrink-0 w-[70%] snap-center">
                       <div className="relative aspect-[9/16.5] rounded-[3rem] overflow-hidden border-[8px] border-foreground/5 bg-secondary/30 shadow-2xl ring-1 ring-foreground/10 group/item">
-                        <img 
-                          src={img} 
-                          alt={`Feature ${i+1}`} 
-                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover/item:scale-105" 
+                        <Image
+                          src={img}
+                          alt={`Feature ${i+1}`}
+                          fill
+                          sizes="(max-width: 1023px) 60vw, 420px"
+                          className="object-cover transition-transform duration-1000 group-hover/item:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none" />
                       </div>
@@ -1066,10 +1072,10 @@ function DigitalPlatforms({ t, lang }: { t: any, lang: string }) {
 
 /* ─── Our Products Section ─── */
 const PRODUCT_ITEMS = (t: any) => [
-  { data: t.products.p1, href: "https://egypt.mubashertrade.com/ar/", image: "/images/products/mubasher-trade.png", imgClass: "max-w-[500px]" },
-  { data: t.products.p2, href: "https://mubashersignals.com/", image: "/images/products/smart-signals.png", imgClass: "max-w-[560px]" },
-  { data: t.products.p3, href: "https://www.mubasher.info/", image: "/images/products/mubasher-info.png", imgClass: "max-w-[640px]" },
-  { data: t.products.p4, href: "https://mubasher-academy.acadimiat.com/", image: "/images/products/mubasher-academy.png", imgClass: "max-w-[560px]" },
+  { data: t.products.p1, href: "https://egypt.mubashertrade.com/ar/", image: "/images/products/mubasher-trade.png", imgClass: "max-w-[500px]", w: 1024, h: 1536 },
+  { data: t.products.p2, href: "https://mubashersignals.com/", image: "/images/products/smart-signals.png", imgClass: "max-w-[560px]", w: 1254, h: 1254 },
+  { data: t.products.p3, href: "https://www.mubasher.info/", image: "/images/products/mubasher-info.png", imgClass: "max-w-[640px]", w: 1536, h: 1024 },
+  { data: t.products.p4, href: "https://mubasher-academy.acadimiat.com/", image: "/images/products/mubasher-academy.png", imgClass: "max-w-[560px]", w: 1254, h: 1254 },
 ];
 
 function ProductRow({ p, index, t, lang }: { p: any, index: number, t: any, lang: string }) {
@@ -1125,7 +1131,7 @@ function ProductRow({ p, index, t, lang }: { p: any, index: number, t: any, lang
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <img src={p.image} alt={p.data.title} className={`w-full h-auto mx-auto ${p.imgClass}`} />
+          <Image src={p.image} alt={p.data.title} width={p.w} height={p.h} sizes="(max-width: 1023px) 90vw, 640px" className={`w-full h-auto mx-auto ${p.imgClass}`} />
         </motion.div>
       </div>
     </div>
@@ -1197,7 +1203,7 @@ function Governance({ t, lang }: { t: any, lang: string }) {
             viewport={{ once: true }}
           >
             <div className="aspect-[4/3] rounded-[3rem] overflow-hidden border border-border/50 shadow-2xl relative group">
-              <img src="/images/governance.jpeg" alt="Governance" className="absolute inset-0 w-full h-full object-cover object-top opacity-80 group-hover:scale-105 transition-all duration-1000" />
+              <Image src="/images/governance.jpeg" alt="Governance" fill sizes="(max-width: 1023px) 90vw, 620px" className="object-cover object-top opacity-80 group-hover:scale-105 transition-all duration-1000" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
               <div className="absolute inset-0 grid-overlay opacity-30 mix-blend-overlay" />
               
@@ -1209,7 +1215,7 @@ function Governance({ t, lang }: { t: any, lang: string }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                  <img src="/images/fra-logo.png" alt="FRA Logo" className="w-full h-full object-contain" />
+                  <Image src="/images/fra-logo.png" alt="FRA Logo" width={96} height={96} className="w-full h-full object-contain" />
                 </motion.div>
                 
                 <motion.div 
@@ -1218,7 +1224,7 @@ function Governance({ t, lang }: { t: any, lang: string }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
                 >
-                  <img src="/images/egx-logo.png" alt="EGX Logo" className="w-full h-full object-contain" />
+                  <Image src="/images/egx-logo.png" alt="EGX Logo" width={96} height={96} className="w-full h-full object-contain" />
                 </motion.div>
               </div>
             </div>
@@ -1404,10 +1410,12 @@ function News({ t, lang }: { t: any, lang: string }) {
             >
               <a href={item.url} target={item.url !== "#" ? "_blank" : "_self"} rel="noopener noreferrer" className="block no-underline">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-8">
-                  <img 
-                    src={item.image} 
-                    alt={item.title} 
-                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="(max-width: 767px) 85vw, (max-width: 1023px) 45vw, 400px"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full">
                     {item.category}
@@ -1443,6 +1451,7 @@ function Media({ t, lang }: { t: any, lang: string }) {
     { id: "TwgxnmG_Te8", title: lang === 'en' ? "Future of Finance" : "مستقبل التمويل" },
   ];
 
+  const [playing, setPlaying] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'next' | 'prev') => {
@@ -1490,13 +1499,34 @@ function Media({ t, lang }: { t: any, lang: string }) {
               className="flex-shrink-0 w-[85vw] md:w-[calc(48%-1.5rem)] lg:w-[calc(42%-2rem)] snap-start group"
             >
               <div className="relative aspect-video rounded-[2rem] overflow-hidden border border-border/50 shadow-2xl group-hover:border-blue-500/50 transition-all duration-500 bg-black">
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.id}`}
-                  title={video.title}
-                  className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+                {playing === video.id ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.id}?autoplay=1`}
+                    title={video.title}
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setPlaying(video.id)}
+                    aria-label={video.title}
+                    className="absolute inset-0 w-full h-full cursor-pointer"
+                  >
+                    <img
+                      src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
+                      alt=""
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                    />
+                    <span className="absolute inset-0 flex items-center justify-center">
+                      <span className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-blue-600/90 backdrop-blur-sm flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-blue-600 transition-all duration-500">
+                        <svg viewBox="0 0 24 24" className="w-7 h-7 lg:w-8 lg:h-8 text-white fill-current" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+                      </span>
+                    </span>
+                  </button>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none" />
                 <div className={`absolute bottom-8 left-8 right-8 ${lang === 'ar' ? 'text-right' : ''} pointer-events-none`}>
                    <h3 className="text-white font-heading text-xl font-bold tracking-tight">{video.title}</h3>
@@ -1741,10 +1771,12 @@ export function Footer({ t, lang }: { t: any, lang: string }) {
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-20 mb-28 ${lang === 'ar' ? 'lg:flex lg:flex-row-reverse lg:justify-between' : ''}`}>
           <div className="lg:col-span-2 space-y-10">
             <a href="/" className={`flex items-center no-underline group ${lang === 'ar' ? 'justify-end' : ''}`}>
-              <img 
-                src="/images/logo.png" 
-                alt="Mubasher Holding" 
-                className="h-14 w-auto group-hover:scale-105 transition-transform duration-700 dark:brightness-110" 
+              <Image
+                src="/images/logo.png"
+                alt="Mubasher Holding"
+                width={400}
+                height={174}
+                className="h-14 w-auto group-hover:scale-105 transition-transform duration-700 dark:brightness-110"
               />
             </a>
             <p className="font-sans text-muted-foreground/80 text-xl leading-relaxed max-w-sm">
