@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-23T15:18:07.460Z",
+  "updatedAt": "2026-08-23T15:18:38.765Z",
   "funds": [
     {
       "key": "gold",
@@ -8,7 +8,7 @@
       "knowMoreUrl": "",
       "en": {
         "name": "Gold Mubasher",
-        "unitPrice": "23.97",
+        "unitPrice": "0",
         "inception": "August 2025",
         "nominal": "EGP 10",
         "subscription": "Monday to Thursday",
@@ -21,7 +21,7 @@
       },
       "ar": {
         "name": "مباشر ذهب",
-        "unitPrice": "23.97",
+        "unitPrice": "0",
         "inception": "أغسطس 2025",
         "nominal": "10 جنيهات مصرية",
         "subscription": "من الاثنين إلى الخميس",
