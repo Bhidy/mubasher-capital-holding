@@ -110,6 +110,9 @@ export default function CalculatorPage() {
 
   useEffect(() => {
     setMounted(true);
+    // The footer links here with ?lang= so the visitor keeps their language.
+    const q = new URLSearchParams(window.location.search).get("lang");
+    if (q === "en" || q === "ar") setLang(q);
   }, []);
 
   const t = calculatorTranslations[lang];

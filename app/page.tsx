@@ -27,8 +27,7 @@ import {
   Handshake,
   Heart,
   Languages,
-  User,
-  Calculator
+  User
 } from "lucide-react";
 
 const SocialIcons = {
@@ -1739,39 +1738,6 @@ function CTA({ t, lang }: { t: any, lang: string }) {
   );
 }
 
-/* ─── Calculator Promo ─── */
-function CalculatorPromo({ t, lang }: { t: any, lang: string }) {
-  return (
-    <section className="py-24 px-6 relative z-10 bg-background overflow-hidden">
-      <div className="absolute inset-0 bg-blue-600/5" />
-      <div className="absolute inset-0 grid-overlay opacity-20" />
-      <div className="max-w-7xl mx-auto relative z-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="glass border-blue-500/20 p-12 md:p-20 rounded-[3rem] shadow-2xl shadow-blue-500/10"
-        >
-          <div className="w-20 h-20 mx-auto rounded-3xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-8 shadow-inner shadow-blue-500/20">
-            <Calculator className="w-10 h-10" />
-          </div>
-          <span className="section-label justify-center">{t.calculatorPromo.label}</span>
-          <h2 className={`font-heading ${lang === 'ar' ? 'text-4xl md:text-6xl' : 'text-5xl md:text-7xl'} font-extrabold tracking-tightest mt-6 mb-8 text-gradient-main`}>
-            {t.calculatorPromo.title}
-          </h2>
-          <p className="font-sans text-muted-foreground/90 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed">
-            {t.calculatorPromo.desc}
-          </p>
-          <a href="/calculator" className="btn-primary min-w-[280px] py-6 text-lg font-black tracking-widest uppercase shadow-2xl shadow-blue-600/30">
-            {t.calculatorPromo.btn}
-          </a>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
 /* ─── Careers ─── */
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -1910,6 +1876,7 @@ export function Footer({ t, lang }: { t: any, lang: string }) {
         { label: t.nav.news },
         { label: t.footer.careers, href: careersPortalUrl(lang), external: true },
         { label: t.nav.contact },
+        { label: t.calculatorPromo.title, href: lang === 'en' ? '/calculator?lang=en' : '/calculator' },
       ]
     },
     {
@@ -2021,7 +1988,6 @@ export default function Home() {
       <Governance t={t} lang={lang} />
       <Values t={t} lang={lang} />
       <Careers t={t} lang={lang} />
-      <CalculatorPromo t={t} lang={lang} />
       <CTA t={t} lang={lang} />
       <Footer t={t} lang={lang} />
     </div>
