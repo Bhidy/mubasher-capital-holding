@@ -125,9 +125,9 @@ export const translations = {
     funds: {
       label: "Investment Funds",
       title: "Mubasher Mutual Funds",
-      desc: "A range of mutual funds managed by the Group, offering diversified investment options across asset classes. Select a fund to view its details.",
+      desc: "A range of mutual funds managed by the Group, offering diversified investment options across asset classes.",
       detailsLabel: "Fund Details",
-      knowMore: "Know More",
+      tba: "To be announced",
       fields: { unitPrice: "Unit Price", inception: "Inception Date", nominal: "Nominal Unit Value", subscription: "Subscription", redemption: "Redemption", subFees: "Subscription Fees", redFees: "Redemption Fees", minSub: "Minimum Subscription", maxSub: "Maximum Subscription", distributions: "Distributions" }
     },
     team: {
@@ -265,9 +265,9 @@ export const translations = {
     funds: {
       label: "صناديق الاستثمار",
       title: "صناديق مباشر للاستثمار",
-      desc: "مجموعة من صناديق الاستثمار التي تديرها المجموعة، تتيح خيارات استثمارية متنوعة عبر مختلف فئات الأصول. اختر صندوقاً لعرض تفاصيله.",
+      desc: "مجموعة من صناديق الاستثمار التي تديرها المجموعة، تتيح خيارات استثمارية متنوعة عبر مختلف فئات الأصول.",
       detailsLabel: "تفاصيل الصندوق",
-      knowMore: "اعرف المزيد",
+      tba: "يُعلن قريباً",
       fields: { unitPrice: "سعر الوثيقة", inception: "تاريخ الإنشاء", nominal: "القيمة الاسمية للوثيقة", subscription: "الاكتتاب", redemption: "الاسترداد", subFees: "رسوم الاكتتاب", redFees: "رسوم الاسترداد", minSub: "الحد الأدنى للاكتتاب", maxSub: "الحد الأقصى للاكتتاب", distributions: "التوزيعات" }
     },
     team: {
@@ -1221,9 +1221,6 @@ function MutualFunds({ t, lang }: { t: any, lang: string }) {
     [F.maxSub, data.maxSub],
     [F.distributions, data.distributions],
   ];
-  const knowMoreProps = fund.knowMoreUrl
-    ? { href: fund.knowMoreUrl, ...EXTERNAL_LINK_PROPS }
-    : { href: "#contact" };
 
   return (
     <section id="funds" className="py-16 md:py-24 px-6 bg-secondary/15 relative z-10 overflow-hidden">
@@ -1306,12 +1303,12 @@ function MutualFunds({ t, lang }: { t: any, lang: string }) {
                   </div>
                 </div>
 
-                {data.unitPrice && (
-                  <div className="flex items-center justify-between gap-4 rounded-2xl border-2 border-blue-500/40 bg-blue-500/[0.07] px-5 md:px-7 py-5 mb-4">
-                    <span className="font-sans text-sm md:text-base font-bold text-blue-700 dark:text-blue-300">{F.unitPrice}</span>
-                    <span className="font-heading text-xl md:text-2xl font-black text-blue-700 dark:text-blue-300 text-end">{data.unitPrice}</span>
-                  </div>
-                )}
+                <div className="flex items-center justify-between gap-4 rounded-2xl border-2 border-blue-500/40 bg-blue-500/[0.07] px-5 md:px-7 py-5 mb-4">
+                  <span className="font-sans text-sm md:text-base font-bold text-blue-700 dark:text-blue-300">{F.unitPrice}</span>
+                  <span className={`font-heading font-black text-blue-700 dark:text-blue-300 text-end ${data.unitPrice ? "text-xl md:text-2xl" : "text-base md:text-lg opacity-80"}`}>
+                    {data.unitPrice || t.funds.tba}
+                  </span>
+                </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {rows.map(([label, value], i) => (
@@ -1322,9 +1319,6 @@ function MutualFunds({ t, lang }: { t: any, lang: string }) {
                   ))}
                 </div>
 
-                <a {...knowMoreProps} className="btn-primary w-full h-14 mt-8 flex items-center justify-center gap-2 text-base">
-                  {t.funds.knowMore} <ArrowRight className={`w-5 h-5 ${lang === 'ar' ? 'rotate-180' : ''}`} />
-                </a>
               </motion.div>
             </AnimatePresence>
           </div>

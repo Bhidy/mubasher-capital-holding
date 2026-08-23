@@ -49,11 +49,6 @@ export default function AdminClient() {
 
   const fund = doc.funds.find((f) => f.key === activeKey)!;
 
-  function patchFund(key: string, patch: Partial<Fund>) {
-    setDoc((d) => ({ ...d, funds: d.funds.map((f) => (f.key === key ? { ...f, ...patch } : f)) }));
-    setDirty(true);
-    setStatus(null);
-  }
   function setField(key: string, lang: "en" | "ar", field: string, value: string) {
     setDoc((d) => ({
       ...d,
@@ -239,10 +234,6 @@ export default function AdminClient() {
                   <label className={microLabel}>Name — Arabic</label>
                   <input dir="rtl" className={inputCls} value={fund.ar.name} onChange={(e) => setField(fund.key, "ar", "name", e.target.value)} />
                 </div>
-                <div>
-                  <label className={microLabel}>Know More link (https://…)</label>
-                  <input dir="ltr" placeholder="Empty = link to Contact section" className={inputCls} value={fund.knowMoreUrl} onChange={(e) => patchFund(fund.key, { knowMoreUrl: e.target.value })} />
-                </div>
               </div>
             </section>
 
@@ -251,7 +242,7 @@ export default function AdminClient() {
               <h2 className="font-heading text-[13px] font-black tracking-[0.2em] uppercase text-blue-700 dark:text-blue-300 mb-1">
                 Unit Price — سعر الوثيقة
               </h2>
-              <p className="font-sans text-[11.5px] text-muted-foreground mb-5">Leave both fields empty to hide the price row on the website.</p>
+              <p className="font-sans text-[11.5px] text-muted-foreground mb-5">Shown as the highlighted first row of the fund card. While empty, the site shows &ldquo;To be announced / يُعلن قريباً&rdquo;.</p>
               <div className="space-y-4">
                 <div>
                   <label className={microLabel}>English (e.g. EGP 12.85)</label>
