@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T14:16:08.357Z",
+  "updatedAt": "2026-08-25T13:31:17.534Z",
   "funds": [
     {
       "key": "gold",
@@ -8,7 +8,7 @@
       "knowMoreUrl": "",
       "en": {
         "name": "Gold Mubasher",
-        "unitPrice": "13.11473",
+        "unitPrice": "13.02760",
         "inception": "August 2025",
         "nominal": "EGP 10",
         "subscription": "Monday to Thursday",
@@ -21,7 +21,7 @@
       },
       "ar": {
         "name": "مباشر ذهب",
-        "unitPrice": "13.11473",
+        "unitPrice": "13.02760",
         "inception": "أغسطس 2025",
         "nominal": "10 جنيهات مصرية",
         "subscription": "من الاثنين إلى الخميس",
@@ -40,7 +40,7 @@
       "knowMoreUrl": "",
       "en": {
         "name": "Silver Mubasher",
-        "unitPrice": "9.79473",
+        "unitPrice": "9.73501",
         "inception": "June 2026",
         "nominal": "EGP 10",
         "subscription": "Monday to Thursday",
@@ -53,7 +53,7 @@
       },
       "ar": {
         "name": "مباشر فضة",
-        "unitPrice": "9.79473",
+        "unitPrice": "9.73501",
         "inception": "يونيو 2026",
         "nominal": "10 جنيهات مصرية",
         "subscription": "من الاثنين إلى الخميس",
@@ -72,7 +72,7 @@
       "knowMoreUrl": "",
       "en": {
         "name": "Dollar Mubasher",
-        "unitPrice": "1.02324",
+        "unitPrice": "1.02341",
         "inception": "May 11, 2026",
         "nominal": "USD 1",
         "subscription": "Daily",
@@ -85,7 +85,7 @@
       },
       "ar": {
         "name": "مباشر دولار",
-        "unitPrice": "1.02324",
+        "unitPrice": "1.02341",
         "inception": "11 مايو 2026",
         "nominal": "1 دولار أمريكي",
         "subscription": "يومياً",
@@ -104,7 +104,7 @@
       "knowMoreUrl": "",
       "en": {
         "name": "Cash Mubasher",
-        "unitPrice": "24.02706",
+        "unitPrice": "24.03852",
         "inception": "November 2022",
         "nominal": "EGP 10",
         "subscription": "Daily",
@@ -117,7 +117,7 @@
       },
       "ar": {
         "name": "مباشر كاش",
-        "unitPrice": "24.02706",
+        "unitPrice": "24.03852",
         "inception": "نوفمبر 2022",
         "nominal": "10 جنيهات مصرية",
         "subscription": "يومياً",
@@ -136,7 +136,7 @@
       "knowMoreUrl": "",
       "en": {
         "name": "Mubasher Equity Funds",
-        "unitPrice": "2.03510",
+        "unitPrice": "2.01820",
         "inception": "September 2024",
         "nominal": "EGP 1",
         "subscription": "Daily",
@@ -149,7 +149,7 @@
       },
       "ar": {
         "name": "مباشر أسهم",
-        "unitPrice": "2.03510",
+        "unitPrice": "2.01820",
         "inception": "سبتمبر 2024",
         "nominal": "1 جنيه مصري",
         "subscription": "يومياً",
